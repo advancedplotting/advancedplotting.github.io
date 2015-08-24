@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Add Errorbars &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="VI Reference Documentation" href="index.html" />
+    <link rel="next" title="Add Colorbar" href="Colorbar.html" />
+    <link rel="prev" title="Histogram Plot" href="Histogram.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Colorbar.html" title="Add Colorbar"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="Histogram.html" title="Histogram Plot"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="add-errorbars">
+<span id="vi-errorbar"></span><h1>Add Errorbars<a class="headerlink" href="#add-errorbars" title="Permalink to this headline">¶</a></h1>
+<p>Overlay error bars on the plot.</p>
+<p>Call a plotting VI such as <a class="reference internal" href="Line.html#vi-line"><span>Line Plot</span></a>, <a class="reference internal" href="Scatter.html#vi-scatter"><span>Scatter Plot</span></a>, or
+<a class="reference internal" href="Bar.html#vi-bar"><span>Bar Plot</span></a> first to display the data.  Then call this VI to add error bars.
+Note this VI <em>only</em> adds error bars; it does not display lines or markers by
+itself.</p>
+<p>The only required input is <strong>Y Data</strong>, which specifies the point at the
+center of the error bar.  The optional <strong>X Data</strong> defaults to an integer
+series 0..N-1, where N is the number of elements in <strong>Y Data</strong>.</p>
+<p>For <strong>X Errors</strong> and <strong>Y Errors</strong>, the values given specify the distance
+from the data point to the end of the bar; in other words, if the value
+V is given, the full width of the bar will be 2V.</p>
+<p>By default, the color used for the bar will be the last color used to make a
+bar, scatter, line, or histogram plot.  You can manually specify a color via
+the <strong>Color</strong> setting.</p>
+<img alt="../_images/Errorbar.png" src="../_images/Errorbar.png" />
+<dl class="docutils">
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <img alt="int32_out" src="../_images/int32_out.png" /> <strong>Plot ID/Plot ID Out</strong></dt>
+<dd>Plot identifier.  <strong>Plot ID Out</strong> always contains the same value as <strong>Plot ID</strong>.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>X Data</strong></dt>
+<dd>Optional X locations of the data points.  Defaults to 0..N-1.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Y Data</strong></dt>
+<dd>Y locations of the data points.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>X Errors</strong></dt>
+<dd>Magnitudes of the errors in the X direction.  The full width of the bar
+is twice the value provided.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Y Errors</strong></dt>
+<dd>Magnitudes of the errors in the Y direction.  The full width of the bar
+is twice the value provided.</dd>
+<dt><img alt="errorbar_props" src="../_images/ErrorbarProps.png" /> <strong>Properties</strong></dt>
+<dd><p class="first">Property cluster, available under the &#8220;Properties&#8221; subpalette.</p>
+<dl class="last docutils">
+<dt><img alt="uint32_in" src="../_images/uint32_in.png" /> <strong>Color</strong></dt>
+<dd>Color of the error bars.  Default is the last color used for the plot.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Line Width</strong></dt>
+<dd>Width of the error bar line, in points.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Cap Size</strong></dt>
+<dd>Length of the error bar cap, in points.</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Display</strong></dt>
+<dd><p class="first">Controls general appearance of the error bars.</p>
+<dl class="last docutils">
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Alpha</strong></dt>
+<dd>Alpha blending value for this object (0.0 to 1.0).  Default is 1.0
+(fully opaque).</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Z Order</strong></dt>
+<dd>Stacking order.  Default is chosen based on the object type.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><img alt="error_in" src="../_images/error_in.png" /> <img alt="error_out" src="../_images/error_out.png" /> <strong>Error In/Out</strong></dt>
+<dd>Terminals for standard error functionality.</dd>
+</dl>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Download <a class="reference download internal" href="../_downloads/Error Bars.vi"><code class="xref download docutils literal"><span class="pre">Error</span> <span class="pre">Bars.vi</span></code></a>,
+or see <a class="reference internal" href="../guide/examples.html#guide-examples"><span>Examples</span></a> for a complete list of examples.</p>
+<img alt="../_images/ErrorbarExample.png" src="../_images/ErrorbarExample.png" />
+</div>
+<div class="section" id="axis-types">
+<h2>Axis Types<a class="headerlink" href="#axis-types" title="Permalink to this headline">¶</a></h2>
+<p>This VI supports rectangular axes.  Use with <a class="reference internal" href="../guide/polar.html#guide-polar"><span>polar axes</span></a>
+will result in <a class="reference internal" href="../guide/errors.html#error-polar"><span>402905 - Operation Not Supported for Polar Plot</span></a>.</p>
+</div>
+<div class="section" id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../guide/errors.html#error-polar"><span>402905 - Operation Not Supported for Polar Plot</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-invalid"><span>402902 - Invalid Plot Identifier</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-plotting"><span>402901 - Error in Plotting Library</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-init"><span>402900 - Failed to Initialize Plotting Library</span></a></li>
+</ul>
+</div>
+<div class="section" id="other-information">
+<h2>Other information<a class="headerlink" href="#other-information" title="Permalink to this headline">¶</a></h2>
+<p>If <strong>Y Data</strong> is empty, this VI does nothing.</p>
+<p>If <strong>X Data</strong>, <strong>Y Data</strong>, <strong>X Errors</strong>, and <strong>Y Errors</strong> have different sizes,
+only the overlap will be displayed.  If <strong>X Data</strong> is empty, the
+default (0..N-1) values will be used.</p>
+<p>If a non-finite entry (NaN or Inf) appears in <strong>X Data</strong> or <strong>Y Data</strong>,
+neither bar will be displayed at that point.  If a non-finite entry occurs
+in <strong>X Errors</strong> or <strong>Y Errors</strong>, the corresponding bar will not be displayed.</p>
+<p>Negative values are permitted in <strong>X Errors</strong> and <strong>Y Errors</strong>; the absolute
+magnitude is used to display the bar.</p>
+<p>Non-finite or negative values for <strong>Line Width</strong> and <strong>Cap Size</strong> will be
+ignored, and the defaults used.  Zero values are permitted.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Add Errorbars</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#axis-types">Axis Types</a></li>
+<li><a class="reference internal" href="#errors">Errors</a></li>
+<li><a class="reference internal" href="#other-information">Other information</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Histogram.html"
+                        title="previous chapter">Histogram Plot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Colorbar.html"
+                        title="next chapter">Add Colorbar</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Colorbar.html" title="Add Colorbar"
+             >next</a></li>
+        <li class="right" >
+          <a href="Histogram.html" title="Histogram Plot"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

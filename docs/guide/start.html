@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting Started &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="User Guide" href="index.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="examples.html" title="Examples"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="index.html" title="User Guide"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="getting-started">
+<span id="guide-start"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Windows Vista, 7, 8, or 8.1 (32 or 64-bit)</li>
+<li>LabVIEW 2011 SP1 or later (32 or 64-bit)</li>
+<li>VI Package Manager 2014 or later</li>
+</ul>
+</div>
+<div class="section" id="download-and-install">
+<h2>Download and Install<a class="headerlink" href="#download-and-install" title="Permalink to this headline">¶</a></h2>
+<p>Downloads for the Toolkit are available at our website:
+<a class="reference external" href="http://www.advancedplotting.com">http://www.advancedplotting.com</a>.</p>
+<p>The Toolkit is distributed as a standard &#8220;VIP&#8221; package, installable via the
+VI Package Manager (VIPM) 2014 or later.  VIPM 2014 ships with LabVIEW 2014.
+If you&#8217;re using LabVIEW 2013 or earlier, it&#8217;s a free download from
+<a class="reference external" href="http://jki.net/vipm">JKI&#8217;s web site</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">VIPM 2014 or later is required.  Trying to install the Toolkit with
+VIPM 2013 or earlier will result in an error message.</p>
+</div>
+<p>Simply double-click the package to start installation.  Once complete, the
+Toolkit will show up under the &#8220;Addons&#8221; palette on the LabVIEW block diagram.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>By far the best way to learn a new toolkit in LabVIEW is to start with
+examples.  In the <a class="reference internal" href="examples.html#guide-examples"><span>Examples</span></a> section, there&#8217;s an example VI
+for nearly every Toolkit VI.  You can also download a ZIP file with all
+the examples.</p>
+</div>
+<div class="section" id="getting-help">
+<h2>Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>You can also get context help easily on the LabVIEW block diagram.  Simply turn
+on the &#8220;Show Context Help&#8221; setting in LabVIEW&#8217;s Help menu, and hover your
+cursor over any Toolkit VI.</p>
+<p>Complete reference documentation also ships with the Toolkit.  You can
+see a complete set of reference documentation here: <a class="reference internal" href="../ref/index.html#ref-index"><span>VI Reference Documentation</span></a>.
+Or from the block diagram, just right-click any VI and select &#8220;Help&#8221;:</p>
+<img alt="../_images/MenuHelp.png" src="../_images/MenuHelp.png" />
+<p>Direct contact information can also be found on our website, at
+<a class="reference external" href="http://www.advancedplotting.com">http://www.advancedplotting.com</a>.</p>
+</div>
+<div class="section" id="making-plots">
+<h2>Making Plots<a class="headerlink" href="#making-plots" title="Permalink to this headline">¶</a></h2>
+<p>The central object in the Toolkit universe is the <em>plot</em>.  A plot isn&#8217;t
+limited to a single kind of data, like a bar or scatter graph.  Rather, it&#8217;s
+a canvas on which you can combine all kinds of objects: contours, tiles,
+lines, bars, points, text, mathematical symbols, legends, colorbars...</p>
+<p>Like many kinds of data in LabVIEW, plots are resources that you have to open and
+close.  First, use <a class="reference internal" href="../ref/New.html#vi-new"><span>New Plot ID</span></a> to create a new <strong>Plot Identifier</strong>, or Plot ID.
+Then supply that Plot ID to the various Toolkit VIs, along with your data.
+Each one will add content to your plot.  When finished, remember to close the
+plot with <a class="reference internal" href="../ref/Close.html#vi-close"><span>Close Plot ID</span></a>.  Here&#8217;s a simple example which creates a new plot
+and draws a series of filled contours:</p>
+<img alt="../_images/demo1.png" src="../_images/demo1.png" />
+<p>The result:</p>
+<img alt="../_images/demo2.png" src="../_images/demo2.png" />
+<p>You&#8217;ll notice there are error terminals for <a class="reference internal" href="../ref/Close.html#vi-close"><span>Close Plot ID</span></a>.  This VI follows
+the behavior used in other LabVIEW cleanup VIs... although it propagates errors
+from input to output, the plot will still be closed if there&#8217;s an error on the
+&#8220;error in&#8221; terminal.  Also, if you supply an invalid or already-closed Plot ID
+to <a class="reference internal" href="../ref/Close.html#vi-close"><span>Close Plot ID</span></a>, it will simply be ignored.</p>
+<p>The Plot ID is an opaque identifier for a reason.  Plots aren&#8217;t handled as
+LabVIEW controls or bitmapped graphics.  Rather, they are stored as objects
+in memory using <em>vector graphics</em>.  Among other things, that means they can
+be reshaped and resized at any time with no loss of quality.</p>
+</div>
+<div class="section" id="combining-multiple-features">
+<h2>Combining Multiple Features<a class="headerlink" href="#combining-multiple-features" title="Permalink to this headline">¶</a></h2>
+<p>Remember, a plot is a canvas to which you can add anything you want.  To add
+multiple features to a plot, just call multiple Toolkit VIs, and their
+output will be combined to make the final result.</p>
+<p>For example, let&#8217;s add contour lines to our original plot, along with a
+colorbar, and set a title:</p>
+<img alt="../_images/demo3.png" src="../_images/demo3.png" />
+<p>The result:</p>
+<img alt="../_images/demo4.png" src="../_images/demo4.png" />
+</div>
+<div class="section" id="viewing-plots">
+<h2>Viewing Plots<a class="headerlink" href="#viewing-plots" title="Permalink to this headline">¶</a></h2>
+<p>Since there&#8217;s no LabVIEW control, how do you view a plot?  There are a couple
+of ways, but the easiest is to render it to a LabVIEW picture.  This is the
+approach used in the example above.  Simply use the <a class="reference internal" href="../ref/View.html#vi-view"><span>View Plot As Picture</span></a> Toolkit VI,
+and create a Picture indicator on the front panel.  That&#8217;s the control used
+in the above examples.</p>
+<p>Plots have a default size of 640 pixels wide by 480 pixels tall.  That might
+not exactly match your Picture indicator, though.  So the Toolkit provides an
+optional <strong>Ref for Sizing</strong> input to <a class="reference internal" href="../ref/View.html#vi-view"><span>View Plot As Picture</span></a>.  Just create a reference
+to your Picture and supply it to the VI.  The plot will be rendered at
+exactly the required size to fit the control.</p>
+<p>Let&#8217;s add that reference to the block diagram, and then scrunch the Picture
+indicator down and see what happens:</p>
+<img alt="../_images/demo5.png" src="../_images/demo5.png" />
+<p>The result:</p>
+<img alt="../_images/demo6.png" src="../_images/demo6.png" />
+</div>
+<div class="section" id="resizing-plots">
+<h2>Resizing Plots<a class="headerlink" href="#resizing-plots" title="Permalink to this headline">¶</a></h2>
+<p>Keep in mind that this kind of resizing is <strong>non-destructive</strong>, since the
+Toolkit uses vector graphics internally.  Your plot won&#8217;t become blurry or
+corrupted.</p>
+<p>You don&#8217;t need a Picture control around to set the size of a plot.  Instead,
+simply use <a class="reference internal" href="../ref/Size.html#vi-size"><span>Set Plot Size</span></a> and specify the size you want in pixels.  This is
+especially handy when saving to disk.  Speaking of which...</p>
+</div>
+<div class="section" id="saving-plots">
+<h2>Saving Plots<a class="headerlink" href="#saving-plots" title="Permalink to this headline">¶</a></h2>
+<p>The great thing about the Toolkit is that you can create <strong>production quality output</strong>
+directly from the block diagram.  Use <a class="reference internal" href="../ref/Save.html#vi-save"><span>Save Plot To Disk</span></a> to save your plots
+in any of half a dozen formats.</p>
+<p>The output format is determined by the file extension.  Here, we modify our
+example by replacing <a class="reference internal" href="../ref/View.html#vi-view"><span>View Plot As Picture</span></a> with <a class="reference internal" href="../ref/Save.html#vi-save"><span>Save Plot To Disk</span></a>:</p>
+<img alt="../_images/demo7.png" src="../_images/demo7.png" />
+<p>Let&#8217;s open that in Adobe Reader to see how it came out:</p>
+<img alt="../_images/demo8.png" src="../_images/demo8.png" />
+</div>
+<div class="section" id="using-property-clusters">
+<h2>Using Property Clusters<a class="headerlink" href="#using-property-clusters" title="Permalink to this headline">¶</a></h2>
+<p>The Toolkit VIs have lots of options, but using lots of terminals in LabVIEW
+can be a pain.  To address this, all the Toolkit VIs use the &#8220;standard&#8221;
+terminal pattern, with one terminal reserved for the <strong>property cluster</strong>.
+This is a cluster with options specific to the plotting VI.</p>
+<p>For example, let&#8217;s modify the example above to use the <strong>Hot and Cold</strong>
+colormap as opposed to the default <strong>Rainbow</strong> colormap:</p>
+<img alt="../_images/demo9.png" src="../_images/demo9.png" />
+<p>Property clusters are just data, and you can handle them the way you would any
+other cluster in LabVIEW.  For simplicity and readability, we recommend
+the approach shown above, using a cluster constant with the default values
+combined with <em>Bundle By Name</em>.  This makes it clear what option you&#8217;re
+setting.</p>
+<p>You can get a cluster constant by right-clicking the Properties terminal of the
+VI, but an even easier way is through the Properties subpalette.  This
+guarantees that your constant will have the right default values:</p>
+<img alt="../_images/props_pal.png" src="../_images/props_pal.png" />
+</div>
+<div class="section" id="other-useful-hints">
+<h2>Other Useful Hints<a class="headerlink" href="#other-useful-hints" title="Permalink to this headline">¶</a></h2>
+<p>Plot sizes are always given in pixels, because that&#8217;s what you need to
+interact with Picture controls and when saving to disk.  But fonts, line widths,
+marker sizes, and other elements are specified in typographical <em>points</em>
+(1/72 inch).  To go back and forth, in addition to a height and width each
+plot has a <em>DPI</em> or <em>dots per inch</em> setting.  This controls, for example, how
+many pixels tall a text label is in 12-point font.  You can adjust the plot&#8217;s
+DPI using the <a class="reference internal" href="../ref/Size.html#vi-size"><span>Set Plot Size</span></a> Toolkit VI.</p>
+<p>The Toolkit uses a special control for colors as well, although the values
+are nearly 100% compatible with the built-in LabVIEW color boxes.  Read more
+about it in <a class="reference internal" href="color.html#guide-color"><span>Using Color</span></a>.</p>
+<p>You can use a wide variety of mathematical symbols in your plots.  They can
+appear in axis labels, text manually added, tick marks; generally wherever
+text can appear.  <a class="reference internal" href="markup.html#guide-latex"><span>Using Inline Text Markup</span></a> has a complete guide.</p>
+<p>And, for all plots dealing with &#8220;1D&#8221; data, you can plot on polar axes!  See
+<a class="reference internal" href="polar.html#guide-polar"><span>Making Polar Plots</span></a> for details.</p>
+</div>
+<div class="section" id="where-to-go-next">
+<h2>Where To Go Next<a class="headerlink" href="#where-to-go-next" title="Permalink to this headline">¶</a></h2>
+<p>You can find a complete list of the Toolkit VIs here: <a class="reference internal" href="../ref/index.html#ref-index"><span>VI Reference Documentation</span></a>.
+It&#8217;s organized by functionality, into:</p>
+<ul class="simple">
+<li><strong>Core</strong> VIs, meaning <a class="reference internal" href="../ref/New.html#vi-new"><span>New Plot ID</span></a>, <a class="reference internal" href="../ref/Close.html#vi-close"><span>Close Plot ID</span></a>, etc.</li>
+<li><strong>1D Plotting</strong> VIs, meaning line, scatter, bar plots; anything that takes a
+1D array as input</li>
+<li><strong>2D Plotting</strong> VIs, meaning contour, vector arrow, streamline, 2D histogram,
+tile plots... anything that takes a 2D array or arrays as input</li>
+<li><strong>Annotation</strong> VIs, meaning VIs that add text, a colorbar, a legend, etc.</li>
+<li><strong>Plot Config</strong> VIs, meaning those that adjust a plot&#8217;s size, etc.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Getting Started</a><ul>
+<li><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li><a class="reference internal" href="#download-and-install">Download and Install</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#getting-help">Getting Help</a></li>
+<li><a class="reference internal" href="#making-plots">Making Plots</a></li>
+<li><a class="reference internal" href="#combining-multiple-features">Combining Multiple Features</a></li>
+<li><a class="reference internal" href="#viewing-plots">Viewing Plots</a></li>
+<li><a class="reference internal" href="#resizing-plots">Resizing Plots</a></li>
+<li><a class="reference internal" href="#saving-plots">Saving Plots</a></li>
+<li><a class="reference internal" href="#using-property-clusters">Using Property Clusters</a></li>
+<li><a class="reference internal" href="#other-useful-hints">Other Useful Hints</a></li>
+<li><a class="reference internal" href="#where-to-go-next">Where To Go Next</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">User Guide</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="examples.html"
+                        title="next chapter">Examples</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="examples.html" title="Examples"
+             >next</a></li>
+        <li class="right" >
+          <a href="index.html" title="User Guide"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Init &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="VI Reference Documentation" href="index.html" />
+    <link rel="prev" title="Is ID Valid" href="IsValid.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="IsValid.html" title="Is ID Valid"
+             accesskey="P">previous</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="init">
+<span id="vi-init"></span><h1>Init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h1>
+<p>This optional VI allows you to manually start the plotting system.</p>
+<p>The Toolkit uses plotting resources which have to be unpacked and set up
+whenever plots are made.  Resources are cached between LabVIEW sessions in
+order to minimize this startup time.  However, a few seconds of startup delay
+is still typical for the first call during a LabVIEW session.  Subsequent calls
+incur no overhead.</p>
+<p>This VI does nothing but trigger initialization of the plotting system.  You
+can use it to handle initialization outside of the main event loop of your
+VI, in order to avoid &#8220;startup freeze&#8221;.</p>
+<p>This VI also allows you to handle the (rare) cases in which a problem
+occurs during initialization.  Since this VI does nothing other than start
+the plotting system, you can use it to trap the errors listed below and
+take appropriate action, rather than explicitly handling them for each call
+to a plotting VI.</p>
+<img alt="../_images/Init.png" src="../_images/Init.png" />
+<dl class="docutils">
+<dt><img alt="error_in" src="../_images/error_in.png" /> <img alt="error_out" src="../_images/error_out.png" /> <strong>Error In/Out</strong></dt>
+<dd>Terminals for standard error functionality.</dd>
+</dl>
+<div class="section" id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../guide/errors.html#error-plotting"><span>402901 - Error in Plotting Library</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-init"><span>402900 - Failed to Initialize Plotting Library</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Init</a><ul>
+<li><a class="reference internal" href="#errors">Errors</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="IsValid.html"
+                        title="previous chapter">Is ID Valid</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="IsValid.html" title="Is ID Valid"
+             >previous</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

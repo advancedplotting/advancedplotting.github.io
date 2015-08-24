@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Add Colorbar &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="VI Reference Documentation" href="index.html" />
+    <link rel="next" title="Add Legend" href="Legend.html" />
+    <link rel="prev" title="Add Errorbars" href="Errorbar.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Legend.html" title="Add Legend"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="Errorbar.html" title="Add Errorbars"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="add-colorbar">
+<span id="vi-colorbar"></span><h1>Add Colorbar<a class="headerlink" href="#add-colorbar" title="Permalink to this headline">¶</a></h1>
+<p>Add a colorbar, representing the last colormapped object plotted.</p>
+<p>The colormap and range displayed are taken from the colormapped object.
+For example, if you make a filled contour plot with <a class="reference internal" href="ContourFilled.html#vi-contourfilled"><span>Filled Contour Plot</span></a> and the
+data range from -5 to +5, the colorbar will also range from -5 to +5.</p>
+<p>The colorbar is displayed to the right of the axis box, with an optional
+label.  Ticks and tick labels are chosen automatically, but may be
+overridden if desired.</p>
+<img alt="../_images/Colorbar.png" src="../_images/Colorbar.png" />
+<dl class="docutils">
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <img alt="int32_out" src="../_images/int32_out.png" /> <strong>Plot ID/Plot ID Out</strong></dt>
+<dd>Plot identifier.  <strong>Plot ID Out</strong> always contains the same value as <strong>Plot ID</strong>.</dd>
+<dt><img alt="string_in" src="../_images/string_in.png" /> <strong>Label</strong></dt>
+<dd>If non-empty, will be used as the axis label for the colorbar.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Ticks</strong></dt>
+<dd>If non-empty, Colorbar axis ticks (in data units).  Default is to
+automatically pick appropriate tick locations.</dd>
+<dt><img alt="string_1d_in" src="../_images/string_1d_in.png" /> <strong>Tick Labels</strong></dt>
+<dd>If non-empty, labels for the colorbar axis ticks.  Only used if <strong>Ticks</strong>
+is also provided.</dd>
+</dl>
+<dl class="docutils">
+<dt><img alt="error_in" src="../_images/error_in.png" /> <img alt="error_out" src="../_images/error_out.png" /> <strong>Error In/Out</strong></dt>
+<dd>Terminals for standard error functionality.</dd>
+</dl>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Download <a class="reference download internal" href="../_downloads/Colormaps and Colorbars.vi"><code class="xref download docutils literal"><span class="pre">Colormaps</span> <span class="pre">and</span> <span class="pre">Colorbars.vi</span></code></a>,
+or see <a class="reference internal" href="../guide/examples.html#guide-examples"><span>Examples</span></a> for a complete list of examples.</p>
+</div>
+<div class="section" id="axis-types">
+<h2>Axis Types<a class="headerlink" href="#axis-types" title="Permalink to this headline">¶</a></h2>
+<p>This VI supports both rectangular and <a class="reference internal" href="../guide/polar.html#guide-polar"><span>polar</span></a> axes.</p>
+</div>
+<div class="section" id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../guide/errors.html#error-invalid"><span>402902 - Invalid Plot Identifier</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-plotting"><span>402901 - Error in Plotting Library</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-init"><span>402900 - Failed to Initialize Plotting Library</span></a></li>
+</ul>
+</div>
+<div class="section" id="other-information">
+<h2>Other information<a class="headerlink" href="#other-information" title="Permalink to this headline">¶</a></h2>
+<p>If an entry in <strong>Ticks</strong> is non-finite (NaN or Inf), it will be ignored, along
+with any matching entry in <strong>Tick Labels</strong>.  If all entries are non-finite,
+the default automatic ticks will be used.  If the sizes of the two arrays
+don&#8217;t match, only the overlapping elements will be used.</p>
+<p>If no colormap object is currently displayed, this VI does nothing (and no
+error is returned).</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Add Colorbar</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#axis-types">Axis Types</a></li>
+<li><a class="reference internal" href="#errors">Errors</a></li>
+<li><a class="reference internal" href="#other-information">Other information</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Errorbar.html"
+                        title="previous chapter">Add Errorbars</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Legend.html"
+                        title="next chapter">Add Legend</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Legend.html" title="Add Legend"
+             >next</a></li>
+        <li class="right" >
+          <a href="Errorbar.html" title="Add Errorbars"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

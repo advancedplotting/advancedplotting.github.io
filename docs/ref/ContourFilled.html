@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Filled Contour Plot &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="VI Reference Documentation" href="index.html" />
+    <link rel="next" title="Tile Plot" href="Tiles.html" />
+    <link rel="prev" title="Contour Plot" href="Contour.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Tiles.html" title="Tile Plot"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="Contour.html" title="Contour Plot"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="filled-contour-plot">
+<span id="vi-contourfilled"></span><h1>Filled Contour Plot<a class="headerlink" href="#filled-contour-plot" title="Permalink to this headline">¶</a></h1>
+<p>Make a filled contour plot.</p>
+<p>Rather than having discrete contour lines, &#8220;filled&#8221; contour plots shade the
+regions between contours according to a colormap.  Contour lines themselves
+are not plotted. Use <a class="reference internal" href="Contour.html#vi-contour"><span>Contour Plot</span></a> in combination with this VI to display
+lines.</p>
+<p>The default colormap (<strong>Colormap.Map</strong>) is Rainbow.</p>
+<p>This is a polymorphic VI; you can choose between automatically generating
+a specific number of contour levels (<a class="reference internal" href="#vi-contourfilled-automatic"><span>Filled Contour Plot (Automatic)</span></a>) and
+manually specifying the contour levels you want (<a class="reference internal" href="#vi-contourfilled-manual"><span>Filled Contour Plot (Manual)</span></a>).</p>
+<p>Data must be of shape 2x2 or larger to make a filled contour plot.</p>
+<div class="section" id="filled-contour-plot-automatic">
+<span id="vi-contourfilled-automatic"></span><h2>Filled Contour Plot (Automatic)<a class="headerlink" href="#filled-contour-plot-automatic" title="Permalink to this headline">¶</a></h2>
+<p>Make a filled contour plot, with N automatically chosen levels.  Note that
+since you specify the number of <em>levels</em> (boundaries between regions),
+the number of <em>shaded regions</em> displayed is N+1.</p>
+<img alt="../_images/ContourFilled_Automatic.png" src="../_images/ContourFilled_Automatic.png" />
+<dl class="docutils">
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <img alt="int32_out" src="../_images/int32_out.png" /> <strong>Plot ID/Plot ID Out</strong></dt>
+<dd>Plot identifier.  <strong>Plot ID Out</strong> always contains the same value as <strong>Plot ID</strong>.</dd>
+<dt><img alt="double_2d_in" src="../_images/double_2d_in.png" /> <strong>Z Data</strong></dt>
+<dd>2-D array for which to generate contours.  The first (slowest-varying)
+dimension is plotted along the Y axis; the second (fastest-varying)
+dimension is plotted along with X axis.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>X Coordinates</strong></dt>
+<dd>Optional 1-D array giving X axis coordinates.  Defaults to 0..NX-1, where
+NX is the size of <strong>Z Data</strong>&#8216;s second dimension.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Y Coordinates</strong></dt>
+<dd>Optional 1-D array giving Y axis coordinates.  Defaults to 0..NY-1, where
+NY is the size of <strong>Z Data</strong>&#8216;s first dimension.</dd>
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <strong>Levels</strong></dt>
+<dd>Number of contours to automatically generate (default 10).
+You can also set the min and max data value to contour via the
+<strong>Contour Range</strong> terminal.</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Contour Range</strong></dt>
+<dd><p class="first">Controls the limits within which contours will be plotted.</p>
+<dl class="last docutils">
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Min Level</strong></dt>
+<dd>Only plot contour levels for data with this value or higher.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Max Level</strong></dt>
+<dd>Only plot contour levels for data with this value or lower.</dd>
+</dl>
+</dd>
+<dt><img alt="contourfilled_props" src="../_images/ContourFilledProps.png" /> <strong>Properties</strong></dt>
+<dd><p class="first">Property cluster, available under the &#8220;Properties&#8221; subpalette.</p>
+<dl class="last docutils">
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Colormap</strong></dt>
+<dd><p class="first">Controls the colormap used to display the regions.</p>
+<dl class="last docutils">
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Map</strong></dt>
+<dd>Colormap to use.  See <a class="reference internal" href="../guide/color.html#guide-colormaps"><span>Colormaps</span></a> for more info.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Value Min</strong></dt>
+<dd>Lower range for colormapped data; values smaller than this will all be
+plotted with the first color in the colormap.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Value Max</strong></dt>
+<dd>Upper range for colormapped data; values larger than this will all be
+plotted with the last color in the colormap.</dd>
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Scaling</strong></dt>
+<dd>Colormap scaling mode.  Currently only linear scaling is supported.</dd>
+<dt><img alt="bool_in" src="../_images/bool_in.png" /> <strong>Reverse</strong></dt>
+<dd>Flip the colormap; for example, if a map has 0.0 as black and 1.0 as
+white, this will assign 0.0 as white and 1.0 as black.</dd>
+</dl>
+</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Display</strong></dt>
+<dd><p class="first">Controls the overall appearance of the contour plot.</p>
+<dl class="last docutils">
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Alpha</strong></dt>
+<dd>Alpha blending value for this object (0.0 to 1.0).  Default is 1.0
+(fully opaque).</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Z Order</strong></dt>
+<dd>Stacking order.  Default is chosen based on the object type.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><img alt="error_in" src="../_images/error_in.png" /> <img alt="error_out" src="../_images/error_out.png" /> <strong>Error In/Out</strong></dt>
+<dd>Terminals for standard error functionality.</dd>
+</dl>
+</div>
+<div class="section" id="filled-contour-plot-manual">
+<span id="vi-contourfilled-manual"></span><h2>Filled Contour Plot (Manual)<a class="headerlink" href="#filled-contour-plot-manual" title="Permalink to this headline">¶</a></h2>
+<p>Make a filled contour plot, with explicitly specified levels.  Note that
+since you specify the <em>levels</em> (boundaries between regions),
+the number of <em>shaded regions</em> displayed is N+1.</p>
+<img alt="../_images/ContourFilled_Manual.png" src="../_images/ContourFilled_Manual.png" />
+<dl class="docutils">
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <img alt="int32_out" src="../_images/int32_out.png" /> <strong>Plot ID/Plot ID Out</strong></dt>
+<dd>Plot identifier.  <strong>Plot ID Out</strong> always contains the same value as <strong>Plot ID</strong>.</dd>
+<dt><img alt="double_2d_in" src="../_images/double_2d_in.png" /> <strong>Z Data</strong></dt>
+<dd>2-D array for which to generate contours.  The first (slowest-varying)
+dimension is plotted along the Y axis; the second (fastest-varying)
+dimension is plotted along with X axis.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>X Coordinates</strong></dt>
+<dd>Optional 1-D array giving X axis coordinates.  Defaults to 0..NX-1, where
+NX is the size of <strong>Z Data</strong>&#8216;s second dimension.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Y Coordinates</strong></dt>
+<dd>Optional 1-D array giving Y axis coordinates.  Defaults to 0..NY-1, where
+NY is the size of <strong>Z Data</strong>&#8216;s first dimension.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Levels</strong></dt>
+<dd>Values at which to draw region boundaries.</dd>
+<dt><img alt="contourfilled_props" src="../_images/ContourFilledProps.png" /> <strong>Properties</strong></dt>
+<dd><p class="first">Property cluster, available under the &#8220;Properties&#8221; subpalette.</p>
+<dl class="last docutils">
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Colormap</strong></dt>
+<dd><p class="first">Controls the colormap used to display the regions.</p>
+<dl class="last docutils">
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Map</strong></dt>
+<dd>Colormap to use.  See <a class="reference internal" href="../guide/color.html#guide-colormaps"><span>Colormaps</span></a> for more info.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Value Min</strong></dt>
+<dd>Lower range for colormapped data; values smaller than this will all be
+plotted with the first color in the colormap.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Value Max</strong></dt>
+<dd>Upper range for colormapped data; values larger than this will all be
+plotted with the last color in the colormap.</dd>
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Scaling</strong></dt>
+<dd>Colormap scaling mode.  Currently only linear scaling is supported.</dd>
+<dt><img alt="bool_in" src="../_images/bool_in.png" /> <strong>Reverse</strong></dt>
+<dd>Flip the colormap; for example, if a map has 0.0 as black and 1.0 as
+white, this will assign 0.0 as white and 1.0 as black.</dd>
+</dl>
+</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Display</strong></dt>
+<dd><p class="first">Controls the overall appearance of the contour plot.</p>
+<dl class="last docutils">
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Alpha</strong></dt>
+<dd>Alpha blending value for this object (0.0 to 1.0).  Default is 1.0
+(fully opaque).</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Z Order</strong></dt>
+<dd>Stacking order.  Default is chosen based on the object type.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><img alt="error_in" src="../_images/error_in.png" /> <img alt="error_out" src="../_images/error_out.png" /> <strong>Error In/Out</strong></dt>
+<dd>Terminals for standard error functionality.</dd>
+</dl>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Download <a class="reference download internal" href="../_downloads/Contour Plot (Filled).vi"><code class="xref download docutils literal"><span class="pre">Contour</span> <span class="pre">Plot</span> <span class="pre">(Filled).vi</span></code></a>,
+or see <a class="reference internal" href="../guide/examples.html#guide-examples"><span>Examples</span></a> for a complete list of examples.</p>
+<img alt="../_images/ContourFilledExample.png" src="../_images/ContourFilledExample.png" />
+</div>
+<div class="section" id="axis-types">
+<h2>Axis Types<a class="headerlink" href="#axis-types" title="Permalink to this headline">¶</a></h2>
+<p>Both <a class="reference internal" href="#vi-contourfilled-automatic"><span>Filled Contour Plot (Automatic)</span></a> and <a class="reference internal" href="#vi-contourfilled-manual"><span>Filled Contour Plot (Manual)</span></a> may be used with
+rectangular axes only.  Use with <a class="reference internal" href="../guide/polar.html#guide-polar"><span>polar</span></a> axes will result
+in <a class="reference internal" href="../guide/errors.html#error-polar"><span>402905 - Operation Not Supported for Polar Plot</span></a>.  Likewise, only linear scales are supported.  Use with
+log or symlog axes will result in <a class="reference internal" href="../guide/errors.html#error-scale"><span>402906 - Operation Not Supported for Axis Scale</span></a>.</p>
+</div>
+<div class="section" id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../guide/errors.html#error-scale"><span>402906 - Operation Not Supported for Axis Scale</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-polar"><span>402905 - Operation Not Supported for Polar Plot</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-invalid"><span>402902 - Invalid Plot Identifier</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-plotting"><span>402901 - Error in Plotting Library</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-init"><span>402900 - Failed to Initialize Plotting Library</span></a></li>
+</ul>
+</div>
+<div class="section" id="other-information">
+<h2>Other information<a class="headerlink" href="#other-information" title="Permalink to this headline">¶</a></h2>
+<p>If an empty <strong>Z Data</strong> array is provided, or an array smaller than 2x2,
+both VIs do nothing.</p>
+<p>If <strong>Levels</strong> (Automatic) is 0, or (Manual) has no elements
+elements, no plot will be made.  A negative value (Automatic)
+will result in the default number of contour levels being displayed.
+The maximum number of levels is 500.  Requests for more than
+500 levels will be silently clipped to 500 (Automatic), or the first 500
+elements of the levels array (Manual).</p>
+<p>If a non-finite value appears in <strong>X Coordinates</strong> or <strong>Y Coordinates</strong>, the
+corresponding row or column of <strong>Z Data</strong> is not displayed.</p>
+<p>If the size of <strong>X Coordinates</strong> or <strong>Y Coordinates</strong> does not match the size of the
+corresponding axis for <strong>Z Data</strong>, only the overlap is displayed.  A zero-sized
+array for either will result in the default coordinates being used (0..N-1).</p>
+<p>A non-finite value for <strong>Contour Range.Min Level</strong> or <strong>Contour Range.Max Level</strong>
+will result in the default value (min or max of <strong>Z Data</strong>) being used.</p>
+<p>A non-finite value in <strong>Z Data</strong> will appear as a &#8220;hole&#8221; or blank patch in the
+shaded contours.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Filled Contour Plot</a><ul>
+<li><a class="reference internal" href="#filled-contour-plot-automatic">Filled Contour Plot (Automatic)</a></li>
+<li><a class="reference internal" href="#filled-contour-plot-manual">Filled Contour Plot (Manual)</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#axis-types">Axis Types</a></li>
+<li><a class="reference internal" href="#errors">Errors</a></li>
+<li><a class="reference internal" href="#other-information">Other information</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Contour.html"
+                        title="previous chapter">Contour Plot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Tiles.html"
+                        title="next chapter">Tile Plot</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Tiles.html" title="Tile Plot"
+             >next</a></li>
+        <li class="right" >
+          <a href="Contour.html" title="Contour Plot"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

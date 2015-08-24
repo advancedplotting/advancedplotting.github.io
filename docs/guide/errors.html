@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Error Codes &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Embedding the Toolkit in Your Application" href="embedding.html" />
+    <link rel="prev" title="Making Polar Plots" href="polar.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="embedding.html" title="Embedding the Toolkit in Your Application"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="polar.html" title="Making Polar Plots"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="error-codes">
+<span id="guide-errors"></span><h1>Error Codes<a class="headerlink" href="#error-codes" title="Permalink to this headline">¶</a></h1>
+<p>Below is a list of all error codes used by the Toolkit, and a brief
+description of what they mean.</p>
+<p>The Toolkit uses a &#8220;low-noise&#8221; approach to error handling.  Only those errors
+which absolutely must be caught and handled are assigned error codes.  In all
+other cases, the Toolkit adopts reasonable behavior which is explicitly
+specified in the documentation.</p>
+<p>For example, imagine you call <a class="reference internal" href="../ref/Line.html#vi-line"><span>Line Plot</span></a> with X and Y arrays which are
+not the same size.  Rather than generate an error, the Toolkit plots the
+common portion of the arrays.</p>
+<div class="section" id="failed-to-initialize-plotting-library">
+<span id="error-init"></span><h2>402900 - Failed to Initialize Plotting Library<a class="headerlink" href="#failed-to-initialize-plotting-library" title="Permalink to this headline">¶</a></h2>
+<p>The Toolkit relies on a small bundled plotting library.
+This error means that, for some reason, the library failed to start properly.
+The text portion of the error cluster will contain a detailed reason why.</p>
+<p>Since this error is only possible when the first Toolkit VI is called, it is
+good practice to check for it once, on app startup using <a class="reference internal" href="../ref/Init.html#vi-init"><span>Init</span></a>,
+rather than after each VI call.</p>
+<p><strong>If you see this error, please contact us so we can investigate.</strong>  It should
+never be triggered in normal operation.</p>
+</div>
+<div class="section" id="error-in-plotting-library">
+<span id="error-plotting"></span><h2>402901 - Error in Plotting Library<a class="headerlink" href="#error-in-plotting-library" title="Permalink to this headline">¶</a></h2>
+<p>While making the plot, an unspecified error occured and the
+plot was not able to be completed.</p>
+<p><strong>If you see this error, please contact us so we can investigate.</strong>  It should
+never be triggered in normal operation.</p>
+</div>
+<div class="section" id="invalid-plot-identifier">
+<span id="error-invalid"></span><h2>402902 - Invalid Plot Identifier<a class="headerlink" href="#invalid-plot-identifier" title="Permalink to this headline">¶</a></h2>
+<p>The plot identifier wasn&#8217;t recognized; for example, it has already been closed.
+If you are unsure whether an identifier is valid, you can use
+<a class="reference internal" href="../ref/IsValid.html#vi-isvalid"><span>Is ID Valid</span></a> to check.</p>
+</div>
+<div class="section" id="unrecognized-file-extension">
+<span id="error-file-extension"></span><h2>402903 - Unrecognized File Extension<a class="headerlink" href="#unrecognized-file-extension" title="Permalink to this headline">¶</a></h2>
+<p>For <a class="reference internal" href="../ref/Save.html#vi-save"><span>Save Plot To Disk</span></a>, the desired format couldn&#8217;t be determined based on the
+file extension.  See <a class="reference internal" href="../ref/Save.html#vi-save"><span>Save Plot To Disk</span></a> docs for a list of supported formats.</p>
+</div>
+<div class="section" id="failed-to-save-file">
+<span id="error-file-save"></span><h2>402904 - Failed to Save File<a class="headerlink" href="#failed-to-save-file" title="Permalink to this headline">¶</a></h2>
+<p>For <a class="reference internal" href="../ref/Save.html#vi-save"><span>Save Plot To Disk</span></a>, the plot was rendered successfully but an error occurred
+when saving the plot to disk.  See the error message for more information.
+Typical causes include e.g. permissions issues.</p>
+</div>
+<div class="section" id="operation-not-supported-for-polar-plot">
+<span id="error-polar"></span><h2>402905 - Operation Not Supported for Polar Plot<a class="headerlink" href="#operation-not-supported-for-polar-plot" title="Permalink to this headline">¶</a></h2>
+<p>The plot was created with polar axes (<a class="reference internal" href="../ref/New.html#vi-new"><span>New Plot ID</span></a>), and an operation was
+requested which doesn&#8217;t make sense or is unimplemented for polar axes.
+Consult the message in the error cluster for more details.  See also
+<a class="reference internal" href="polar.html#guide-polar"><span>Making Polar Plots</span></a>.</p>
+</div>
+<div class="section" id="operation-not-supported-for-axis-scale">
+<span id="error-scale"></span><h2>402906 - Operation Not Supported for Axis Scale<a class="headerlink" href="#operation-not-supported-for-axis-scale" title="Permalink to this headline">¶</a></h2>
+<p>The plot was created with log or symlog scales (<a class="reference internal" href="../ref/New.html#vi-new"><span>New Plot ID</span></a>), and an
+operation was requested which doesn&#8217;t make sense or is unimplemented for the
+current scale type. Consult the message in the error cluster for more details.</p>
+</div>
+<div class="section" id="coordinates-not-regular">
+<span id="error-coordinates"></span><h2>402907 - Coordinates Not Regular<a class="headerlink" href="#coordinates-not-regular" title="Permalink to this headline">¶</a></h2>
+<p>Certain VIs (e.g. <a class="reference internal" href="../ref/Streamline.html#vi-streamline"><span>Streamline Plot</span></a>) require that the X and Y coordinate
+arrays, if provided, satisfy certain constraints.  For example, they might
+be required to be equally spaced, or monotonically increasing.  Consult the
+message in the error cluster for details.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Error Codes</a><ul>
+<li><a class="reference internal" href="#failed-to-initialize-plotting-library">402900 - Failed to Initialize Plotting Library</a></li>
+<li><a class="reference internal" href="#error-in-plotting-library">402901 - Error in Plotting Library</a></li>
+<li><a class="reference internal" href="#invalid-plot-identifier">402902 - Invalid Plot Identifier</a></li>
+<li><a class="reference internal" href="#unrecognized-file-extension">402903 - Unrecognized File Extension</a></li>
+<li><a class="reference internal" href="#failed-to-save-file">402904 - Failed to Save File</a></li>
+<li><a class="reference internal" href="#operation-not-supported-for-polar-plot">402905 - Operation Not Supported for Polar Plot</a></li>
+<li><a class="reference internal" href="#operation-not-supported-for-axis-scale">402906 - Operation Not Supported for Axis Scale</a></li>
+<li><a class="reference internal" href="#coordinates-not-regular">402907 - Coordinates Not Regular</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="polar.html"
+                        title="previous chapter">Making Polar Plots</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="embedding.html"
+                        title="next chapter">Embedding the Toolkit in Your Application</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="embedding.html" title="Embedding the Toolkit in Your Application"
+             >next</a></li>
+        <li class="right" >
+          <a href="polar.html" title="Making Polar Plots"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

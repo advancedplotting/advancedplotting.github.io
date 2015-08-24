@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Vector Field Plot &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="VI Reference Documentation" href="index.html" />
+    <link rel="next" title="2D Histogram Plot" href="Histogram2D.html" />
+    <link rel="prev" title="Streamline Plot" href="Streamline.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Histogram2D.html" title="2D Histogram Plot"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="Streamline.html" title="Streamline Plot"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vector-field-plot">
+<span id="vi-vectorfield"></span><h1>Vector Field Plot<a class="headerlink" href="#vector-field-plot" title="Permalink to this headline">¶</a></h1>
+<p>Display a field of vector arrows.</p>
+<p>Provide two 2D arrays, giving the <strong>X Vector Component</strong> and
+<strong>Y Vector Component</strong> at each point on the grid.  Arrows are drawn starting
+at each grid location; their length is proportional to the vector magnitude.</p>
+<p>The overall size of all vectors can be changed via the <strong>Arrow Scale</strong>
+setting.  In keeping with industry practice, this value is in
+<em>data units per pixel</em>.  In other words, if <strong>Arrow Scale</strong> were set to 10,
+a vector with magnitude 50 in data units would be 5 pixels long.</p>
+<p>Vectors are colored black by default.  To use a colormap, supply a 2D array
+to <strong>Colormap Values</strong>.  Its values will be used to color the arrows,
+according to the selected colormap.  A solid color may be selected via
+<strong>Color</strong> in the property cluster.</p>
+<img alt="../_images/VectorField.png" src="../_images/VectorField.png" />
+<dl class="docutils">
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <img alt="int32_out" src="../_images/int32_out.png" /> <strong>Plot ID/Plot ID Out</strong></dt>
+<dd>Plot identifier.  <strong>Plot ID Out</strong> always contains the same value as <strong>Plot ID</strong>.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>X Coordinates</strong></dt>
+<dd>Optional 1-D array giving X axis coordinates.  Defaults to 0..NX-1, where
+NX is the size of the data&#8217;s second dimension.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Y Coordinates</strong></dt>
+<dd>Optional 1-D array giving Y axis coordinates.  Defaults to 0..NY-1, where
+NY is the size of the data&#8217;s first dimension.</dd>
+<dt><img alt="double_2d_in" src="../_images/double_2d_in.png" /> <strong>X Vector Component</strong></dt>
+<dd>X component at each point.</dd>
+<dt><img alt="double_2d_in" src="../_images/double_2d_in.png" /> <strong>Y Vector Component</strong></dt>
+<dd>Y component at each point.</dd>
+<dt><img alt="double_2d_in" src="../_images/double_2d_in.png" /> <strong>Colormap Values</strong></dt>
+<dd>Optional 2D array which will be used to color the arrows.</dd>
+<dt><img alt="vectorfield_props" src="../_images/VectorFieldProps.png" /> <strong>Properties</strong></dt>
+<dd><p class="first">Property cluster, available under the &#8220;Properties&#8221; subpalette.</p>
+<dl class="last docutils">
+<dt><img alt="uint32_in" src="../_images/uint32_in.png" /> <strong>Color</strong></dt>
+<dd>Arrow color.  May be a PlotColor or LabVIEW color.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Arrow Scale</strong></dt>
+<dd>Arrow scale factor, in <em>data units per pixel</em>.  For example, a value
+of 10 would mean that a magnitude-50 vector was 5 pixels long.
+Default is to pick an appropriate scale factor automatically.</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Colormap</strong></dt>
+<dd><p class="first">Controls the colormap used to shade the arrows, when <strong>Arrow Color</strong>
+is set to Automatic.</p>
+<dl class="last docutils">
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Map</strong></dt>
+<dd>Colormap to use.  See <a class="reference internal" href="../guide/color.html#guide-colormaps"><span>Colormaps</span></a> for more info.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Value Min</strong></dt>
+<dd>Lower range for colormapped data; values smaller than this will all be
+plotted with the first color in the colormap.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Value Max</strong></dt>
+<dd>Upper range for colormapped data; values larger than this will all be
+plotted with the last color in the colormap.</dd>
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Scaling</strong></dt>
+<dd>Colormap scaling mode.  Currently only linear scaling is supported.</dd>
+<dt><img alt="bool_in" src="../_images/bool_in.png" /> <strong>Reverse</strong></dt>
+<dd>Flip the colormap; for example, if a map has 0.0 as black and 1.0 as
+white, this will assign 0.0 as white and 1.0 as black.</dd>
+</dl>
+</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Display</strong></dt>
+<dd><p class="first">Controls general appearance of the plot.</p>
+<dl class="last docutils">
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Alpha</strong></dt>
+<dd>Alpha blending value for this object (0.0 to 1.0).  Default is 1.0
+(fully opaque).</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Z Order</strong></dt>
+<dd>Stacking order.  Default is chosen based on the object type.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><img alt="error_in" src="../_images/error_in.png" /> <img alt="error_out" src="../_images/error_out.png" /> <strong>Error In/Out</strong></dt>
+<dd>Terminals for standard error functionality.</dd>
+</dl>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Download <a class="reference download internal" href="../_downloads/Vector Field.vi"><code class="xref download docutils literal"><span class="pre">Vector</span> <span class="pre">Field.vi</span></code></a>,
+or see <a class="reference internal" href="../guide/examples.html#guide-examples"><span>Examples</span></a> for a complete list of examples.</p>
+<img alt="../_images/VectorFieldExample.png" src="../_images/VectorFieldExample.png" />
+</div>
+<div class="section" id="axis-types">
+<h2>Axis Types<a class="headerlink" href="#axis-types" title="Permalink to this headline">¶</a></h2>
+<p>This VI supports rectangular axes.  Use with <a class="reference internal" href="../guide/polar.html#guide-polar"><span>polar axes</span></a>
+will result in <a class="reference internal" href="../guide/errors.html#error-polar"><span>402905 - Operation Not Supported for Polar Plot</span></a>.  Likewise, only linear scales are supported.
+Use with log or symlog axes will result in <a class="reference internal" href="../guide/errors.html#error-scale"><span>402906 - Operation Not Supported for Axis Scale</span></a>.</p>
+</div>
+<div class="section" id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../guide/errors.html#error-scale"><span>402906 - Operation Not Supported for Axis Scale</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-polar"><span>402905 - Operation Not Supported for Polar Plot</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-invalid"><span>402902 - Invalid Plot Identifier</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-plotting"><span>402901 - Error in Plotting Library</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-init"><span>402900 - Failed to Initialize Plotting Library</span></a></li>
+</ul>
+</div>
+<div class="section" id="other-information">
+<h2>Other information<a class="headerlink" href="#other-information" title="Permalink to this headline">¶</a></h2>
+<p>If an empty array is provided for <strong>X Vector Component</strong> or <strong>Y Vector Component</strong>,
+this VI does nothing.</p>
+<p>If a non-finite value appears in <strong>X Coordinates</strong> or <strong>Y Coordinates</strong>, the
+corresponding row or column is not displayed.  A non-finite value in
+<strong>X Vector Component</strong> or <strong>Y Vector Component</strong> will result in the corresponding
+arrow not being displayed.</p>
+<p>If the sizes of any of the inputs are not the same, only the overlapping
+region will be displayed.  If a zero-size array is provided for any of
+<strong>X Coordinates</strong>, <strong>Y Coordinates</strong>, or <strong>Colormap Value</strong>, it will be ignored.</p>
+<p>A non-finite, zero, or negative value for <strong>Arrow Scale</strong> will be ignored.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Vector Field Plot</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#axis-types">Axis Types</a></li>
+<li><a class="reference internal" href="#errors">Errors</a></li>
+<li><a class="reference internal" href="#other-information">Other information</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Streamline.html"
+                        title="previous chapter">Streamline Plot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Histogram2D.html"
+                        title="next chapter">2D Histogram Plot</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Histogram2D.html" title="2D Histogram Plot"
+             >next</a></li>
+        <li class="right" >
+          <a href="Streamline.html" title="Streamline Plot"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

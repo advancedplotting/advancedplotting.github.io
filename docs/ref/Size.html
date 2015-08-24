@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Set Plot Size &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="VI Reference Documentation" href="index.html" />
+    <link rel="next" title="Is ID Valid" href="IsValid.html" />
+    <link rel="prev" title="Set Axis Limits" href="Limits.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="IsValid.html" title="Is ID Valid"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="Limits.html" title="Set Axis Limits"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="set-plot-size">
+<span id="vi-size"></span><h1>Set Plot Size<a class="headerlink" href="#set-plot-size" title="Permalink to this headline">¶</a></h1>
+<p>Set the width and height of the plot.</p>
+<p>Because LabVIEW and most output formats are pixel-oriented, you specify the
+size of the plot in pixels.  Plots are stored internally using vector graphics,
+and can be arbitrarily resized without any loss of detail.</p>
+<p>Each plot also has an assocated <em>dots per inch</em> or DPI.  When writing to a
+vector output format like PDF (which has native units of inches), this value
+determines the size of the plot.</p>
+<p>New plots have size 640x480, and a DPI of 80.</p>
+<img alt="../_images/Size.png" src="../_images/Size.png" />
+<dl class="docutils">
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <img alt="int32_out" src="../_images/int32_out.png" /> <strong>Plot ID/Plot ID Out</strong></dt>
+<dd>Plot identifier.  <strong>Plot ID Out</strong> always contains the same value as <strong>Plot ID</strong>.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Width (pixels)</strong></dt>
+<dd>New plot width. Default is to leave the width unchanged.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Height (pixels)</strong></dt>
+<dd>New plot height. Default is to leave the height unchanged.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>DPI</strong></dt>
+<dd>Dots-per-inch factor used when going from inches to pixels.  Default is to
+leave the DPI unchanged.</dd>
+</dl>
+<dl class="docutils">
+<dt><img alt="error_in" src="../_images/error_in.png" /> <img alt="error_out" src="../_images/error_out.png" /> <strong>Error In/Out</strong></dt>
+<dd>Terminals for standard error functionality.</dd>
+</dl>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Download <a class="reference download internal" href="../_downloads/Resizing.vi"><code class="xref download docutils literal"><span class="pre">Resizing.vi</span></code></a>,
+or see <a class="reference internal" href="../guide/examples.html#guide-examples"><span>Examples</span></a> for a complete list of examples.</p>
+</div>
+<div class="section" id="axis-types">
+<h2>Axis Types<a class="headerlink" href="#axis-types" title="Permalink to this headline">¶</a></h2>
+<p>This VI supports both rectangular and <a class="reference internal" href="../guide/polar.html#guide-polar"><span>polar</span></a> axes.</p>
+</div>
+<div class="section" id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../guide/errors.html#error-invalid"><span>402902 - Invalid Plot Identifier</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-plotting"><span>402901 - Error in Plotting Library</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-init"><span>402900 - Failed to Initialize Plotting Library</span></a></li>
+</ul>
+</div>
+<div class="section" id="other-information">
+<h2>Other information<a class="headerlink" href="#other-information" title="Permalink to this headline">¶</a></h2>
+<p>For <strong>Width</strong> and <strong>Height</strong>: non-finite (NaN or Inf) values, and values of
+1 or smaller, are ignored and the defaults used.  For <strong>DPI</strong>, values less than
+10 will be ignored, and the defaults used.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Set Plot Size</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#axis-types">Axis Types</a></li>
+<li><a class="reference internal" href="#errors">Errors</a></li>
+<li><a class="reference internal" href="#other-information">Other information</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Limits.html"
+                        title="previous chapter">Set Axis Limits</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="IsValid.html"
+                        title="next chapter">Is ID Valid</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="IsValid.html" title="Is ID Valid"
+             >next</a></li>
+        <li class="right" >
+          <a href="Limits.html" title="Set Axis Limits"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

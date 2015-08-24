@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Histogram Plot &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="VI Reference Documentation" href="index.html" />
+    <link rel="next" title="Add Errorbars" href="Errorbar.html" />
+    <link rel="prev" title="Bar Plot" href="Bar.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Errorbar.html" title="Add Errorbars"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="Bar.html" title="Bar Plot"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="histogram-plot">
+<span id="vi-histogram"></span><h1>Histogram Plot<a class="headerlink" href="#histogram-plot" title="Permalink to this headline">¶</a></h1>
+<p>Make a 1D histogram plot from raw data.</p>
+<p>A histogram plot is a bar chart showing the distribution of values in a
+particular data set.  The X axis is divided into a number of regions, or
+<em>bins</em>, and the data values are sorted into them.  The height of the bars
+indicates the number of elements which fall in each bin.</p>
+<p>Both Histogram VIs described here additionally support a <em>cumulative</em> mode,
+in which the height of each bar indicates the number of values in that bin,
+plus all previous bins.  Turn this on via the <strong>Cumulative</strong> setting in the
+property cluster.</p>
+<p>By default, the bar heights represent the raw number of values in each bin.
+If the <strong>Normalize</strong> setting is True, the bar heights are percentages of the
+total number of values in the input array.</p>
+<p>This VI participates in <a class="reference internal" href="../guide/color.html#guide-color-cycle"><span>The Automatic Color Cycle</span></a>.</p>
+<p>This is a polymorphic VI, which provides two subVIs depending on how the bins
+are specified.  To automatically generate a certain number of bins, use
+<a class="reference internal" href="#vi-histogram-automatic"><span>Histogram Plot (Automatic)</span></a>.  To manually specify bins, use
+<a class="reference internal" href="#vi-histogram-manual"><span>Histogram Plot (Manual)</span></a>.  The polymorphic VI will also automatically adapt
+based on the type of data wired to <strong>Bins</strong>.</p>
+<div class="section" id="histogram-plot-automatic">
+<span id="vi-histogram-automatic"></span><h2>Histogram Plot (Automatic)<a class="headerlink" href="#histogram-plot-automatic" title="Permalink to this headline">¶</a></h2>
+<p>Make a histogram with a certain number of bins.  Provide your 1D data array
+to <strong>Data</strong>, and the number of bins desired to the <strong>Bins</strong> input.
+By default, the bins will span the full range of the data.  You can adjust
+this &#8220;window&#8221; via the <strong>Data Range</strong> cluster.</p>
+<img alt="../_images/Histogram_Automatic.png" src="../_images/Histogram_Automatic.png" />
+<dl class="docutils">
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <img alt="int32_out" src="../_images/int32_out.png" /> <strong>Plot ID/Plot ID Out</strong></dt>
+<dd>Plot identifier.  <strong>Plot ID Out</strong> always contains the same value as <strong>Plot ID</strong>.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Data</strong></dt>
+<dd>Raw data for which to produce the histogram.</dd>
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <strong>Bins</strong></dt>
+<dd>Number of bins to use when generating the histogram.  Default is 10.</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Data Range</strong></dt>
+<dd><p class="first">Controls the range of data displayed.</p>
+<dl class="last docutils">
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Data Min</strong></dt>
+<dd>Values smaller than this will be dropped from the histogram.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Data Max</strong></dt>
+<dd>Values larger than this will be dropped from the histogram.</dd>
+</dl>
+</dd>
+<dt><img alt="string_in" src="../_images/string_in.png" /> <strong>Legend Title</strong></dt>
+<dd>Title to be displayed if a legend is added to the plot.</dd>
+<dt><img alt="histogram_props" src="../_images/HistogramProps.png" /> <strong>Properties</strong></dt>
+<dd><p class="first">Property cluster, available under the &#8220;Properties&#8221; subpalette.</p>
+<dl class="last docutils">
+<dt><img alt="uint32_in" src="../_images/uint32_in.png" /> <strong>Color</strong></dt>
+<dd>Color of the bars.  By default, uses the next value in the color cycle
+(shared with <a class="reference internal" href="Bar.html#vi-bar"><span>Bar Plot</span></a>).</dd>
+<dt><img alt="bool_in" src="../_images/bool_in.png" /> <strong>Cumulative</strong></dt>
+<dd>If True, display a cumulative histogram, in which each bar represents
+the number of values in that bin plus all previous bins combined.</dd>
+<dt><img alt="bool_in" src="../_images/bool_in.png" /> <strong>Normalize</strong></dt>
+<dd>If True, the heights of the bars represent the percentage (0 to 100)
+of values in each bin, rather than raw counts.</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Line</strong></dt>
+<dd><p class="first">Controls the appearance of the lines surrounding the bins.</p>
+<dl class="last docutils">
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Style</strong></dt>
+<dd>Line style (solid, dashed, etc.).  Default is to automatically
+select an appropriate style.</dd>
+<dt><img alt="uint32_in" src="../_images/uint32_in.png" /> <strong>Color</strong></dt>
+<dd>Line color.  May be a PlotColor or LabView color.</dd>
+<dt><img alt="single_in" src="../_images/single_in.png" /> <strong>Width</strong></dt>
+<dd>Line width, in font points (1/72 inch).</dd>
+</dl>
+</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Display</strong></dt>
+<dd><p class="first">Controls the overall appearance of the plot.</p>
+<dl class="last docutils">
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Alpha</strong></dt>
+<dd>Alpha blending value for this object (0.0 to 1.0).  Default is 1.0
+(fully opaque).</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Z Order</strong></dt>
+<dd>Stacking order.  Default is chosen based on the object type.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><img alt="error_in" src="../_images/error_in.png" /> <img alt="error_out" src="../_images/error_out.png" /> <strong>Error In/Out</strong></dt>
+<dd>Terminals for standard error functionality.</dd>
+</dl>
+</div>
+<div class="section" id="histogram-plot-manual">
+<span id="vi-histogram-manual"></span><h2>Histogram Plot (Manual)<a class="headerlink" href="#histogram-plot-manual" title="Permalink to this headline">¶</a></h2>
+<p>Make a histogram with the bins explicitly specified.  This allows you to
+create irregularly-sized bins.</p>
+<p>Provide your 1D data array
+to <strong>Data</strong>, and the bin <em>edges</em> to <strong>Bins</strong>.  Note that since you are giving
+the locations of the bin <em>edges</em>, if <strong>Bins</strong> has N elements, N-1 bars will be
+displayed.</p>
+<img alt="../_images/Histogram_Manual.png" src="../_images/Histogram_Manual.png" />
+<dl class="docutils">
+<dt><img alt="int32_in" src="../_images/int32_in.png" /> <img alt="int32_out" src="../_images/int32_out.png" /> <strong>Plot ID/Plot ID Out</strong></dt>
+<dd>Plot identifier.  <strong>Plot ID Out</strong> always contains the same value as <strong>Plot ID</strong>.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Data</strong></dt>
+<dd>Raw data for which to produce the histogram.</dd>
+<dt><img alt="double_1d_in" src="../_images/double_1d_in.png" /> <strong>Bins</strong></dt>
+<dd>Bin edges to use when computing the histogram.</dd>
+<dt><img alt="string_in" src="../_images/string_in.png" /> <strong>Legend Title</strong></dt>
+<dd>Title to be displayed if a legend is added to the plot.</dd>
+<dt><img alt="histogram_props" src="../_images/HistogramProps.png" /> <strong>Properties</strong></dt>
+<dd><p class="first">Property cluster, available under the &#8220;Properties&#8221; subpalette.</p>
+<dl class="last docutils">
+<dt><img alt="uint32_in" src="../_images/uint32_in.png" /> <strong>Color</strong></dt>
+<dd>Color of the bars.  By default, uses the next value in the color cycle
+(shared with <a class="reference internal" href="Bar.html#vi-bar"><span>Bar Plot</span></a>).</dd>
+<dt><img alt="bool_in" src="../_images/bool_in.png" /> <strong>Cumulative</strong></dt>
+<dd>If True, display a cumulative histogram, in which each bar represents
+the number of values in that bin plus all previous bins combined.</dd>
+<dt><img alt="bool_in" src="../_images/bool_in.png" /> <strong>Normalize</strong></dt>
+<dd>If True, the heights of the bars represent the percentage (0 to 100)
+of values in each bin, rather than raw counts.</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Line</strong></dt>
+<dd><p class="first">Controls the appearance of the lines surrounding the bins.</p>
+<dl class="last docutils">
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Style</strong></dt>
+<dd>Line style (solid, dashed, etc.).  Default is to automatically
+select an appropriate style.</dd>
+<dt><img alt="uint32_in" src="../_images/uint32_in.png" /> <strong>Color</strong></dt>
+<dd>Line color.  May be a PlotColor or LabView color.</dd>
+<dt><img alt="single_in" src="../_images/single_in.png" /> <strong>Width</strong></dt>
+<dd>Line width, in font points (1/72 inch).</dd>
+</dl>
+</dd>
+<dt><img alt="cluster_in" src="../_images/cluster_in.png" /> <strong>Display</strong></dt>
+<dd><p class="first">Controls the overall appearance of the plot.</p>
+<dl class="last docutils">
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Alpha</strong></dt>
+<dd>Alpha blending value for this object (0.0 to 1.0).  Default is 1.0
+(fully opaque).</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Z Order</strong></dt>
+<dd>Stacking order.  Default is chosen based on the object type.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><img alt="error_in" src="../_images/error_in.png" /> <img alt="error_out" src="../_images/error_out.png" /> <strong>Error In/Out</strong></dt>
+<dd>Terminals for standard error functionality.</dd>
+</dl>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Download <a class="reference download internal" href="../_downloads/Histogram.vi"><code class="xref download docutils literal"><span class="pre">Histogram.vi</span></code></a>,
+or see <a class="reference internal" href="../guide/examples.html#guide-examples"><span>Examples</span></a> for a complete list of examples.</p>
+<img alt="../_images/HistogramExample.png" src="../_images/HistogramExample.png" />
+</div>
+<div class="section" id="axis-types">
+<h2>Axis Types<a class="headerlink" href="#axis-types" title="Permalink to this headline">¶</a></h2>
+<p>Both VIs support rectangular and <a class="reference internal" href="../guide/polar.html#guide-polar"><span>polar</span></a> plots.</p>
+</div>
+<div class="section" id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../guide/errors.html#error-invalid"><span>402902 - Invalid Plot Identifier</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-plotting"><span>402901 - Error in Plotting Library</span></a></li>
+<li><a class="reference internal" href="../guide/errors.html#error-init"><span>402900 - Failed to Initialize Plotting Library</span></a></li>
+</ul>
+</div>
+<div class="section" id="other-information">
+<h2>Other information<a class="headerlink" href="#other-information" title="Permalink to this headline">¶</a></h2>
+<p>If <strong>Data</strong> is empty, if <strong>Bins</strong> is set to 0 (Automatic), or has less than
+two elements (Manual), no plot is displayed.  The color cycle is still advanced.</p>
+<p>If <strong>Bins</strong> is negative (Automatic), the default number of bins will be used.</p>
+<p>Non-finite elements in <strong>Data</strong> are ignored, and are not considered
+when computing the normalized histogram.  Non-finite elements in <strong>Bins</strong>
+(Manual) are ignored.  The ordering of elements in <strong>Bins</strong> (Manual) has no
+significance.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Histogram Plot</a><ul>
+<li><a class="reference internal" href="#histogram-plot-automatic">Histogram Plot (Automatic)</a></li>
+<li><a class="reference internal" href="#histogram-plot-manual">Histogram Plot (Manual)</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#axis-types">Axis Types</a></li>
+<li><a class="reference internal" href="#errors">Errors</a></li>
+<li><a class="reference internal" href="#other-information">Other information</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Bar.html"
+                        title="previous chapter">Bar Plot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Errorbar.html"
+                        title="next chapter">Add Errorbars</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Errorbar.html" title="Add Errorbars"
+             >next</a></li>
+        <li class="right" >
+          <a href="Bar.html" title="Bar Plot"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >VI Reference Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

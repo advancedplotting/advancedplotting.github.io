@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Making Polar Plots &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Error Codes" href="errors.html" />
+    <link rel="prev" title="Using Inline Text Markup" href="markup.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="errors.html" title="Error Codes"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="markup.html" title="Using Inline Text Markup"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="making-polar-plots">
+<span id="guide-polar"></span><h1>Making Polar Plots<a class="headerlink" href="#making-polar-plots" title="Permalink to this headline">¶</a></h1>
+<p>Unlike other plotting libraries, there is no special &#8220;polar&#8221; version of
+VIs like <a class="reference internal" href="../ref/Line.html#vi-line"><span>Line Plot</span></a> or <a class="reference internal" href="../ref/Scatter.html#vi-scatter"><span>Scatter Plot</span></a>.  Rather, when you create a new
+plot using <a class="reference internal" href="../ref/New.html#vi-new"><span>New Plot ID</span></a>, you can specify whether to use rectangular (default)
+axes, or polar axes.  Then use the ordinary 1D plotting VIs to populate the
+plot.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Download <a class="reference download internal" href="../_downloads/Polar Plots.vi"><code class="xref download docutils literal"><span class="pre">Polar</span> <span class="pre">Plots.vi</span></code></a>,
+or see <a class="reference internal" href="examples.html#guide-examples"><span>Examples</span></a> for a complete list of examples.</p>
+<img alt="../_images/PolarExample.png" src="../_images/PolarExample.png" />
+</div>
+<div class="section" id="radians-or-degrees">
+<h2>Radians or Degrees?<a class="headerlink" href="#radians-or-degrees" title="Permalink to this headline">¶</a></h2>
+<p>Radians.</p>
+<p>The 1D plotting VIs which can be used with polar plots (<a class="reference internal" href="../ref/Line.html#vi-line"><span>Line Plot</span></a>,
+<a class="reference internal" href="../ref/Scatter.html#vi-scatter"><span>Scatter Plot</span></a>, and <a class="reference internal" href="../ref/Bar.html#vi-bar"><span>Bar Plot</span></a>) all take two input arrays: X and Y.
+On a rectangular plot, the X array gives the location of points along the
+horizontal axis, and the Y array gives the location of points along the
+vertical axis.</p>
+<p>When plotting to polar axes, the X array gives the <em>angular</em> locations of
+points, in <em>radians</em>.  The Y array gives the locations of the points in the
+radial direction.</p>
+<p>This is also the case for all other VIs which interact with the plot; for
+example, when placing text on the plot using <a class="reference internal" href="../ref/Text.html#vi-text"><span>Add Text</span></a>, the X position
+is interpreted as an angle, in radians.</p>
+<p>The zero angle is on the right horizontal axis, as is common in mathematics and
+the physical sciences.  Negative angle values are fully supported, as are
+values greater than 2 <span class="math">\pi</span>.</p>
+</div>
+<div class="section" id="gotchas">
+<h2>Gotchas<a class="headerlink" href="#gotchas" title="Permalink to this headline">¶</a></h2>
+<p>The X input for <a class="reference internal" href="../ref/Line.html#vi-line"><span>Line Plot</span></a> and friends is optional; if N data points are
+provided to the Y input, it defaults to 0..N-1.  This may have unexpected
+effects on a polar plot; the points will appear at 0, 1, 2, etc., <em>radians</em>,
+which is probably not what you want.  To avoid this, always specify X and Y
+explicitly when using polar plots.</p>
+<p>Although points are placed in <em>radians</em>, the default human-readable tick
+labels are given in <em>degrees</em> (0, 90, 180, 270).  You can re-label these,
+if desired, using <a class="reference internal" href="../ref/XTicks.html#vi-xticks"><span>Set X Ticks</span></a>.  Check out <a class="reference internal" href="markup.html#guide-latex"><span>Using Inline Text Markup</span></a> if you
+want to use the <span class="math">\pi</span> symbol for this!</p>
+</div>
+<div class="section" id="vis-supporting-polar-plots">
+<h2>VIs Supporting Polar Plots<a class="headerlink" href="#vis-supporting-polar-plots" title="Permalink to this headline">¶</a></h2>
+<p>Not all VIs can cope with the polar coordinate system.  At present, the 1D
+plotting routines work well, along with VIs for annotation, like
+<a class="reference internal" href="../ref/Legend.html#vi-legend"><span>Add Legend</span></a>.</p>
+<p>Here&#8217;s a list of the VIs which support polar axes.  Calling other VIs with a
+polar plot will result in error <a class="reference internal" href="errors.html#error-polar"><span>402905 - Operation Not Supported for Polar Plot</span></a>.</p>
+<div class="section" id="core-vis">
+<h3>Core VIs<a class="headerlink" href="#core-vis" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../ref/New.html#vi-new"><span>New Plot ID</span></a></li>
+<li><a class="reference internal" href="../ref/Close.html#vi-close"><span>Close Plot ID</span></a></li>
+<li><a class="reference internal" href="../ref/Save.html#vi-save"><span>Save Plot To Disk</span></a></li>
+<li><a class="reference internal" href="../ref/View.html#vi-view"><span>View Plot As Picture</span></a></li>
+</ul>
+</div>
+<div class="section" id="plotting">
+<h3>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../ref/Bar.html#vi-bar"><span>Bar Plot</span></a></li>
+<li><a class="reference internal" href="../ref/Line.html#vi-line"><span>Line Plot</span></a></li>
+<li><a class="reference internal" href="../ref/Scatter.html#vi-scatter"><span>Scatter Plot</span></a></li>
+</ul>
+</div>
+<div class="section" id="annotation">
+<h3>Annotation<a class="headerlink" href="#annotation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../ref/Colorbar.html#vi-colorbar"><span>Add Colorbar</span></a></li>
+<li><a class="reference internal" href="../ref/Legend.html#vi-legend"><span>Add Legend</span></a></li>
+<li><a class="reference internal" href="../ref/Text.html#vi-text"><span>Add Text</span></a></li>
+<li><a class="reference internal" href="../ref/Title.html#vi-title"><span>Set Title</span></a></li>
+<li><a class="reference internal" href="../ref/XLabel.html#vi-xlabel"><span>Set X Label</span></a></li>
+<li><a class="reference internal" href="../ref/YLabel.html#vi-ylabel"><span>Set Y Label</span></a></li>
+<li><a class="reference internal" href="../ref/XTicks.html#vi-xticks"><span>Set X Ticks</span></a></li>
+<li><a class="reference internal" href="../ref/YTicks.html#vi-yticks"><span>Set Y Ticks</span></a></li>
+</ul>
+</div>
+<div class="section" id="plot-config-and-setup">
+<h3>Plot Config and Setup<a class="headerlink" href="#plot-config-and-setup" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../ref/Grids.html#vi-grids"><span>Grid Lines</span></a></li>
+<li><a class="reference internal" href="../ref/Limits.html#vi-limits"><span>Set Axis Limits</span></a> (Y limits only)</li>
+<li><a class="reference internal" href="../ref/Size.html#vi-size"><span>Set Plot Size</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Making Polar Plots</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#radians-or-degrees">Radians or Degrees?</a></li>
+<li><a class="reference internal" href="#gotchas">Gotchas</a></li>
+<li><a class="reference internal" href="#vis-supporting-polar-plots">VIs Supporting Polar Plots</a><ul>
+<li><a class="reference internal" href="#core-vis">Core VIs</a></li>
+<li><a class="reference internal" href="#plotting">Plotting</a></li>
+<li><a class="reference internal" href="#annotation">Annotation</a></li>
+<li><a class="reference internal" href="#plot-config-and-setup">Plot Config and Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="markup.html"
+                        title="previous chapter">Using Inline Text Markup</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="errors.html"
+                        title="next chapter">Error Codes</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="errors.html" title="Error Codes"
+             >next</a></li>
+        <li class="right" >
+          <a href="markup.html" title="Using Inline Text Markup"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

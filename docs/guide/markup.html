@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Inline Text Markup &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Making Polar Plots" href="polar.html" />
+    <link rel="prev" title="Using Color" href="color.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="polar.html" title="Making Polar Plots"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="color.html" title="Using Color"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-inline-text-markup">
+<span id="guide-latex"></span><h1>Using Inline Text Markup<a class="headerlink" href="#using-inline-text-markup" title="Permalink to this headline">¶</a></h1>
+<p>Any text that appears on a plot, including titles, axis labels, colorbar labels,
+and text placed with <a class="reference internal" href="../ref/Text.html#vi-text"><span>Add Text</span></a>, can contain inline markup.  The Toolkit
+uses a subset of the &#8220;LaTeX&#8221; markup widely used in science and engineering.</p>
+<p>Inline markup occurs between <code class="docutils literal"><span class="pre">$</span></code> characters in your string:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="97%" />
+<col width="3%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">some</span> <span class="pre">example</span> <span class="pre">text</span> <span class="pre">with</span> <span class="pre">an</span> <span class="pre">$\alpha$</span> <span class="pre">character.</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>This is some example text with an <span class="math">\alpha</span> character.</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>To put a literal <code class="docutils literal"><span class="pre">$</span></code> symbol in your string, simply escape it:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="97%" />
+<col width="3%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Alphas</span> <span class="pre">($\alpha$)</span> <span class="pre">are</span> <span class="pre">expensive:</span> <span class="pre">\$2</span> <span class="pre">each!</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Alphas (<span class="math">\alpha</span>) are expensive: $2 each!</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Ordinary letters appearing in markup will be treated as the names of
+mathematical variables, and will appear in italic font.  You can manually
+specify the font using the following commands:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\mathrm{Roman}</span></code></td>
+<td><span class="math">\mathrm{Roman}</span></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\mathrm{Italic}</span></code></td>
+<td><span class="math">\mathit{Italic}</span></td>
+</tr>
+</tbody>
+</table>
+<p>For function names (like <code class="docutils literal"><span class="pre">cos</span></code> or <code class="docutils literal"><span class="pre">sin</span></code>), there&#8217;s a better way:
+see <a class="reference internal" href="#guide-latex-functions"><span>Function Names</span></a> below.</p>
+<p>If a string contains formatting mistakes or illegal characters, it will not
+be processed by the LaTeX system.  Instead, the raw contents of the string
+will be displayed.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Download <a class="reference download internal" href="../_downloads/Text Markup.vi"><code class="xref download docutils literal"><span class="pre">Text</span> <span class="pre">Markup.vi</span></code></a>,
+or see <a class="reference internal" href="examples.html#guide-examples"><span>Examples</span></a> for a complete list of examples.</p>
+<img alt="../_images/TextExample.png" src="../_images/TextExample.png" />
+</div>
+<div class="section" id="basic-math">
+<h2>Basic Math<a class="headerlink" href="#basic-math" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="53%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Result</th>
+<th class="head">Code</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">a_i^j</span></td>
+<td><code class="docutils literal"><span class="pre">a_i^j</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">a_{sub}^{super}</span></td>
+<td><code class="docutils literal"><span class="pre">a_{sub}^{super}</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\sqrt{a}</span></td>
+<td><code class="docutils literal"><span class="pre">\sqrt{a}</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\sqrt[5]{a}</span></td>
+<td><code class="docutils literal"><span class="pre">\sqrt[5]{a}</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\frac{a}{b}</span></td>
+<td><code class="docutils literal"><span class="pre">\frac{a}{b}</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">a = b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">a &lt; b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">a &gt; b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">a \leq b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">\leq</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">a \geq b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">\geq</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">a \ll b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">\ll</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">a \gg b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">\gg</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">a \approx b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">\approx</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">a \neq b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">\neq</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">a \times b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">\times</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">a \pm b</span></td>
+<td><code class="docutils literal"><span class="pre">a</span> <span class="pre">\pm</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\langle a \rangle</span></td>
+<td><code class="docutils literal"><span class="pre">\langle</span> <span class="pre">a</span> <span class="pre">\rangle</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\{a\}</span></td>
+<td><code class="docutils literal"><span class="pre">\{</span> <span class="pre">a</span> <span class="pre">\}</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\vec{a}</span></td>
+<td><code class="docutils literal"><span class="pre">\vec{a}</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\acute{a}</span></td>
+<td><code class="docutils literal"><span class="pre">\acute{a}</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\bar{a}</span></td>
+<td><code class="docutils literal"><span class="pre">\bar{a}</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\dot{a}</span></td>
+<td><code class="docutils literal"><span class="pre">\dot{a}</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\ddot{a}</span></td>
+<td><code class="docutils literal"><span class="pre">\ddot{a}</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\hat{a}</span></td>
+<td><code class="docutils literal"><span class="pre">\hat{a}</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="math-symbols">
+<h2>Math Symbols<a class="headerlink" href="#math-symbols" title="Permalink to this headline">¶</a></h2>
+<p>Keep in mind that some symbols, notably <code class="docutils literal"><span class="pre">\int</span></code>, <code class="docutils literal"><span class="pre">\prod</span></code>, and <code class="docutils literal"><span class="pre">\sum</span></code>,
+have &#8220;smart&#8221; subscript and superscript support.  For example, this code:</p>
+<div class="highlight-python"><div class="highlight"><pre>\int_{0}^{\infty} A(x) dx = \sum_{i=0}^{\infty} B_i
+</pre></div>
+</div>
+<p>produces this result:</p>
+<div class="math">
+<p><span class="math">\int_{0}^{\infty} A(x) dx = \sum_{i=0}^{\infty} B_i</span></p>
+</div><table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Symbol</th>
+<th class="head">Code</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\int</span></td>
+<td><code class="docutils literal"><span class="pre">\int</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\iint</span></td>
+<td><code class="docutils literal"><span class="pre">\iint</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\iiint</span></td>
+<td><code class="docutils literal"><span class="pre">\iiint</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\oint</span></td>
+<td><code class="docutils literal"><span class="pre">\oint</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\sum</span></td>
+<td><code class="docutils literal"><span class="pre">\sum</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\prod</span></td>
+<td><code class="docutils literal"><span class="pre">\prod</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\infty</span></td>
+<td><code class="docutils literal"><span class="pre">\infty</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\nabla</span></td>
+<td><code class="docutils literal"><span class="pre">\nabla</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\partial</span></td>
+<td><code class="docutils literal"><span class="pre">\partial</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\star</span></td>
+<td><code class="docutils literal"><span class="pre">\star</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\circ</span></td>
+<td><code class="docutils literal"><span class="pre">\circ</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\sim</span></td>
+<td><code class="docutils literal"><span class="pre">\sim</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\odot</span></td>
+<td><code class="docutils literal"><span class="pre">\odot</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\oplus</span></td>
+<td><code class="docutils literal"><span class="pre">\ominus</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\otimes</span></td>
+<td><code class="docutils literal"><span class="pre">\otimes</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\parallel</span></td>
+<td><code class="docutils literal"><span class="pre">\parallel</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\perp</span></td>
+<td><code class="docutils literal"><span class="pre">\perp</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\leftarrow</span></td>
+<td><code class="docutils literal"><span class="pre">\leftarrow</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\rightarrow</span></td>
+<td><code class="docutils literal"><span class="pre">\rightarrow</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\uparrow</span></td>
+<td><code class="docutils literal"><span class="pre">\uparrow</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\downarrow</span></td>
+<td><code class="docutils literal"><span class="pre">\downarrow</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="function-names">
+<span id="guide-latex-functions"></span><h2>Function Names<a class="headerlink" href="#function-names" title="Permalink to this headline">¶</a></h2>
+<p>Plain characters inside a markup block are treated as the names of mathematical
+variables.  This is undesirable when e.g. the sine of x is desired; <code class="docutils literal"><span class="pre">sin</span> <span class="pre">x</span></code>
+is rendered as <span class="math">sin x</span>.  The correct approach is to use the explicit
+function name, via <code class="docutils literal"><span class="pre">\sin{x}</span></code>: <span class="math">\sin{x}</span>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Code</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\sin{x}</span></td>
+<td><code class="docutils literal"><span class="pre">\sin{x}</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\cos{x}</span></td>
+<td><code class="docutils literal"><span class="pre">\cos{x}</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\tan{x}</span></td>
+<td><code class="docutils literal"><span class="pre">\tan{x}</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\arcsin{x}</span></td>
+<td><code class="docutils literal"><span class="pre">\arcsin{x}</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\arccos{x}</span></td>
+<td><code class="docutils literal"><span class="pre">\arccos{x}</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\arctan{x}</span></td>
+<td><code class="docutils literal"><span class="pre">\arctan{x}</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\exp{x}</span></td>
+<td><code class="docutils literal"><span class="pre">\exp{x}</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\ln{x}</span></td>
+<td><code class="docutils literal"><span class="pre">\ln{x}</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\log{x}</span></td>
+<td><code class="docutils literal"><span class="pre">\log{x}</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="greek-characters">
+<h2>Greek Characters<a class="headerlink" href="#greek-characters" title="Permalink to this headline">¶</a></h2>
+<p>These can be used anywhere an ordinary letter is used.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Character</th>
+<th class="head">Code</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\alpha</span></td>
+<td><code class="docutils literal"><span class="pre">\alpha</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\beta</span></td>
+<td><code class="docutils literal"><span class="pre">\beta</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\chi</span></td>
+<td><code class="docutils literal"><span class="pre">\chi</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\delta</span></td>
+<td><code class="docutils literal"><span class="pre">\delta</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\epsilon</span></td>
+<td><code class="docutils literal"><span class="pre">\epsilon</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\eta</span></td>
+<td><code class="docutils literal"><span class="pre">\eta</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\gamma</span></td>
+<td><code class="docutils literal"><span class="pre">\gamma</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\iota</span></td>
+<td><code class="docutils literal"><span class="pre">\iota</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\kappa</span></td>
+<td><code class="docutils literal"><span class="pre">\kappa</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\lambda</span></td>
+<td><code class="docutils literal"><span class="pre">\lambda</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\mu</span></td>
+<td><code class="docutils literal"><span class="pre">\mu</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\nu</span></td>
+<td><code class="docutils literal"><span class="pre">\nu</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\omega</span></td>
+<td><code class="docutils literal"><span class="pre">\omega</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\phi</span></td>
+<td><code class="docutils literal"><span class="pre">\phi</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\pi</span></td>
+<td><code class="docutils literal"><span class="pre">\pi</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\psi</span></td>
+<td><code class="docutils literal"><span class="pre">\psi</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\rho</span></td>
+<td><code class="docutils literal"><span class="pre">\rho</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\sigma</span></td>
+<td><code class="docutils literal"><span class="pre">\sigma</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\tau</span></td>
+<td><code class="docutils literal"><span class="pre">\tau</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\theta</span></td>
+<td><code class="docutils literal"><span class="pre">\theta</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\upsilon</span></td>
+<td><code class="docutils literal"><span class="pre">\upsilon</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\xi</span></td>
+<td><code class="docutils literal"><span class="pre">\xi</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\zeta</span></td>
+<td><code class="docutils literal"><span class="pre">\zeta</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\Delta</span></td>
+<td><code class="docutils literal"><span class="pre">\Delta</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\Gamma</span></td>
+<td><code class="docutils literal"><span class="pre">\Gamma</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\Lambda</span></td>
+<td><code class="docutils literal"><span class="pre">\Lambda</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\Omega</span></td>
+<td><code class="docutils literal"><span class="pre">\Omega</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\Phi</span></td>
+<td><code class="docutils literal"><span class="pre">\Phi</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\Pi</span></td>
+<td><code class="docutils literal"><span class="pre">\Pi</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\Psi</span></td>
+<td><code class="docutils literal"><span class="pre">\Psi</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\Sigma</span></td>
+<td><code class="docutils literal"><span class="pre">\Sigma</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\Theta</span></td>
+<td><code class="docutils literal"><span class="pre">\Theta</span></code></td>
+</tr>
+<tr class="row-even"><td><span class="math">\Upsilon</span></td>
+<td><code class="docutils literal"><span class="pre">\Upsilon</span></code></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\Xi</span></td>
+<td><code class="docutils literal"><span class="pre">\Xi</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Using Inline Text Markup</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#basic-math">Basic Math</a></li>
+<li><a class="reference internal" href="#math-symbols">Math Symbols</a></li>
+<li><a class="reference internal" href="#function-names">Function Names</a></li>
+<li><a class="reference internal" href="#greek-characters">Greek Characters</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="color.html"
+                        title="previous chapter">Using Color</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="polar.html"
+                        title="next chapter">Making Polar Plots</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="polar.html" title="Making Polar Plots"
+             >next</a></li>
+        <li class="right" >
+          <a href="color.html" title="Using Color"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

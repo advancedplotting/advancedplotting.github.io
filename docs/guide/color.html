@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Color &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Using Inline Text Markup" href="markup.html" />
+    <link rel="prev" title="Examples" href="examples.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="markup.html" title="Using Inline Text Markup"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Examples"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-color">
+<span id="guide-color"></span><h1>Using Color<a class="headerlink" href="#using-color" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-plotcolor-control">
+<h2>The PlotColor Control<a class="headerlink" href="#the-plotcolor-control" title="Permalink to this headline">¶</a></h2>
+<p>To make dealing with colors easier, the Toolkit provides a special color
+typedef, referred to as a <strong>PlotColor</strong>:</p>
+<img alt="../_images/color_control.png" src="../_images/color_control.png" />
+<p>PlotColors controls show up in property clusters, and are used to control the
+colors of things like lines and markers in 1D plots, the color of grid lines,
+etc.</p>
+<p>They are fully compatible with the normal LabVIEW color system.  The
+data type is the same (unsigned 32-bit int); you can wire any LabVIEW color
+to a terminal expecting a PlotColor and it will work just fine.  Likewise,
+any named color in the PlotColor control can be wired to a LabVIEW color
+terminal it it will show up correctly.</p>
+<p>There&#8217;s one difference: the first entry in the PlotColor ring is a special
+value called &#8220;Automatic&#8221;.  This means &#8220;use an appropriate color depending
+on context&#8221;.  Among other things, it makes possible the use of the Toolkit&#8217;s
+<a class="reference internal" href="#guide-color-cycle"><span>automatic color cycle</span></a>.</p>
+</div>
+<div class="section" id="alpha-transparency-and-z-order">
+<span id="guide-color-alpha"></span><h2>Alpha Transparency and Z-Order<a class="headerlink" href="#alpha-transparency-and-z-order" title="Permalink to this headline">¶</a></h2>
+<p>LabVIEW supports &#8220;1-bit&#8221; transparency; in other words, there&#8217;s a special color
+called &#8220;transparent&#8221; which you can select from a color box.  This works
+perfectly well with the Toolkit; objects with a color of &#8220;transparent&#8221; are
+not displayed.</p>
+<p>But the Toolkit goes one step further: most objects you plot can have a
+<em>variable</em> level of transparency, determined by an <em>alpha value</em> between
+0.0 (fully transparent) and 1.0 (fully opaque).  Overlapping objects are
+then <em>alpha blended</em> together to form the final plot.</p>
+<p>You can also control which objects appear &#8220;on top of&#8221; other objects, by
+adjusting their <em>z-order</em>.  By default, the Toolkit will assign objects in
+a z-order it thinks is appropriate.</p>
+<p>Plotting VIs which support these features will have a Display member in
+their property clusters:</p>
+<img alt="../_images/display_control.png" src="../_images/display_control.png" />
+<dl class="docutils">
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Alpha</strong></dt>
+<dd>Alpha blending value for the object (0.0 to 1.0).  Default is 1.0
+(fully opaque).</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Z Order</strong></dt>
+<dd>Stacking order.  Default is chosen based on the object type.</dd>
+</dl>
+<img alt="../_images/AlphaExample.png" src="../_images/AlphaExample.png" />
+</div>
+<div class="section" id="the-automatic-color-cycle">
+<span id="guide-color-cycle"></span><h2>The Automatic Color Cycle<a class="headerlink" href="#the-automatic-color-cycle" title="Permalink to this headline">¶</a></h2>
+<p>Particularly when doing 1D plots, such as those generated by <a class="reference internal" href="../ref/Line.html#vi-line"><span>Line Plot</span></a>,
+<a class="reference internal" href="../ref/Scatter.html#vi-scatter"><span>Scatter Plot</span></a>, or <a class="reference internal" href="../ref/Bar.html#vi-bar"><span>Bar Plot</span></a>, it&#8217;s common to display multiple data
+sets on the same graph.  This is accomplished by simply calling multiple VIs
+(or the same VI multiple times) with the same Plot ID.</p>
+<p>But how do we illustrate that the data sets are different?  We could manually
+specify different colors, but that sounds like a lot of work and error-prone...</p>
+<p>The Toolkit addresses this issue by using an <em>automatic color cycle.</em>  When
+you call one of the 1D plotting VIs without explicitly specifying a color,
+a color is chosen for you.  When the next plot is made, another distinct
+color is chosen, and so on.</p>
+<p>So, for example, calling <a class="reference internal" href="../ref/Scatter.html#vi-scatter"><span>Scatter Plot</span></a> six times with six different data
+sets would produce this:</p>
+<img alt="../_images/cycle.png" src="../_images/cycle.png" />
+<p>There&#8217;s one VI in particular that doesn&#8217;t participate in the color cycle:
+<a class="reference internal" href="../ref/Errorbar.html#vi-errorbar"><span>Add Errorbars</span></a>.  Since that VI is used to add error bars to an existing
+plot, if you don&#8217;t explicitly give a color, it will pick the last color used.</p>
+<p>Finally, each plot has its own separate color cycle, so you don&#8217;t need to
+worry about race conditions or plots interfering with each other.</p>
+<p>The VIs that participate in the color cycle are:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../ref/Line.html#vi-line"><span>Line Plot</span></a></li>
+<li><a class="reference internal" href="../ref/Scatter.html#vi-scatter"><span>Scatter Plot</span></a></li>
+<li><a class="reference internal" href="../ref/Bar.html#vi-bar"><span>Bar Plot</span></a></li>
+<li><a class="reference internal" href="../ref/Histogram.html#vi-histogram"><span>Histogram Plot</span></a></li>
+</ul>
+<p>The color cycle goes in the following order.  Once the last element is
+reached, it starts over:</p>
+<ul class="simple">
+<li>Blue</li>
+<li>Green</li>
+<li>Red</li>
+<li>Cyan</li>
+<li>Magenta</li>
+<li>Yellow</li>
+<li>Dark Gray</li>
+<li>Pink</li>
+</ul>
+</div>
+<div class="section" id="colormaps">
+<span id="guide-colormaps"></span><h2>Colormaps<a class="headerlink" href="#colormaps" title="Permalink to this headline">¶</a></h2>
+<p>One common way to visualize 2D data is to assign colors on the basis of the
+values.  For example, <a class="reference internal" href="../ref/ArrayView.html#vi-arrayview"><span>View Array</span></a> and <a class="reference internal" href="../ref/ContourFilled.html#vi-contourfilled"><span>Filled Contour Plot</span></a> both
+use color to illustrate the range of values in a dataset.</p>
+<p>A &#8220;colormap&#8221; determines which color is displayed for each data value in a
+dataset.  For example, consider a 2D dataset in which the values range from
+-100 to +50.  If the <code class="docutils literal"><span class="pre">White</span> <span class="pre">to</span> <span class="pre">Green</span></code> colormap is selected, all locations
+with value -100 would be colored white, all locations with +50 would be colored
+green, and the values in between would be various shades between white and
+green.</p>
+<p>Once you&#8217;ve made a plot that uses a colormap, call <a class="reference internal" href="../ref/Colorbar.html#vi-colorbar"><span>Add Colorbar</span></a> to
+add a color bar.</p>
+<p>Here&#8217;s the strict-typedef control which specifies the colormap settings for
+Toolkit VIs.  This usually appears as a member of the property cluster for
+each VI:</p>
+<img alt="../_images/cmap_control.png" src="../_images/cmap_control.png" />
+<dl class="docutils">
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Map</strong></dt>
+<dd>The name of the colormap.  All the Toolkit colormaps are listed below.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Value Min</strong></dt>
+<dd>Lower range for colormapped data; values smaller than this will all be
+plotted with the first color in the colormap.</dd>
+<dt><img alt="double_in" src="../_images/double_in.png" /> <strong>Value Max</strong></dt>
+<dd>Upper range for colormapped data; values larger than this will all be
+plotted with the last color in the colormap.</dd>
+<dt><img alt="enum_in" src="../_images/enum_in.png" /> <strong>Scaling</strong></dt>
+<dd>Choose between linear mapping (default) and logarithmic mapping.</dd>
+<dt><img alt="bool_in" src="../_images/bool_in.png" /> <strong>Reverse</strong></dt>
+<dd>Flip the colormap; for example, if a map has 0.0 as black and 1.0 as
+white, this will assign 0.0 as white and 1.0 as black.</dd>
+</dl>
+</div>
+<div class="section" id="built-in-colormaps">
+<h2>Built-In Colormaps<a class="headerlink" href="#built-in-colormaps" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/cmaps.png" src="../_images/cmaps.png" />
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="examples.html#guide-examples"><span>Examples</span></a> for a complete list of examples.</p>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/Alpha Transparency and Z-Order.vi"><code class="xref download docutils literal"><span class="pre">Alpha</span> <span class="pre">Transparency</span> <span class="pre">and</span> <span class="pre">Z-Order.vi</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/Colormaps and Colorbars.vi"><code class="xref download docutils literal"><span class="pre">Colormaps</span> <span class="pre">and</span> <span class="pre">Colorbars.vi</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/Color Cycle.vi"><code class="xref download docutils literal"><span class="pre">Color</span> <span class="pre">Cycle.vi</span></code></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Using Color</a><ul>
+<li><a class="reference internal" href="#the-plotcolor-control">The PlotColor Control</a></li>
+<li><a class="reference internal" href="#alpha-transparency-and-z-order">Alpha Transparency and Z-Order</a></li>
+<li><a class="reference internal" href="#the-automatic-color-cycle">The Automatic Color Cycle</a></li>
+<li><a class="reference internal" href="#colormaps">Colormaps</a></li>
+<li><a class="reference internal" href="#built-in-colormaps">Built-In Colormaps</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="examples.html"
+                        title="previous chapter">Examples</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="markup.html"
+                        title="next chapter">Using Inline Text Markup</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="markup.html" title="Using Inline Text Markup"
+             >next</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Examples"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

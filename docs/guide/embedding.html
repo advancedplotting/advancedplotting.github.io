@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Embedding the Toolkit in Your Application &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="License Agreements and Acknowledgements" href="licenses.html" />
+    <link rel="prev" title="Error Codes" href="errors.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="licenses.html" title="License Agreements and Acknowledgements"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="errors.html" title="Error Codes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="embedding-the-toolkit-in-your-application">
+<span id="guide-embedding"></span><h1>Embedding the Toolkit in Your Application<a class="headerlink" href="#embedding-the-toolkit-in-your-application" title="Permalink to this headline">¶</a></h1>
+<p>Using Toolkit VIs in your own LabVIEW application is very straightforward.
+In this discussion, we will call the computer on which your app is written
+the <em>development</em> environment, and the one on which it is intended to be used
+the <em>target</em> environment.</p>
+<div class="section" id="distributing-a-compiled-labview-app-application-builder">
+<h2>Distributing a compiled LabVIEW app (Application Builder)<a class="headerlink" href="#distributing-a-compiled-labview-app-application-builder" title="Permalink to this headline">¶</a></h2>
+<p>If you compile your app for distribution using the LabVIEW Application Builder,
+you only need a licensed copy of the Toolkit on the development computer.  The
+Toolkit and its plotting runtime are &#8220;bootstrapped&#8221;, and are pulled in
+automatically from vi.lib when you compile your app.  Nothing special needs to
+be installed on the target computer.</p>
+</div>
+<div class="section" id="distributing-a-native-labview-app-development-environment">
+<h2>Distributing a native LabVIEW app (Development Environment)<a class="headerlink" href="#distributing-a-native-labview-app-development-environment" title="Permalink to this headline">¶</a></h2>
+<p>If your app requires the full LabVIEW development environment to run, both
+the development and target computers must have a licensed copy of the Toolkit
+installed.  Simply install and activate the Toolkit as normal, using the VI
+Package Manager (2014 or later).</p>
+</div>
+<div class="section" id="a-note-on-the-plotting-cache">
+<h2>A note on the plotting cache<a class="headerlink" href="#a-note-on-the-plotting-cache" title="Permalink to this headline">¶</a></h2>
+<p>A small number of files, which support the plotting subsystem, are extracted
+into a cache directory when the Toolkit is first run on any platform. They are
+placed in the &#8220;local&#8221; AppData directory, e.g. <code class="docutils literal"><span class="pre">C:\Users\&lt;username&gt;\AppData\Local.</span></code>
+This directory will need to be readable, writable, and executable on any
+platform on which the Toolkit is installed.  These permissions are the default
+on all versions of Windows.  The amount of disk space used for cache files is
+very small; less than 10 MB.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Embedding the Toolkit in Your Application</a><ul>
+<li><a class="reference internal" href="#distributing-a-compiled-labview-app-application-builder">Distributing a compiled LabVIEW app (Application Builder)</a></li>
+<li><a class="reference internal" href="#distributing-a-native-labview-app-development-environment">Distributing a native LabVIEW app (Development Environment)</a></li>
+<li><a class="reference internal" href="#a-note-on-the-plotting-cache">A note on the plotting cache</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="errors.html"
+                        title="previous chapter">Error Codes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="licenses.html"
+                        title="next chapter">License Agreements and Acknowledgements</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="licenses.html" title="License Agreements and Acknowledgements"
+             >next</a></li>
+        <li class="right" >
+          <a href="errors.html" title="Error Codes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>

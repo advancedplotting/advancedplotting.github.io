@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>User Guide &mdash; Advanced Plotting Toolkit</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Advanced Plotting Toolkit" href="../index.html" />
+    <link rel="next" title="Getting Started" href="start.html" />
+    <link rel="prev" title="Init" href="../ref/Init.html" />
+ 
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="start.html" title="Getting Started"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="../ref/Init.html" title="Init"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="user-guide">
+<span id="guide-index"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#download-and-install">Download and Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#getting-help">Getting Help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#making-plots">Making Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#combining-multiple-features">Combining Multiple Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#viewing-plots">Viewing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#resizing-plots">Resizing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#saving-plots">Saving Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#using-property-clusters">Using Property Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#other-useful-hints">Other Useful Hints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#where-to-go-next">Where To Go Next</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color.html">Using Color</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="color.html#the-plotcolor-control">The PlotColor Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color.html#alpha-transparency-and-z-order">Alpha Transparency and Z-Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color.html#the-automatic-color-cycle">The Automatic Color Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color.html#colormaps">Colormaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color.html#built-in-colormaps">Built-In Colormaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="markup.html">Using Inline Text Markup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="markup.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markup.html#basic-math">Basic Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markup.html#math-symbols">Math Symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markup.html#function-names">Function Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markup.html#greek-characters">Greek Characters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Making Polar Plots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="polar.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polar.html#radians-or-degrees">Radians or Degrees?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polar.html#gotchas">Gotchas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polar.html#vis-supporting-polar-plots">VIs Supporting Polar Plots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">Error Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="errors.html#failed-to-initialize-plotting-library">402900 - Failed to Initialize Plotting Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html#error-in-plotting-library">402901 - Error in Plotting Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html#invalid-plot-identifier">402902 - Invalid Plot Identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html#unrecognized-file-extension">402903 - Unrecognized File Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html#failed-to-save-file">402904 - Failed to Save File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html#operation-not-supported-for-polar-plot">402905 - Operation Not Supported for Polar Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html#operation-not-supported-for-axis-scale">402906 - Operation Not Supported for Axis Scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html#coordinates-not-regular">402907 - Coordinates Not Regular</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding the Toolkit in Your Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#distributing-a-compiled-labview-app-application-builder">Distributing a compiled LabVIEW app (Application Builder)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#distributing-a-native-labview-app-development-environment">Distributing a native LabVIEW app (Development Environment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#a-note-on-the-plotting-cache">A note on the plotting cache</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licenses.html">License Agreements and Acknowledgements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="licenses.html#matplotlib">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="licenses.html#license-agreement">License Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="licenses.html#license-agreements-acknowledgements-and-disclosures-for-other-components">License Agreements, Acknowledgements and Disclosures for Other Components</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.advancedplotting.com">Back to Main Website</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../ref/Init.html"
+                        title="previous chapter">Init</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="start.html"
+                        title="next chapter">Getting Started</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="start.html" title="Getting Started"
+             >next</a></li>
+        <li class="right" >
+          <a href="../ref/Init.html" title="Init"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Advanced Plotting Toolkit</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Heliosphere Research LLC.
+    </div>
+  </body>
+</html>
