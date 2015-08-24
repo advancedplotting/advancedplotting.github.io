@@ -1,0 +1,165 @@
+/*
+Template Name: CleanCut
+Template URI: http://www.os-templates.com/
+Description: Designed and Built by <a href="http://www.os-templates.com/">OS Templates</a>. This modern template is adaptable, lightweight and fully customisable. The template is easy to use, enabling you to create your site within minutes. 
+Version: 1.0
+Author: OS-Templates.com
+Author URI: http://www.os-templates.com/
+Licence: 
+Licence URI: 
+Tags: dark, light, responsive
+File: Layout CSS
+*/
+
+/*
+	TOC - Table Of Contents
+	
+	1 => Default Fonts
+	2 => Fixed Width Mode
+	3 => Row Styling
+	4 => Generalise
+	5 => Topbar
+	6 => Header
+	7 => Page Intro
+	8 => Main Container
+	9 => Footer
+	10 => Copyright
+*/
+
+
+html{overflow-x:hidden; overflow-y:scroll;}
+body{margin:0; padding:0; font-size:14px; text-align:left;}
+
+
+/* Default Fonts
+---------------------------------------------------------------------------------------------------------------------------------------*/
+body{font-family:'OpenSansRegular', Arial, Helvetica, sans-serif;}
+strong, .bold{font-family:'OpenSansBold', Arial, Helvetica, sans-serif;}
+h1, h2, h3, h4, h5, h6, .georgia{font-family:Georgia, "Times New Roman", Times, serif;}
+
+
+/* Fixed Width Mode - See Template Documentation
+---------------------------------------------------------------------------------------------------------------------------------------*/
+html#ost-fixed{overflow-x:auto;}
+html#ost-fixed #mobilemenu{display:none;}
+
+/* Full Width Layout */
+
+html#ost-fixed.ost-960 #topbar, html#ost-fixed.ost-960 #header, html#ost-fixed.ost-960 #pageintro, html#ost-fixed.ost-960 #intro, html#ost-fixed.ost-960 .container, html#ost-fixed.ost-960 .p-footer, html#ost-fixed.ost-960 #copyright{width:960px; margin:0 auto;}
+html#ost-fixed.ost-1200 #topbar, html#ost-fixed.ost-1200 #header, html#ost-fixed.ost-1200 #pageintro, html#ost-fixed.ost-1200 #intro, html#ost-fixed.ost-1200 .container, html#ost-fixed.ost-1200 .p-footer, html#ost-fixed.ost-1200 #copyright{width:1200px; margin:0 auto;}
+
+/* Box Layout */
+
+html#ost-fixed.ost-960.boxed .wrapper, html#ost-fixed.ost-960.boxed  #topbar, html#ost-fixed.ost-960.boxed  #header, html#ost-fixed.ost-960.boxed  #pageintro, html#ost-fixed.ost-960.boxed  #intro, html#ost-fixed.ost-960.boxed  .container, html#ost-fixed.ost-960.boxed  .p-footer, html#ost-fixed.ost-960.boxed  #copyright{width:930px; max-width:930px; margin:0 auto;}
+html#ost-fixed.ost-960.boxed .wrapper{padding:0 15px;}
+html#ost-fixed.ost-1200.boxed .wrapper, html#ost-fixed.ost-1200.boxed  #topbar, html#ost-fixed.ost-1200.boxed  #header, html#ost-fixed.ost-1200.boxed  #pageintro, html#ost-fixed.ost-1200.boxed  #intro, html#ost-fixed.ost-1200.boxed  .container, html#ost-fixed.ost-1200.boxed  .p-footer, html#ost-fixed.ost-1200.boxed  #copyright{width:1140px; max-width:1140px; margin:0 auto;}
+html#ost-fixed.ost-1200.boxed .wrapper{padding:0 30px;}
+
+/* Override for full width content in box layout */
+
+html#ost-fixed.ost-960.boxed .wrapper.full_width{width:960px; max-width:none; padding:0;}
+html#ost-fixed.ost-1200.boxed .wrapper.full_width{width:1200px; max-width:none; padding:0;}
+
+
+/* Row Styling
+---------------------------------------------------------------------------------------------------------------------------------------*/
+.row0, .row0 a{}
+.row0 a{}
+.row1, .row1 a{border-top:4px solid;}
+.row1 a{border:none;}
+.row2{}
+.row3{border-top:5px solid;}
+.row4{border-bottom:1px solid}
+.row4 a{}
+.row5{border-top:1px solid;}
+
+
+/* Generalise
+---------------------------------------------------------------------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6{margin:0 0 30px 0; font-weight:normal; line-height:normal; text-transform:capitalize;}
+
+h1{font-size:1.8em;}
+h2{font-size:1.6em;}
+h3{font-size:1.4em;}
+h4, h5, h6{font-size:1.2em;}
+
+address{margin:10px 0; font-style:normal;}
+
+#topbar, #header, #intro, .container, .p-footer, #copyright{margin:0 auto;}
+
+
+/* Topbar
+---------------------------------------------------------------------------------------------------------------------------------------*/
+#topbar{}
+#topbar .fl_left li{display:inline; margin:0 0 0 15px; padding:0 0 0 15px; border-left:1px solid;}
+#topbar .fl_left li:first-child{margin:0; padding:0; border:none;}
+
+#slidepanel{display:none; position:relative; width:100%; padding:15px 0; overflow:hidden;}
+#openpanel{display:block; position:absolute; top:0; right:0;}
+#openpanel a{display:block; padding:6px 6px 6px 8px; font-size:15px; font-weight:normal; line-height:.8em; -moz-border-radius:0 0 0 12px; -webkit-border-radius:0 0 0 12px; border-radius:0 0 0 12px;}
+#openpanel a:hover{padding-top:10px;}
+
+
+/* Header
+---------------------------------------------------------------------------------------------------------------------------------------*/
+#header{position:relative;}
+#header #logo{float:left;}
+#header #logo h1, #header #logo h2{margin:0; padding:0; font-weight:normal; text-transform:none;}
+#header #logo h1{font-size:3em; margin-top:15px;}
+#header #logo h2{font-size:1em; display:none;}
+
+
+/* Page Intro
+---------------------------------------------------------------------------------------------------------------------------------------*/
+.pageintro{}
+#pageintro{padding:50px 0;}
+#pageintro ul{margin:0; padding:0; list-style:none;}
+#pageintro .pagetitle{margin:0 0 30px 0; padding:0;}
+#pageintro .pagetitle h1{display:inline-block; margin:0; padding:10px 18px; font-size:2.5em; line-height:1em; font-variant:small-caps;}
+#pageintro .pagetitle h1{-moz-border-radius:15px 0; -webkit-border-radius:15px 0; border-radius:15px 0;}
+
+
+/* Main Container => Content + Sidebar
+---------------------------------------------------------------------------------------------------------------------------------------*/
+.container{padding:50px 0; clear:both; font-size:1em; line-height:1.4em;}
+.container section{margin-bottom:50px;}
+.container section.last, .container section.nospace{margin-bottom:0;}
+
+.emphasise, .container .emphasise{font-size:2.8em; line-height:1.4em;}
+
+.font-xsmall, .container .font-xsmall{font-size:.8em;}
+.font-small, .container .font-small{font-size:1em;}
+.font-medium, .container .font-medium{font-size:1.2em;}
+.font-large, .container .font-large{font-size:1.4em;}
+.font-xl, .container .xl-large{font-size:4em; line-height:1.2em;}
+.font-xxl, .container .xxl-large{font-size:6em; font-weight:normal; line-height:1.2em;}
+
+/* Sidebar */
+
+.sidebar aside{line-height:1.2em;}
+.sidebar aside ul.nospace li{margin-top:20px;}
+
+
+/* Footer
+---------------------------------------------------------------------------------------------------------------------------------------*/
+.p-footer{padding:40px 0;}
+.p-footer .footer_title{margin:0 0 40px 0; font-size:1em; font-weight:bold; text-transform:uppercase;}
+.p-footer .footer_title span{padding-bottom:10px; border-bottom:1px solid;}
+.p-footer .tweet-container li{margin-top:18px; padding-top:18px; border-top:1px solid;}
+.p-footer .tweet-container li:first-child{margin-top:0; padding-top:0; border-top:none;}
+.p-footer .tweet-container li .tweet_time{font-size:.8em;}
+
+.p-footer .footer_gallery.spacing li{margin-bottom:15px;}
+
+.p-footer .social li, .p-footer .social div{margin-right:8px;}
+
+.p-footer .nav.inline li{margin:0 8px 5px 0; padding:0 0 0 15px;}
+.p-footer .nav.inline li:last-child, .p-footer .nav.inline li.last-child{border-right:0;}
+
+.p-footer .testimonial{margin-top:0;}
+
+
+/* Copyright
+---------------------------------------------------------------------------------------------------------------------------------------*/
+#copyright{padding:20px 0; font-size:.85em;}
+#copyright p{margin:0; padding:0;}

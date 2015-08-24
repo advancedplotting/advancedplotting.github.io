@@ -1,0 +1,234 @@
+/*
+Template Name: CleanCut
+Template URI: http://www.os-templates.com/
+Description: Designed and Built by <a href="http://www.os-templates.com/">OS Templates</a>. This modern template is adaptable, lightweight and fully customisable. The template is easy to use, enabling you to create your site within minutes. 
+Version: 1.0
+Author: OS-Templates.com
+Author URI: http://www.os-templates.com/
+Licence: 
+Licence URI: 
+Tags: dark, light, responsive
+File: Dark Skin CSS
+*/
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for navigation.css-------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Top Navigation */
+
+.tno-2 nav ul li a, .tno-4 nav ul li a{color:inherit; background-color:#333333;}
+#header.tno-2 nav ul li a.drop:before, #header.tno-4 nav ul li a.drop:before{border-top-color:#454545;}
+
+#header.tno-10 nav ul:first-child li{border-left-color:inherit; border-right-color:inherit;}
+
+#topnav li li{border-color:#2A2A2A transparent #232323 transparent;}
+#topnav li li a, #topnav li.active li a{color:#A0A0A0; background:#1C1C1C;}
+
+/* Top navigation for smaller resolutions */
+
+#topnav form select{color:inherit; background:#171717; border-color:#252525;}
+
+/* Sidebar Navigation */
+
+.sidebar aside nav a{color:#666666; background-color:inherit; border-bottom-color:#666666;}
+
+/* Pagination */
+
+.pagination a{border-color:#333333;}
+
+/* Footer Navigation */
+
+.footer_nav ul li{border-top-color:#484848;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for elements.css---------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Call To Action - Best used as a full width banner */
+
+.calltoaction{color:#FFFFFF; background-color:#232323;}
+
+/* Lists - For ul + ol */
+
+.list.block li > ul, .list.block li > ol{border-color:#333333;}
+.list.underline li{border-bottom-color:#333333;}
+.list.tagcloud li a, .list.posttags li a{color:#FFFFFF; background-color:#333333;}
+.list.posttags li a:before{border-right-color:#333333;}
+
+.p-footer .list.tagcloud li a, .p-footer .list.posttags li a{color:#CCCCCC; background-color:#333333;}
+.p-footer .list.posttags li a:before{border-right-color:#333333;}
+
+/* Dividers */
+
+hr{background-color:#333333;}
+.divider1, .divider2, .divider3{border-top-color:#333333;}
+
+/* Alert Messages */
+
+.alert-msg{color:#666666;}
+
+/* Pricing Tables */
+
+.pricingtable-wrapper{border-color:#333333;}
+.pricingtable-wrapper .pricingtable .pricingtable-list ul li{border-color:#333333;}
+.pricingtable-wrapper .pricingtable .pricingtable-title, .pricingtable-wrapper .pricingtable .pricingtable-price{color:#FFFFFF; background-color:#232323;}
+
+.pricingtable-wrapper.opt2{border-color:#333333;}
+
+.pricingtable-wrapper-opt3{color:inherit; background-color:#000000;}
+.pricingtable-wrapper.opt3 .pricingtable{color:#FFFFFF; background-color:#1C1C1C; border-color:#333333;}
+.pricingtable-wrapper.opt3 .pricingtable .pricingtable-title{background-color:inherit;}
+
+/* Jquery Tabs */
+
+.tab-wrapper .tab-nav li a{border-color:#333333;}
+.tab-wrapper .tab-nav li.ui-tabs-active a{border-bottom-color:#1C1C1C;}
+.tab-wrapper .tab-container{border-color:#333333;}
+
+.tab-wrapper.tab-opt2 .tab-nav li a{border-bottom-color:#333333;}
+
+/* Jquery Accordion + Jquery Toggle */
+
+.accordion-wrapper .accordion-title, .accordion-wrapper .accordion-title.active, .toggle-wrapper .toggle-title, .toggle-wrapper .toggle-title.active{border-color:#333333;}
+.accordion-wrapper .accordion-title span, .accordion-wrapper .accordion-title.active span, .toggle-wrapper .toggle-title span, .toggle-wrapper .toggle-title.active span{border-color:#333333;}
+.accordion-wrapper .accordion-content, .toggle-wrapper .toggle-content{border-color:#333333;}
+
+/* Forms */
+
+form input, form select, form textarea{color:#FFFFFF; background-color:#232323; border-color:#333333;}
+form input[type="submit"], form input[type="reset"]{color:#FFFFFF; background-color:#232323;}
+
+.jq-selectbox .select{
+	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAIAAABi9+OQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+v//PxM2zMDAQEtxgAADAF2uTe9L4getAAAAAElFTkSuQmCC") repeat-x #F5F5F5;
+	border-color:#DFDFDF;
+	}
+
+/* Tables */
+
+table, table td, .table, .table .t-cell{border-color:#333333;}
+table thead th, .table .t-header .t-cell{color:#FFFFFF; background-color:#000000; border-color:#000000;}
+table tr, .table .t-row{color:#949494; background-color:#252525;}
+/*
+table tr:nth-child(even), .table .t-row:nth-child(even){color:#666666; background-color:#E8E8E8;}
+nth-child is Not supported by IE8 so its been commented out and we changed it to:
+*/
+table tr.dark, .table .t-row.dark{color:#949494; background-color:#202020;}
+table tr:hover, .table .t-row:hover{color:#FFFFFF; background-color:#000000;}
+
+/* Social Icons */
+
+.social a, .social.coloured a:hover{color:#949494; background-color:#333;}
+.social a:hover, .social.coloured a{color:#FFFFFF;}
+
+/* Skillset */
+
+.skillset span{color:inherit; background-color:#232323;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for pages.css------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Site Wide Shared Classes */
+
+.blog-post-title a{color:#979797; background-color:inherit;}
+
+/* Blog Overview */
+
+#blog-posts #blog-overview .blog-post-excerpt .blog-post-meta ul,
+#blog-posts #blog-overview .blog-post-excerpt .blog-post-meta ul li,
+#blog-post .post-content-wrapper .post-content .blog-post-meta ul li{border-color:#333333;}
+
+/* Blog Post Single */
+
+#blog-post .post-content-wrapper .post-content .blog-post-meta, 
+#blog-post .blog-post-related ul.related li img, 
+#blog-post #comment-count, 
+#blog-post #comment-list .comment-wrapper .comment-meta .comment-author .comment-date .comment-reply, 
+#blog-post #comment-list .comment-wrapper .comment-meta .comment-avatar img{border-color:#333333;}
+
+/* 404 */
+
+#fof h1{text-shadow:6px 6px 0 rgba(255, 255, 255, .1);}
+#fof p.clear{border-color:#333333;}
+
+/* About Us */
+
+figure.team-member figcaption .team-description{border-color:#333333;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for shop.css------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Product Display Options */
+
+.prd-options{border-color:#333333;}
+.prd-options .displayview .prd-layout span.active-view{color:#FFFFFF; background-color:#A8A8A8;}
+
+/* Product Overview */
+
+.prd-wrap article .prd-info .prd-meta{border-color:#333333;}
+
+/* Basket */
+
+#basket .t-header .t-cell{border-color:#1C1C1C;} /* Same colour as the main containing DIV */
+#basket button{background-color:transparent;}
+#basket input[type="text"]{border-color:#CCCCCC;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for layout.css------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+body{color:#949494; background-color:#2A2A2A;}
+html.boxed body{color:#919191; background-color:#000000;}
+
+.boxholder{border-color:#333333;}
+
+/* Row Styling */
+
+.row0, .row0 a{color:#C2C2C2; background-color:#151515;}
+.row1, .row1 a{color:#949494; background-color:#1C1C1C;}
+.row2{color:#C2C2C2; background-color:#000000;}
+.row3{color:#949494; background-color:#1C1C1C; border-top-color:#171717;}
+.row4{color:#949494; background-color:#232323; border-bottom-color:#181818;}
+.row4 a{background-color:inherit;}
+.row5{color:#949494; background-color:#2A2A2A; border-top-color:#3A3A3A;}
+.row6{color:#949494; background-color:#000000;}
+
+/* Generalise */
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{border-color:#333333;}
+
+/* Topbar */
+
+#topbar .fl_left li{border-left-color:#C0BAB6;}
+
+/* Page Intro */
+
+#pageintro .breadcrumb a{color:#FFFFFF; background-color:inherit;}
+
+/* Main Container => Content + Sidebar */
+
+.sidebar aside h2{border-bottom-color:#333333;}
+
+/* Footer */
+
+.p-footer .footer_title{border-bottom-color:#484848;}
+.p-footer .tweet-container li{border-top-color:#484848;}
+.p-footer form input, .p-footer form textarea{color:#FFFFFF; background-color:#333333; border-color:#484848;}
+
+.p-footer a, #copyright a{color:#B2B2B2; background-color:inherit;}
+
+.p-footer [class^="socico-"], .p-footer [class*=" socico-"], .social.coloured a:hover{color:inherit; background-color:#333333;}
+.p-footer [class^="socico-"]:hover, .p-footer [class*=" socico-"]:hover{color:#FFFFFF; background-color:#000000;}
+
+.p-footer .list.underline li{border-bottom-color:#E5E4E3;}
+
+.p-footer hr{background-color:#333333;}
+.p-footer .divider1, .p-footer .divider2, .p-footer .divider3{border-top-color:#333333;}
+
+.p-footer .testimonial blockquote{border-color:#333333;}

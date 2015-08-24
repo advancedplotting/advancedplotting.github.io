@@ -1,0 +1,142 @@
+/*
+Template Name: CleanCut
+Template URI: http://www.os-templates.com/
+Description: Designed and Built by <a href="http://www.os-templates.com/">OS Templates</a>. This modern template is adaptable, lightweight and fully customisable. The template is easy to use, enabling you to create your site within minutes. 
+Version: 1.0
+Author: OS-Templates.com
+Author URI: http://www.os-templates.com/
+Licence: 
+Licence URI: 
+Tags: dark, light, responsive
+File: Red CSS
+*/
+
+/* Base Colour: #D54346 */
+
+a{color:#D54346;}
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for layout.css-----------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Row Styling */
+
+.row1{border-top-color:#D54346;}
+
+/* Generalise */
+
+h1 span:after, h2 span:after, h3 span:after, h4 span:after, h5 span:after, h6 span:after{background-color:#D54346;}
+
+/* Topbar */
+
+#openpanel a{color:#FFFFFF; background-color:#D54346;}
+
+/* Page Intro */
+
+.pageintro{color:#FFFFFF; background-color:#D54346;}
+#pageintro .pagetitle h1{color:#FFFFFF; background-color:#7A1B1D;} /* Use Button Hover BG Colour */
+
+/* Main Container => Content + Sidebar */
+
+.container a{}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for navigation.css-------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Top Navigation */
+
+#topnav li.active a, #topnav a:hover, #topnav ul li li:hover > a, #topnav ul li.active ul .active > a, #header.tno-7 nav ul ul li:hover > a, #header.tno-7 nav ul ul li.active > a, #header.tno-8 nav ul li:hover > a, #header.tno-8 nav ul li.active:hover > a, #header.tno-8 nav ul ul li:hover > a, #header.tno-8 nav ul ul li.active > a, #header.tno-10 nav ul ul li:hover > a, #header.tno-10 nav ul ul li.active > a{
+	color:#FFFFFF; background-color:#D54346;}
+#header.tno-2 nav ul li:hover a.drop:before, #header.tno-2 nav ul li.active a.drop:before, #header.tno-4 nav ul li:hover a.drop:before, #header.tno-4 nav ul li.active a.drop:before{
+	border-top-color:#D54346;}
+#header.tno-6 nav ul li:hover > a, #header.tno-6 nav ul li.active > a, #header.tno-7 nav ul li:hover > a, #header.tno-7 nav ul li.active > a, #header.tno-8 nav ul li:hover > a, #header.tno-8 nav ul li.active > a, #header.tno-9 nav ul li:hover > a, #header.tno-9 nav ul li.active > a{
+	border-bottom-color:#7A1B1D;} /* Use Button Hover BG Colour */
+#header.tno-7 nav ul li:hover > a, #header.tno-7 nav ul li.active > a, #header.tno-8 nav ul li.active > a{
+	color:inherit; background-color:inherit;}
+#header.tno-10 nav ul li:hover > a, #header.tno-10 nav ul li.active > a{
+	color:#D54346; background-color:inherit;}
+
+#header #topnav .jq-selectbox ul li:hover{color:#FFFFFF; background-color:#D54346;}
+
+/* Sidebar Navigation */
+
+.container .sidebar aside nav a:hover, .container .sidebar aside nav .active > a{color:#D54346; background-color:inherit;}
+
+/* Mobilemenu */
+
+.jq-selectbox li:hover{color:#FFFFFF; background:#D54346;}
+
+/* Scroll To Top */
+
+#scrolltotop{color:#FFFFFF; background-color:#D54346;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for elements.css---------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* To completely override all the pre-defined button colours uncomment the following */
+
+/*
+.button.blue, .button.dkblue, .button.green, .button.grey, .button.maroon, .button.orange, .button.purple, .button.red, .button.yellow, .button.black, .button.white{
+	color:#FFFFFF; background-color:#D54346;}
+
+.button.blue:hover, .button.dkblue:hover, .button.green:hover, .button.grey:hover, .button.maroon:hover, .button.orange:hover, .button.purple:hover, .button.red:hover, .button.yellow:hover, .button.black:hover, .button.white:hover{
+	color:#FFFFFF; background-color:#7A1B1D;}
+
+.button.blue.gradient, .button.dkblue.gradient, .button.green.gradient, .button.grey.gradient, .button.maroon.gradient, .button.orange.gradient, .button.purple.gradient, .button.red.gradient, .button.yellow.gradient, .button.black.gradient, .button.white.gradient{
+	background:#7A1B1D;
+	background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc4NjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNENTQzNDYiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM3QTFCMUQiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c4NjApIiAvPgo8L3N2Zz4=);
+	background:-moz-linear-gradient(#D54346 0%, #7A1B1D 100%);
+	background:-webkit-gradient(color-stop(0%,#D54346), color-stop(100%,#7A1B1D));
+	background:-webkit-linear-gradient(#D54346 0%,#7A1B1D 100%);
+	background:-o-linear-gradient(#D54346 0%,#7A1B1D 100%);
+	background:-ms-linear-gradient(#D54346 0%,#7A1B1D 100%);
+	background:linear-gradient(#D54346 0%,#7A1B1D 100%);
+	}
+*/
+
+/* Lists - For ul + ol */
+
+.list.tagcloud li a:hover, .list.posttags li a:hover{color:#FFFFFF; background-color:#D54346;}
+.list.posttags li a:hover:before{border-right-color:#D54346;}
+
+/* Call To Action - Best used as a full width banner */
+
+.calltoaction.opt1, .calltoaction.opt2, .calltoaction.opt3, .calltoaction.opt4{border-color:#D54346;}
+
+/* Jquery Accordion + Jquery Toggle */
+
+.accordion-title:hover, .toggle-title:hover, .accordion-wrapper .accordion-title.active, .toggle-wrapper .toggle-title.active{color:#FFFFFF; background-color:#D54346;}
+
+/* Jquery Isotope - Sorting / Filters */
+
+.container .isotope-filters .current a{color:#FFFFFF; background-color:#D54346;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for pages.css------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Site Wide Shared Classes */
+
+.blog-post-title a:hover{color:#D54346; background-color:inherit;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for shop.css------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Shop */
+
+.sidebar-cart, .sidebar-cart a{color:#FFFFFF; background-color:#D54346;}
+
+/* Product Display Options */
+
+.prd-options .displayview .prd-layout span.inactive-view{color:#FFFFFF; background-color:#D54346;}
+
+/* Basket */
+
+#basket .t-header .t-cell{color:#FFFFFF; background-color:#D54346;}

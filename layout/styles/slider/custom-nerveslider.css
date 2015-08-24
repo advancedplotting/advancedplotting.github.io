@@ -1,0 +1,162 @@
+@font-face{
+  font-family:"slide_font";
+  src:url('font/slide_font.eot?47527398');
+  src:url('font/slide_font.eot?47527398#iefix') format('embedded-opentype'),
+      url('font/slide_font.woff?47527398') format('woff'),
+      url('font/slide_font.ttf?47527398') format('truetype'),
+      url('font/slide_font.svg?47527398#fontello') format('svg');
+  font-weight:normal;
+  font-style:normal;
+  font-variant:normal;
+  text-transform:none;
+  speak:none;
+  }
+
+.ns-full img, .ns-norm img{width:auto; max-width:none; height:auto;}
+.ns_nerveSlider a, .ns_nerveSlider a img{text-decoration:none; outline:none; border:none;}
+
+/* GENERAL SET-UP
+   ############################################################################################################################ */
+
+.ns_nerveSlider{display:inline-block; position:relative; overflow:hidden; text-align:left; white-space:nowrap; -ms-interpolation-mode:bicubic;}
+
+.ns_nerveSlider .ns_slides,
+.ns_nerveSlider .ns_slides .ns_slidesTrack,
+.ns_nerveSlider .ns_slideContainer,
+.ns_nerveSlider .ns_slideContainer > a,
+.ns_nerveSlider .ns_loadSpinner,
+.ns_nerveSlider .ns_loadSpinner div,
+.ns_nerveSlider .ns_dummyImage,
+.ns_nerveSlider .ns_dummyImage div{
+	display:block;
+	width:100%;
+	height:100%;
+	}
+
+.ns_nerveSlider .ns_slides .ns_slidesTrack{position:absolute; overflow:visible;}
+.ns_nerveSlider .ns_slideContainer{position:relative; margin:0; padding:0; overflow:hidden;}
+.ns_nerveSlider.heightAdaptable .ns_slideContainer img.ns_slideImage{width:100%; height:auto;}
+.ns_slideContainer.ns_decoy.ns_ls.left{position:absolute; left:-100%;}
+.ns_slideContainer.ns_decoy.ns_ls.right{position:absolute; right:-100%;}
+.ns_slideContainer.ns_decoy.ns_ls.up{position:absolute; top:-100%;}
+.ns_slideContainer.ns_decoy.ns_ls.down{position:absolute; bottom:-100%;}
+.ns_nerveSlider.ns_horizontal .ns_slideContainer{display:inline-block;}
+.ns_nerveSlider.ns_vertical .ns_slideContainer{display:block;}
+.ns_nerveSlider .ns_slideContainer img{position:absolute; z-index:auto;}
+
+.ns_nerveSlider .ns_loadSpinner, .ns_nerveSlider .ns_dummyImage{display:none; position:absolute; top:0; left:0; font:bold 18px/normal Verdana, sans-serif; z-index:6;}
+.ns_nerveSlider .ns_loadSpinner div:after, .ns_nerveSlider .ns_dummyImage div:after{display:block; position:absolute; top:46%; width:100%; text-align:center; background-color:inherit;}
+.ns_nerveSlider .ns_loadSpinner div:after{content:"Loading Images\2026";}
+.ns_nerveSlider .ns_dummyImage div:after{content:"Image Not Available\2026";}
+
+/* TIMER BAR
+   ############################################################################################################################ */
+
+.ns_nerveSlider .ns_timer{position:absolute; bottom:0; left:0; width:0; height:6px; z-index:90;}
+
+/* NAVIGATION ELEMENTS
+   ############################################################################################################################ */
+
+/* Previous, Next & Pause */
+.ns_nerveSlider .ns_prevButton, .ns_nerveSlider .ns_nextButton, .ns_nerveSlider .ns_pauseButton{position:absolute; width:40px; height:40px; font:bold 20px/22px "slide_font"; cursor:pointer; z-index:999999;}
+.ns_nerveSlider .ns_prevButton div, .ns_nerveSlider .ns_nextButton div, .ns_nerveSlider .ns_pauseButton div{display:block; position:relative; width:100%; height:100%; -moz-border-radius:50%; -webkit-border-radius:50%; border-radius:50%; cursor:pointer;}
+
+/* Previous & Next */
+.ns_nerveSlider .ns_prevButton, .ns_nerveSlider .ns_nextButton{top:46%;}
+.ns_nerveSlider .ns_prevButton{left:20px;}
+.ns_nerveSlider .ns_nextButton{right:20px;}
+.ns_nerveSlider .ns_prevButton div:after, .ns_nerveSlider .ns_nextButton div:after{position:absolute; top:10px; width:0; height:0;}
+.ns_nerveSlider .ns_prevButton div:after{left:13px; content:"\e800";}
+.ns_nerveSlider .ns_nextButton div:after{left:13px; content:"\e801";}
+
+/* Pause */
+.ns_nerveSlider .ns_pauseButton{right:20px; bottom:10px;}
+.ns_nerveSlider .ns_pauseButton div:before, .ns_nerveSlider .ns_pauseButton div:after{position:absolute; top:12px; width:5px; height:16px; content:""; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+.ns_nerveSlider .ns_pauseButton div:before{left:13px;}
+.ns_nerveSlider .ns_pauseButton div:after{right:13px;}
+
+/* Circle Navigation - Top Right */
+.ns_nerveSlider .ns_dots{display:block; position:absolute; top:10px; right:20px; margin:0; padding:0; z-index:200;}
+.ns_nerveSlider .ns_dots .ns_dot{display:inline-block; width:10px; height:10px; margin:0 3px; background-color:transparent; border:1px solid; -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; cursor:pointer;}
+
+/* Thumbnail Gallery */
+.ns_nerveSlider .ns_filmstrip{position:absolute; top:30px; left:0; width:100%; max-width:100%; text-align:center; overflow-x:auto; z-index:52;}
+.ns_nerveSlider .ns_filmstrip img{height:45px; margin:0 2px; padding:2px; border:1px solid; opacity:0.5; filter:alpha(opacity=50); cursor:pointer;}
+.ns_nerveSlider .ns_filmstrip img:hover{opacity:1; filter:alpha(opacity=100);}
+
+/* Navigation Elements Hover Effects - Direction & Opacity */
+.ns_nerveSlider .ns_prevButton, .ns_nerveSlider .ns_nextButton, .ns_nerveSlider .ns_pauseButton, .ns_nerveSlider .ns_dots, .ns_nerveSlider .ns_filmstrip{margin:0 -50px 0 0; opacity:0; filter:alpha(opacity=0);}
+.ns_nerveSlider .ns_prevButton{margin:0 0 0 -50px;}
+.ns_nerveSlider .ns_dots, .ns_nerveSlider .ns_filmstrip{margin:-50px 0 0 0;}
+.ns_nerveSlider:hover .ns_prevButton, .ns_nerveSlider:hover .ns_nextButton, .ns_nerveSlider:hover .ns_pauseButton, .ns_nerveSlider:hover .ns_dots, .ns_nerveSlider:hover .ns_filmstrip{margin-right:0; opacity:0.5; filter:alpha(opacity=50);}
+.ns_nerveSlider:hover .ns_prevButton{margin-left:0;}
+.ns_nerveSlider:hover .ns_dots, .ns_nerveSlider:hover .ns_filmstrip{margin-top:0;}
+.ns_nerveSlider .ns_prevButton:hover, .ns_nerveSlider .ns_nextButton:hover, .ns_nerveSlider .ns_pauseButton:hover, .ns_nerveSlider .ns_dots:hover, .ns_nerveSlider .ns_filmstrip:hover{opacity:1; filter:alpha(opacity=100);}
+
+/* SLIDE CONTENT & CAPTIONS
+   ############################################################################################################################ */
+
+.ns_nerveSlider .ns_caption, .ns_nerveSlider .ns_slideContent{display:block; position:absolute; bottom:0; left:0; width:100%; padding-bottom:6px; font:bold 14px/normal Verdana, sans-serif;}
+.ns_nerveSlider .ns_caption div, .ns_nerveSlider .ns_slideContent .ns_captionwrapper{display:block; position:relative; width:100%; max-width:1200px; margin:0 auto; padding:20px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+
+/* TRANSITIONS - Only work in modern browsers e.g. IE10+, Chrome 4+, Safari 3.1+, FireFox 4+
+   ############################################################################################################################ */
+
+.ns_nerveSlider .ns_prevButton, .ns_nerveSlider .ns_nextButton, .ns_nerveSlider .ns_pauseButton, .ns_nerveSlider .ns_dots, .ns_nerveSlider .ns_filmstrip{-webkit-transition:0.3s; -moz-transition:0.3s; -o-transition:0.3s; -ms-transition:0.3s; transition:0.3s;}
+
+/* LIGHT THEME
+   ############################################################################################################################ */
+   
+/* Main Slider Background Colour */
+.ns_nerveSlider.light{background-color:#E5E5E5;}
+/* Loading & No Image Text Colour */
+.ns_nerveSlider .ns_loadSpinner div:after, .ns_nerveSlider .ns_dummyImage div:after{color:#2A2A2A;}
+/* General Button Background */
+.ns_nerveSlider.light .ns_pauseButton div, .ns_nerveSlider.light .ns_prevButton div, .ns_nerveSlider.light .ns_nextButton div{background-color:#FFFFFF;}
+/* || Elements */
+.ns_nerveSlider.light .ns_pauseButton div:before, .ns_nerveSlider.light .ns_pauseButton div:after{background-color:#2A2A2A;}
+/* < > Text Colour */
+.ns_nerveSlider.light .ns_prevButton div:after, .ns_nerveSlider.light .ns_nextButton div:after{color:#2A2A2A;}
+/* Top Right Circle Navigation */
+.ns_nerveSlider.light .ns_dots .ns_dot{border-color:#FFFFFF;}
+.ns_nerveSlider.light .ns_dots .ns_dot:hover, .ns_nerveSlider.light .ns_dots .ns_dot.ns_selected{background:#FFFFFF;}
+/* Thumbnail Border Colour */
+.ns_nerveSlider.light .ns_filmstrip img{border-color:#FFFFFF;}
+/* Caption Colour + Background Colour & Transparency */
+.ns_nerveSlider.light .ns_caption, .ns_nerveSlider.light .ns_slideContent{color:#333333; background-color:#FFFFFF; filter:alpha(opacity=70); background-color:rgba(255,255,255,0.7);}
+/* Timer Bar - Bottom Of Slider */
+.ns_nerveSlider.light .ns_timer{background-color:#FFFFFF; filter:alpha(opacity=40); background-color:rgba(255,255,255,0.4);}
+
+/* DARK THEME
+   ############################################################################################################################ */
+
+/* Main Slider Background Colour */
+.ns_nerveSlider.light{background-color:#E5E5E5;}
+/* Loading & No Image Text Colour */
+.ns_nerveSlider .ns_loadSpinner div:after, .ns_nerveSlider .ns_dummyImage div:after{color:#2A2A2A;}
+/* General Button Background */
+.ns_nerveSlider.dark .ns_pauseButton div, .ns_nerveSlider.dark .ns_prevButton div, .ns_nerveSlider.dark .ns_nextButton div{background-color:#2A2A2A;}
+/* || Elements */
+.ns_nerveSlider.dark .ns_pauseButton div:before, .ns_nerveSlider.dark .ns_pauseButton div:after{background-color:#FFFFFF;}
+/* < > Text Colour */
+.ns_nerveSlider.dark .ns_prevButton div:after, .ns_nerveSlider.dark .ns_nextButton div:after{color:#FFFFFF;}
+/* Top Right Circle Navigation */
+.ns_nerveSlider.dark .ns_dots .ns_dot{border-color:#2A2A2A;}
+.ns_nerveSlider.dark .ns_dots .ns_dot:hover, .ns_nerveSlider.dark .ns_dots .ns_dot.ns_selected{background:#2A2A2A;}
+/* Thumbnail Border Colour */
+.ns_nerveSlider.dark .ns_filmstrip img{border-color:#2A2A2A;}
+/* Caption Colour + Background Colour & Transparency */
+.ns_nerveSlider.dark .ns_caption, .ns_nerveSlider.dark .ns_slideContent{color:#FFFFFF; background-color:#000000; filter:alpha(opacity=80); background-color:rgba(0,0,0,0.8);}
+/* Timer Bar - Bottom Of Slider */
+.ns_nerveSlider.dark .ns_timer{background-color:#000000; filter:alpha(opacity=40); background-color:rgba(0,0,0,0.4);}
+
+/* Media Queries
+   ############################################################################################################################ */
+
+@media screen and (max-width:599px){
+	.ns_nerveSlider .ns_caption div, .ns_nerveSlider .ns_slideContent{display:none;}
+	}
+
+@media screen and (min-width:180px) and (max-width:360px){
+	.ns_nerveSlider .ns_prevButton, .ns_nerveSlider .ns_nextButton, .ns_nerveSlider .ns_pauseButton{display:none;}
+	}

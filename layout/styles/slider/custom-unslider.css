@@ -1,0 +1,20 @@
+.unslider{position:relative; width:100%; max-height:500px; overflow:hidden; font-size:1.4em; text-align:center;}
+
+.unslider ul{display:block; width:300%; height:100%; margin:0; padding:0; list-style:none; white-space:nowrap; overflow:hidden;}
+.unslider ul li{display:block; float:left; width:100%; height:100%; -o-background-size:cover; -ms-background-size:cover; -moz-background-size:cover; -webkit-background-size:cover; background-size:cover; background-attachment:fixed;}
+
+/* Slider Content */
+.unslider .unslider-inner{display:block; max-width:1200px; margin:0 auto; padding:100px 20px 210px; white-space:normal; word-break:break-all; word-wrap:break-word; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.unslider .unslider-inner p{margin:0 0 25px 0; padding:0;}
+.unslider .unslider-inner p:first-child{font-family:Georgia,"Times New Roman",Times,serif; text-transform:uppercase; font-size:1.4em; text-shadow:0 0 1px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,1);}
+.unslider .unslider-inner span{display:inline-block; padding:10px 15px; color:#FFFFFF; background-color:rgba(0,0,0,0.3); -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;}
+
+/* Navigation Dots - Bottom Middle */
+.unslider .dots{display:block; position:absolute; bottom:20px; width:100%; margin:0; padding:0; list-style:none; text-align:center;}
+.unslider .dots li{display:inline-block; width:10px; height:10px; margin:0 4px; text-indent:-999em; border:2px solid #FFFFFF; -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; cursor:pointer; opacity:.4; -webkit-transition:background .5s,opacity .5s; -moz-transition:background .5s,opacity .5s; transition:background .5s,opacity .5s;}
+.unslider .dots li.active{background:#FFFFFF; opacity:1;}
+.unslider .dot{-webkit-filter:drop-shadow(0 1px 2px rgba(0,0,0,.3)); -moz-filter:drop-shadow(0 1px 2px rgba(0,0,0,.3)); -ms-filter:drop-shadow(0 1px 2px rgba(0,0,0,.3)); -o-filter:drop-shadow(0 1px 2px rgba(0,0,0,.3)); filter:drop-shadow(0 1px 2px rgba(0,0,0,.3));}
+
+/* Navigation Arrows - Top Right */
+.unslider .arrows{position:absolute; top:20px; right:20px; color:#FFFFFF;}
+.unslider .arrow{display:inline; padding-left:10px; cursor:pointer;}

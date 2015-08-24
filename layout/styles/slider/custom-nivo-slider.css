@@ -1,0 +1,97 @@
+/*
+Description: A complete re-write of the original nivo-slider.css and default theme - A fully imageless standalone skin using the latest techniques
+Skin Version: 1.0
+Nivo Slider Version: v3.2
+Author: OS-Templates.com
+Author URI: http://www.os-templates.com/
+Supports Thumbs: true
+*/
+
+@font-face{
+  font-family:"slide_font";
+  src:url('font/slide_font.eot?47527398');
+  src:url('font/slide_font.eot?47527398#iefix') format('embedded-opentype'),
+      url('font/slide_font.woff?47527398') format('woff'),
+      url('font/slide_font.ttf?47527398') format('truetype'),
+      url('font/slide_font.svg?47527398#fontello') format('svg');
+  font-weight:normal;
+  font-style:normal;
+  font-variant:normal;
+  text-transform:none;
+  speak:none;
+  }
+ 
+/* The Nivo Slider styles */
+.nivo-wrapper, .nivoSlider{display:block; position:relative; width:100%; height:auto; overflow:hidden;}
+.nivoSlider img{position:absolute; top:0; left:0; max-width:none; height:auto;}
+.nivo-main-image{display:block !important; position:relative !important; width:100% !important;}
+
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink{display:none; position:absolute; top:0; left:0; width:100%; height:100%; margin:0; padding:0; z-index:6; border:none; opacity:0; filter:alpha(opacity=0);}
+
+/* The slices and boxes in the Slider */
+.nivo-slice, .nivo-box, .nivo-box img{display:block;}
+.nivo-slice, .nivo-box{position:absolute; z-index:5;}
+.nivo-slice{top:0; height:100%;}
+.nivo-box{overflow:hidden;}
+
+/* Caption styles */
+.nivo-caption{display:none; position:absolute; bottom:0; left:0; width:100%; padding:5px 10px; z-index:8; color:#FFF; background-color:#000; background-color:rgba(0,0,0,.65); overflow:hidden;}
+.nivo-caption .nivo-content{display:block; position:relative; max-width:1200px; margin:0 auto; padding:10px;}
+.nivo-caption, .nivo-content{-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.nivo-html-caption{display:none;}
+
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a{
+	display:block; position:absolute; top:45%; z-index:9; width:36px; height:36px;
+	font:bold 24px/26px "slide_font"; text-align:center; cursor:pointer;
+	color:#FFF; background-color:#000; opacity:0; filter:alpha(opacity=0);
+	-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;
+	-moz-border-radius:52%; -webkit-border-radius:52%; border-radius:52%;
+	}
+.nivo-directionNav a.nivo-prevNav:before, .nivo-directionNav a.nivo-nextNav:before{position:absolute; top:5px;}
+.nivo-directionNav a.nivo-prevNav:before{left:9px; content:"\e800";}
+.nivo-directionNav a.nivo-nextNav:before{left:11px; content:"\e801";}
+
+.nivo-wrapper:hover .nivo-prevNav, .nivo-wrapper:hover .nivo-nextNav{opacity:0.5; filter:alpha(opacity=50);}
+.nivo-wrapper:hover .nivo-prevNav:hover, .nivo-wrapper:hover .nivo-nextNav:hover{color:#FFF; opacity:1; filter:alpha(opacity=100);}
+.nivo-directionNav a em{display:none;}
+
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav{display:block; position:absolute; top:20px; right:20px; z-index:9999; margin:0; padding:0;}
+.nivo-controlNav a{display:inline-block; width:10px; height:10px; margin:0 3px; text-indent:-9999em; border:1px solid #FFF; -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; cursor:pointer; opacity:0.5; filter:alpha(opacity=50);}
+.nivo-controlNav a:hover, .nivo-controlNav a.active{background:#FFFFFF; opacity:1; filter:alpha(opacity=100);}
+
+/* Control nav styles with thumbs */
+.nivo-controlNav.nivo-thumbs-enabled{max-width:100%; text-align:right;}
+.nivo-controlNav.nivo-thumbs-enabled a{width:auto; height:auto; background:none; margin-bottom:5px; text-indent:0; border:none; -moz-border-radius:0; -webkit-border-radius:0; border-radius:0;}
+.nivo-controlNav.nivo-thumbs-enabled img{display:block; width:120px; height:auto;}
+
+/* Direction & Control nav styles extended */
+.nivo-prevNav{left:-50px;}
+.nivo-wrapper:hover .nivo-prevNav{left:20px;}
+
+.nivo-nextNav{right:-50px;}
+.nivo-wrapper:hover .nivo-nextNav{right:20px;}
+
+.nivo-controlNav{margin:-50px 0 0 0; opacity:0; filter:alpha(opacity=0);}
+.nivo-wrapper:hover .nivo-controlNav{margin-top:0; opacity:1; filter:alpha(opacity=100);}
+
+.nivo-wrapper .nivo-directionNav a, .nivo-wrapper .nivo-controlNav{
+	-webkit-transition:0.3s;
+	-moz-transition:0.3s;
+	-o-transition:0.3s;
+	-ms-transition:0.3s;
+	transition:0.3s;
+	}
+
+/* Media Queries to hide elements in smaller viewports - added to main media queries CSS file */
+/*
+@media screen and (max-width:650px) {
+	.nivo-caption, .nivo-controlNav.nivo-thumbs-enabled{visibility:hidden; opacity:0; filter:alpha(opacity=0);}
+	}
+
+@media screen and (min-width:180px) and (max-width:361px) {
+	.nivo-directionNav a{display:none;}
+	} 
+*/

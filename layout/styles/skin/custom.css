@@ -1,0 +1,235 @@
+/*
+Template Name: CleanCut
+Template URI: http://www.os-templates.com/
+Description: Designed and Built by <a href="http://www.os-templates.com/">OS Templates</a>. This modern template is adaptable, lightweight and fully customisable. The template is easy to use, enabling you to create your site within minutes. 
+Version: 1.0
+Author: OS-Templates.com
+Author URI: http://www.os-templates.com/
+Licence: 
+Licence URI: 
+Tags: dark, light, responsive
+File: Custom Skin CSS
+*/
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for navigation.css-------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Top Navigation */
+
+.tno-2 nav ul li a, .tno-4 nav ul li a{color:inherit; background-color:;}
+#header.tno-2 nav ul li a.drop:before, #header.tno-4 nav ul li a.drop:before{border-top-color:;}
+
+#header.tno-10 nav ul:first-child li{border-left-color:; border-right-color:;}
+
+#topnav li li{border-color:# transparent # transparent;}/* # represents a colour */
+#topnav li li a, #topnav li.active li a{color:; background:;}
+
+/* Top navigation for smaller resolutions */
+
+#topnav form select{color:inherit; background:; border-color:;}
+
+/* Sidebar Navigation */
+
+.sidebar aside nav a{color:; background-color:inherit; border-bottom-color:;}
+
+/* Pagination */
+
+.pagination a{border-color:;}
+
+/* Footer Navigation */
+
+.footer_nav ul li{border-top-color:;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for elements.css---------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Call To Action - Best used as a full width banner */
+
+.calltoaction{color:; background-color:;}
+
+/* Lists - For ul + ol */
+
+.list.block li > ul, .list.block li > ol{border-color:;}
+.list.underline li{border-bottom-color:;}
+.list.tagcloud li a, .list.posttags li a{color:; background-color:;}
+.list.posttags li a:before{border-right-color:;}
+
+.p-footer .list.tagcloud li a, .p-footer .list.posttags li a{color:; background-color:;}
+.p-footer .list.posttags li a:before{border-right-color:;}
+
+/* Dividers */
+
+hr{background-color:;}
+.divider1, .divider2, .divider3{border-top-color:;}
+
+/* Alert Messages */
+
+.alert-msg{color:inherit;}
+
+/* Pricing Tables */
+
+.pricingtable-wrapper{border-color:;}
+.pricingtable-wrapper .pricingtable .pricingtable-list ul li{border-color:;}
+.pricingtable-wrapper .pricingtable .pricingtable-title, .pricingtable-wrapper .pricingtable .pricingtable-price{color:; background-color:;}
+
+.pricingtable-wrapper.opt2{border-color:;}
+
+.pricingtable-wrapper-opt3{color:inherit; background-color:;}
+.pricingtable-wrapper.opt3 .pricingtable{color:inherit; background-color:; border-color:;}
+.pricingtable-wrapper.opt3 .pricingtable .pricingtable-title{background-color:inherit;}
+
+/* Jquery Tabs */
+
+.tab-wrapper .tab-nav li a{border-color:;}
+.tab-wrapper .tab-nav li.ui-tabs-active a{border-bottom-color:;}
+.tab-wrapper .tab-container{border-color:;}
+
+.tab-wrapper.tab-opt2 .tab-nav li a{border-bottom-color:;}
+
+/* Jquery Accordion + Jquery Toggle */
+
+.accordion-wrapper .accordion-title, .accordion-wrapper .accordion-title.active, .toggle-wrapper .toggle-title, .toggle-wrapper .toggle-title.active{border-color:;}
+.accordion-wrapper .accordion-title span, .accordion-wrapper .accordion-title.active span, .toggle-wrapper .toggle-title span, .toggle-wrapper .toggle-title.active span{border-color:;}
+.accordion-wrapper .accordion-content, .toggle-wrapper .toggle-content{border-color:;}
+
+/* Forms */
+
+form input, form select, form textarea{color:inherit; background-color:inherit; border-color:;}
+form input[type="submit"], form input[type="reset"]{color:; background-color:;}
+
+.jq-selectbox .select{
+	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAIAAABi9+OQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+v//PxM2zMDAQEtxgAADAF2uTe9L4getAAAAAElFTkSuQmCC") repeat-x;
+	background-color:;
+	border-color:;
+	}
+
+/* Tables */
+
+table, table td, .table, .table .t-cell{border-color:;}
+table thead th, .table .t-header .t-cell{color:; background-color:; border-color:;}
+table tr, .table .t-row{color:; background-color:;}
+/*
+table tr:nth-child(even), .table .t-row:nth-child(even){color:; background-color:;}
+nth-child is Not supported by IE8 so its been commented out and we changed it to:
+*/
+table tr.dark, .table .t-row.dark{color:; background-color:;}
+table tr:hover, .table .t-row:hover{background-color:;}
+
+/* Social Icons */
+
+.social a, .social.coloured a:hover{color:; background-color:;}
+.social a:hover, .social.coloured a{color:;}
+
+/* Skillset */
+
+.skillset span{color:; background-color:;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for pages.css------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Site Wide Shared Classes */
+
+.blog-post-title a{color:; background-color:inherit;}
+
+/* Blog Overview */
+
+#blog-posts #blog-overview .blog-post-excerpt .blog-post-meta ul,
+#blog-posts #blog-overview .blog-post-excerpt .blog-post-meta ul li,
+#blog-post .post-content-wrapper .post-content .blog-post-meta ul li{border-color:;}
+
+/* Blog Post Single */
+
+#blog-post .post-content-wrapper .post-content .blog-post-meta, 
+#blog-post .blog-post-related ul.related li img, 
+#blog-post #comment-count, 
+#blog-post #comment-list .comment-wrapper .comment-meta .comment-author .comment-date .comment-reply, 
+#blog-post #comment-list .comment-wrapper .comment-meta .comment-avatar img{border-color:;}
+
+/* 404 */
+
+#fof h1{text-shadow:6px 6px 0 rgba(229, 228, 227, 1);}
+#fof p.clear{border-color:;}
+
+/* About Us */
+
+figure.team-member figcaption .team-description{border-color:;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for shop.css------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Product Display Options */
+
+.prd-options{border-color:;}
+.prd-options .displayview .prd-layout span.active-view{color:; background-color:;}
+
+/* Product Overview */
+
+.prd-wrap article .prd-info .prd-meta{border-color:;}
+
+/* Basket */
+
+#basket .t-header .t-cell{border-color:;} /* Same colour as the main containing DIV */
+#basket button{background-color:transparent;}
+#basket input[type="text"]{border-color:;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------Colour Coding for layout.css------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+body{color:; background-color:;}
+html.boxed body{color:; background-color:;}
+
+.boxholder{border-color:;}
+
+/* Row Styling */
+
+.row0, .row0 a{color:; background-color:;}
+.row1, .row1 a{color:; background-color:;}
+.row2{color:; background-color:;}
+.row3{color:; background-color:; border-top-color:;}
+.row4{color:; background-color:; border-bottom-color:;}
+.row4 a{background-color:inherit;}
+.row5{color:; background-color:; border-top-color:;}
+.row6{color:; background-color:;}
+
+/* Generalise */
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{border-color:;}
+
+/* Topbar */
+
+#topbar .fl_left li{border-left-color:;}
+
+/* Page Intro */
+
+#pageintro .breadcrumb a{color:; background-color:inherit;}
+
+/* Main Container => Content + Sidebar */
+
+.sidebar aside h2{border-bottom-color:;}
+
+/* Footer */
+
+.p-footer .footer_title{border-bottom-color:;}
+.p-footer .tweet-container li{border-top-color:;}
+.p-footer form input, .p-footer form textarea{color:; background-color:; border-color:;}
+
+.p-footer a, #copyright a{color:; background-color:inherit;}
+
+.p-footer [class^="socico-"], .p-footer [class*=" socico-"]{color:inherit; background-color:;}
+.p-footer [class^="socico-"]:hover, .p-footer [class*=" socico-"]:hover{color:; background-color:;}
+
+.p-footer .list.underline li{border-bottom-color:;}
+
+.p-footer hr{background-color:;}
+.p-footer .divider1, .p-footer .divider2, .p-footer .divider3{border-top-color:;}
+
+.p-footer .testimonial blockquote{border-color:;}

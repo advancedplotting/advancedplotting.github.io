@@ -1,0 +1,220 @@
+/*
+Template Name: CleanCut
+Template URI: http://www.os-templates.com/
+Description: Designed and Built by <a href="http://www.os-templates.com/">OS Templates</a>. This modern template is adaptable, lightweight and fully customisable. The template is easy to use, enabling you to create your site within minutes. 
+Version: 1.0
+Author: OS-Templates.com
+Author URI: http://www.os-templates.com/
+Licence: 
+Licence URI: 
+Tags: dark, light, responsive
+File: RTL CSS
+*/
+
+html, body{text-align:right;}
+
+form, ul, ol, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, .read-more, .button{direction:rtl;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*--------------------------------------RTL for layout.css--------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+h1 span:after, h2 span:after, h3 span:after, h4 span:after, h5 span:after, h6 span:after{right:0;}
+
+/* Topbar */
+
+#topbar .fl_left li{margin:0 15px 0 0; padding:0 15px 0 0; border:solid; border-width:0 1px 0 0;}
+
+/* Page Intro */
+
+/*
+If the breadcrumb has to be semantically correct, the HTML code must be in reverse order i.e. "Home" must be last in the list, not first
+To get around this we set the list elements to float right and a visual RTL result is created
+*/
+
+#pageintro .breadcrumb li{margin:0 0 0 10px; float:right;}
+#pageintro .breadcrumb li:last-child{margin:0;}
+#pageintro .breadcrumb a{padding:0 15px 0 0;}
+#pageintro .breadcrumb a:before{right:0; content:"\f100";}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*----------------------------------RTL for navigation.css--------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Top Navigation */
+
+#topnav ul, #topnav li{direction:ltr;}
+#topnav ul ul{right:0;}
+#topnav ul ul ul, #topnav ul ul ul ul{left:-190px; top:-1px;}
+#topnav ul:first-child li:first-child > ul{right:0;}
+#topnav ul:first-child > li:first-child li > ul{left:-190px;}
+#topnav li{float:right;}
+
+#topnav li a.drop:before, #topnav li.active a.drop:before{right:14px; left:inherit;}
+#topnav li li a.drop:before, #topnav li.active li a.drop:before{right:5px; left:inherit;}
+
+#header[class^="tno-"] nav ul:first-child li, #header[class*=" tno-"] nav ul:first-child li{margin:0 0 0 10px;}
+#header[class^="tno-"] nav ul:first-child li:last-child, #header[class*=" tno-"] nav ul:first-child li:last-child{margin-left:0;}
+#header[class^="tno-"] nav ul li a.drop:before, #header[class*=" tno-"] nav ul li a.drop:before{top:16px; right:7px; left:inherit;}
+
+#header.tno-2 nav ul li a.drop:before{top:inherit; right:5px;}
+#header.tno-3 nav ul li a.drop:before{top:16px; right:7px;}
+#header.tno-4 nav ul li a.drop:before{top:inherit; bottom:-15px; left:45%;}
+#header.tno-10 nav ul li a.drop:before{top:11px; right:7px;}
+#header.tno-10 nav ul:first-child li{margin:0; padding:0 8px 0 0; border-left:none; border-right:1px solid;}
+#header.tno-10 nav ul:first-child li:first-child, #header.tno-10 nav ul:first-child ul li{border-left:none; border-right:none; padding:0;}
+
+#header[class^="tno-"] nav li li a.drop:before, #header[class^="tno-"] nav li.active li a.drop:before,
+#header[class*=" tno-"] nav li li a.drop:before, #header[class*=" tno-"] nav li.active li a.drop:before{top:16px; right:5px; left:inherit;}
+
+/* Sidebar Navigation */
+
+.sidebar aside nav a{padding:5px 15px 5px 10px;}
+.sidebar aside nav a:before{right:5px; content:"\f0d9";}
+.sidebar aside nav ul ul a{padding-right:35px;}
+.sidebar aside nav ul ul a:before{right:25px;}
+.sidebar aside nav ul ul ul a{padding-right:45px;}
+.sidebar aside nav ul ul ul a:before{right:35px;}
+.sidebar aside nav ul ul ul ul a{padding-right:55px;}
+.sidebar aside nav ul ul ul ul a:before{right:45px;}
+.sidebar aside nav ul ul ul ul ul a{padding-right:65px;}
+.sidebar aside nav ul ul ul ul ul a:before{right:55px;}
+
+/*----------------------------------------------------------------------------------------*/
+/*------------------------------------RTL for elements.css--------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Lists - ul + ol */
+
+.list.indent{margin-left:0; margin-right:20px;}
+.list li > ul, .list li > ol{margin:8px 30px 8px 0;}
+.list.block li > ul, .list.block li > ol{padding:0 10px 0 0; border-width:0 1px 0 0;}
+.list.tick li, .list.arrow li{padding-left:0; padding-right:22px;}
+.list.tick li:before, .list.arrow li:before{display:none;}
+.list.tick li:after, .list.arrow li:after{right:0;}
+.list.tick li:after{content:"\f00c";}
+.list.arrow li:after{content:"\f060";}
+
+.list.posttags{padding:12px 0 0 0;}
+.list.posttags li{margin:0 0 5px 15px;}
+.list.posttags li:last-child{margin-left:0;}
+
+/* Dropcaps */
+
+.dropcap{float:right; margin:0 0 0 10px;}
+
+/* Alert Messages */
+
+.alert-msg{padding:15px 20px 15px 40px;}
+.alert-msg .close{right:inherit; left:20px;}
+
+/* Jquery Accordion + Jquery Toggle */
+
+.accordion-wrapper .accordion-title, .accordion-wrapper .accordion-title.active, .toggle-wrapper .toggle-title, .toggle-wrapper .toggle-title.active{padding:0 34px 0 0;}
+.accordion-wrapper .accordion-title span, .accordion-wrapper .accordion-title.active span, .toggle-wrapper .toggle-title span, .toggle-wrapper .toggle-title.active span{border-width:0 1px 0 0;}
+.accordion-wrapper .accordion-title:before, .toggle-wrapper .toggle-title:before, .accordion-wrapper .accordion-title.active:before, .toggle-wrapper .toggle-title.active:before{left:inherit; right:9px;}
+
+/* Jquery Tabs */
+
+.tab-wrapper .tab-nav li{display:inline-block; float:right; margin:0 0 -1px -1px;}
+
+.tab-wrapper.rnd5 .tab-nav li:first-child a{-moz-border-radius:0 5px 0 0; -webkit-border-radius:0 5px 0 0; border-radius:0 5px 0 0;}
+.tab-wrapper.rnd5 .tab-nav li:last-child a{-moz-border-radius:5px 0 0 0; -webkit-border-radius:5px 0 0 0; border-radius:5px 0 0 0;}
+.tab-wrapper.rnd5 .tab-container{-moz-border-radius:5px 0 5px 5px; -webkit-border-radius:5px 0 5px 5px; border-radius:5px 0 5px 5px;}
+.tab-wrapper.rnd8 .tab-nav li:first-child a{-moz-border-radius:0 8px 0 0; -webkit-border-radius:0 8px 0 0; border-radius:0 8px 0 0;}
+.tab-wrapper.rnd8 .tab-nav li:last-child a{-moz-border-radius:8px 0 0 0; -webkit-border-radius:8px 0 0 0; border-radius:8px 0 0 0;}
+.tab-wrapper.rnd8 .tab-container{-moz-border-radius:8px 0 8px 8px; -webkit-border-radius:8px 0 8px 8px; border-radius:8px 0 8px 8px;}
+.tab-wrapper.rnd10 .tab-nav li:first-child a{-moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0; border-radius:0 10px 0 0;}
+.tab-wrapper.rnd10 .tab-nav li:last-child a{-moz-border-radius:10px 0 0 0; -webkit-border-radius:10px 0 0 0; border-radius:10px 0 0 0;}
+.tab-wrapper.rnd10 .tab-container{-moz-border-radius:10px 0 10px 10px; -webkit-border-radius:10px 0 10px 10px; border-radius:10px 0 10px 10px;}
+.tab-wrapper.rnd12 .tab-nav li:first-child a{-moz-border-radius:0 12px 0 0; -webkit-border-radius:0 12px 0 0; border-radius:0 12px 0 0;}
+.tab-wrapper.rnd12 .tab-nav li:last-child a{-moz-border-radius:12px 0 0 0; -webkit-border-radius:12px 0 0 0; border-radius:12px 0 0 0;}
+.tab-wrapper.rnd12 .tab-container{-moz-border-radius:12px 0 12px 12px; -webkit-border-radius:12px 0 12px 12px; border-radius:12px 0 12px 12px;}
+
+.tab-wrapper.tab-opt2 .tab-nav li a{padding:10px 0 10px 20px;}
+.tab-wrapper.tab-opt2 .tab-nav li.ui-tabs-active a:before{position:absolute; top:12px; left:0; font-family:"FontAwesome"; font-size:13px; content:"\f060";}
+.tab-wrapper.tab-opt2 .tab-nav li.ui-tabs-active a:after{display:none;}
+
+/* Testimonials */
+
+.testimonial div blockquote{padding:0 60px 0 0;}
+.testimonial div blockquote:before{left:auto; right:0; content:"\201D";}
+
+.testimonial.opt2 blockquote{position:relative; width:auto; margin:0 0 20px 0; padding:20px; border-width:1px;}
+.testimonial.opt2 blockquote:after{left:auto; right:20px;}
+.testimonial.opt2 .testimonial-author{margin:0 20px 0 0;}
+
+.testimonial.opt3 blockquote{-moz-border-radius:0 8px 8px 8px; -webkit-border-radius:0 8px 8px 8px; border-radius:0 8px 8px 8px;}
+.testimonial.opt3 blockquote:before{left:auto; right:20px; border-width:20px 40px 0 0;}
+.testimonial.opt3 blockquote:after{right:auto; left:-1px; content:"\201C";}
+
+.testimonial.opt3 .testimonial-author img, .testimonial.opt3 .testimonial-author .testimonial-caption{float:right;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*---------------------------------------RTL for pages.css--------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Blog Overview */
+
+#blog-posts #blog-overview .blog-post-excerpt .blog-post-meta ul li{margin-left:inherit; margin-right:5px; padding-left:inherit; padding-right:8px; border-width:0 1px 0 0;}
+#blog-posts #blog-overview .blog-post-excerpt .blog-post-meta ul li:first-child{margin-right:0; margin-left:inherit;}
+
+/* Blog Post Single */
+
+#blog-post .post-author-bio .post-author-image{float:right; margin-right:0; margin-left:15px;}
+#blog-post .blog-post-related ul.related li img{float:right; margin:0 0 0 10px;}
+
+#blog-post #comment-list .comment-wrapper .comment-meta div{float:right; margin-right:0; margin-left:15px; line-height:normal;}
+#blog-post #comment-list .comment-wrapper .comment-meta div:last-child{margin-left:0;}
+#blog-post #comment-list .comment-wrapper .comment-meta .comment-author .comment-date time{float:right; margin-right:0; margin-left:10px;}
+#blog-post #comment-list .comment-wrapper .comment-meta .comment-author .comment-date .comment-reply{float:right; padding:0 10px 0 0; border-width:0 1px 0 0;}
+
+#blog-post .post-content-wrapper .post-content .blog-post-meta ul li{margin-left:inherit; margin-right:5px; padding-left:inherit; padding-right:8px; border-width:0 1px 0 0;}
+#blog-post .post-content-wrapper .post-content .blog-post-meta ul li:first-child{margin-right:0; margin-left:inherit;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*--------------------------------------RTL for shop.css----------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Shop */
+
+#tab-reviews article div.fl_left:first-child{float:right;}/* This is a backup as the element itself can be changed from "fl_left" to "fl_right" */
+
+.prd-rating strong{float:right; margin-left:5px; margin-right:0;}
+.prd-rating ul{float:right;}
+.prd-rating ul li{float:right; margin:0 0 0 3px;}
+.prd-rating ul li span{margin:0 0 0 -2px;}
+
+.prd-wrap article .prd-info .prd-meta ul li{margin:0 0 10px 20px;}
+.prd-wrap article .prd-info .prd-meta ul li:last-child, .prd-wrap article .prd-info .prd-meta ul li.last{margin-left:0;}
+
+/* Basket */
+
+#basket .description{text-align:right; max-width:350px;}
+#basket input, #basket button{margin:0 0 0 10px;}
+#basket button:last-child{margin-left:0;}
+button.update span{margin-right:inherit; margin-left:5px;}
+
+#shop-cart-total .cell.title, #shop-cart-total .cell.amount{float:right;}
+#shop-cart-total .cell.title{min-width:80px; text-align:left;}
+#shop-cart-total .cell.amount{min-width:inherit; padding-right:10px;}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------------------Sliders--------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+/* Flexslider */
+
+.flex-container.flex-rtl{display:block; max-width:100%;}
+.flex-container.flex-rtl .flex-direction-nav{right:inherit; left:0;}
+.flex-container.flex-rtl .flex-control-paging li a{text-indent:9999px; text-align:left;}
+
+/* Nivo Slider */
+
+.nivo-caption, .nivo-content{text-align:right;}
+.nivo-controlNav a.nivo-control{text-indent:9999em;}

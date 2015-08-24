@@ -1,0 +1,5 @@
+ul.demo_li_space li{display:inline-block; *display:inline; margin:0 5px 10px 0; padding:0;}
+ul.demo_li_space .button{*margin-bottom:8px;}
+ul.demo_li_space li:last-child{margin-right:0;}
+
+div.columncolor div{margin-bottom:30px; color:#FFFFFF; background-color:#666666;}

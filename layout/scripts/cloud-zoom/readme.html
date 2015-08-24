@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cloud Zoom jQuery Plugin: v1.0.4</title>
+<meta charset="UTF-8">
+<style type="text/css">
+body{margin:0; padding:30px; font-size:14px; font-family:Verdana, Geneva, sans-serif;}
+table{width:100%; border-collapse:collapse; table-layout:auto; vertical-align:top; margin-bottom:15px; border:1px solid #CCCCCC;}
+table thead th{color:#FFFFFF; background-color:#666666; border:1px solid #CCCCCC; border-collapse:collapse; text-align:center; table-layout:auto; vertical-align:middle;}
+table tbody td{vertical-align:top; border-collapse:collapse; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC;}
+table thead th, table tbody td{padding:8px; border-collapse:collapse;}
+table tbody tr{color:#666666; background-color:#F7F7F7;}
+table tbody tr:nth-child(even){color:#666666; background-color:#E8E8E8;}
+</style>
+</head>
+<body>
+<h1>Minimal Set-up</h1>
+<pre>
+&lt;a id=&quot;zoom01&quot; class=&quot;cloud-zoom&quot; href=&quot;images/1-large.jpg&quot; data-cloudzoom=&quot;position:'inside', softFocus:1, smoothMove:5, tintOpacity:0.8&quot;&gt;&lt;img src=&quot;images/1-medium.jpg&quot; alt=&quot;&quot; title=&quot;Main Image Title&quot;&gt;&lt;/a&gt;<br>
+&lt;a class=&quot;cloud-zoom-gallery&quot; href=&quot;images/1-large.jpg&quot; data-cloudzoom=&quot;useZoom: 'zoom01', mediumImage: 'images/1-medium.jpg'&quot;&gt;&lt;img src=&quot;images/1-small.jpg&quot; alt=&quot;&quot; title=&quot;Image 1&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;cloud-zoom-gallery&quot; href=&quot;images/2-large.jpg&quot; data-cloudzoom=&quot;useZoom: 'zoom01', mediumImage: 'images/2-medium.jpg'&quot;&gt;&lt;img src=&quot;images/2-small.jpg&quot; alt=&quot;&quot; title=&quot;Image 2&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;cloud-zoom-gallery&quot; href=&quot;images/3-large.jpg&quot; data-cloudzoom=&quot;useZoom: 'zoom01', mediumImage: 'images/3-medium.jpg'&quot;&gt;&lt;img src=&quot;images/3-small.jpg&quot; alt=&quot;&quot; title=&quot;Image 3&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;cloud-zoom-gallery&quot; href=&quot;images/4-large.jpg&quot; data-cloudzoom=&quot;useZoom: 'zoom01', mediumImage: 'images/4-medium.jpg'&quot;&gt;&lt;img src=&quot;images/4-small.jpg&quot; alt=&quot;&quot; title=&quot;Image 4&quot;&gt;&lt;/a&gt;
+</pre>
+<p>&nbsp;</p>
+<p>The reference to each image, be it small, medium or large needs to be adjusted to suit your needs. You may well not have a folder called &quot;images&quot;, it could be called &quot;media&quot; or something else.</p>
+<p>You are not restricted to only using &quot;.jpg&quot;, you can use any image type you wish e.g. &quot;.png&quot;, &quot;.gif&quot; etc.</p>
+<p>&nbsp;</p>
+<h2>Zoom settings</h2>
+<p>All parameters are defined in the <strong>data-cloudzoom</strong> attribute of the main image id=&quot;zoom01&quot;.</p>
+<table>
+  <tbody>
+    <tr>
+      <td>zoomWidth</td>
+      <td>in pixels</td>
+      <td>The width of the zoom window in pixels. If it is missing, the width will be the same as the small image.</td>
+    </tr>
+    <tr>
+      <td>zoomHeight</td>
+      <td>in pixels</td>
+      <td>The height of the zoom window in pixels. If it is missing, the height will be the same as the small image.</td>
+    </tr>
+    <tr>
+      <td>position</td>
+      <td>&nbsp;</td>
+      <td>Default value <strong>&quot;right&quot;</strong>. Specifies the position of the zoom window relative to the small image. Allowable values are &quot;left&quot;, &quot;right&quot;, &quot;top&quot;, &quot;bottom&quot;, &quot;inside&quot; or you can specifiy the id of an html element to place the zoom window.</td>
+    </tr>
+    <tr>
+      <td>adjustX</td>
+      <td>in pixels</td>
+      <td>Default value <strong>0</strong>. Allows you to fine tune the x-position of the zoom window.</td>
+    </tr>
+    <tr>
+      <td>adjustY</td>
+      <td>in pixels</td>
+      <td>Default value <strong>0</strong>. Allows you to fine tune the y-position of the zoom window.</td>
+    </tr>
+    <tr>
+      <td>tint</td>
+      <td>#aa00aa</td>
+      <td>Specifies a tint color which will cover the small image. Colors should be specified in hex format, e.g. #aa00aa. Effects with <strong>Blur Effect.</strong> are applied with some restrictions.</td>
+    </tr>
+    <tr>
+      <td>tintOpacity</td>
+      <td>&nbsp;</td>
+      <td>Tint Opacity. Default value <strong>0.5</strong>. Where 0 is fully transparent, and 1 is fully opaque.</td>
+    </tr>
+    <tr>
+      <td>softFocus</td>
+      <td>true/false</td>
+      <td>Applies a subtle blur effect to the small image. Set to true or false. Effects with <strong>Tint Effect.</strong> are applied with some restrictions.</td>
+    </tr>
+    <tr>
+      <td>smoothMove</td>
+      <td>&nbsp;</td>
+      <td>Default value <strong>3</strong>. Amount of smoothness/drift of the zoom image as it moves. The higher the number, the smoother/more drifty the movement will be. 1 = no smoothing.</td>
+    </tr>
+    <tr>
+      <td>lensOpacity</td>
+      <td>&nbsp;</td>
+      <td>Lens mouse pointer opacity. Default value <strong>0.5</strong>. Where 0 is fully transparent, and 1 is fully opaque.</td>
+    </tr>
+    <tr>
+      <td>showTitle</td>
+      <td>true/false</td>
+      <td>Shows the title tag of the image.</td>
+    </tr>
+    <tr>
+      <td>titleOpacity</td>
+      <td>&nbsp;</td>
+      <td>Default value <strong>0.5</strong>. Specifies the opacity of the title if displayed, where 0 is fully transparent, and 1 is fully opaque.</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

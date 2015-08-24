@@ -1,0 +1,5 @@
+Nerve Slider - Copyright © 2013 Evolve
+Developed By: Ryan Bruzan
+Homepage: http://www.ryanbruzan.net/work/plugins/nerve-slider
+
+Nerve Slider is offered AS-IS and WITHOUT WARRANTY. You may make necessary modifications and use it for your personal use, but you may not sell, resell or redistribute it as your own.

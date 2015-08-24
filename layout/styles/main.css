@@ -1,0 +1,70 @@
+/* 
+Template Name: CleanCut
+Template URI: http://www.os-templates.com/
+Description: Designed and Built by <a href="http://www.os-templates.com/">OS Templates</a>. This modern template is adaptable, lightweight and fully customisable. The template is easy to use, enabling you to create your site within minutes. 
+Version: 1.0
+Author: OS-Templates.com
+Author URI: http://www.os-templates.com/
+Licence: 
+Licence URI: 
+Tags: dark, light, responsive
+File: Main CSS
+*/
+
+/* Fonts */
+@import url("fonts/open-sans/stylesheet.css");
+@import url("fonts/font-awesome/css/font-awesome.min.css");
+
+/* Custom Sliders */
+@import url("slider/custom-flexslider.css");
+@import url("slider/custom-nerveslider.css");
+@import url("slider/custom-nivo-slider.css");
+@import url("slider/custom-responsiveslides.css");
+@import url("slider/custom-unslider.css");
+
+/* Lightbox */
+@import url("../scripts/lightbox/magnific-popup/magnific-popup.css");
+@import url("../scripts/lightbox/nivo-lightbox/nivo-lightbox.css");
+@import url("../scripts/lightbox/nivo-lightbox/themes/default/default.css");
+@import url("../scripts/lightbox/prettyphoto/css/custom-prettyPhoto.css");
+@import url("../scripts/lightbox/custom.css");
+
+/* Layout */
+@import url("layout.css");
+@import url("navigation.css");
+@import url("pages.css");
+@import url("shop/shop.css");
+@import url("framework.css");
+@import url("elements.css");
+
+/* RTL Support
+IMPORTANT: this file must be before the skin & colours, but always below the main structure files at all times if/when used
+This file overrides all pre-defined LTR and left aligned elements
+Uncomment the following line for Right To Left language support */
+/*@import url("rtl/rtl.css");*/
+
+/* Layout Skin - A choice of light or dark skin - uncomment the one you wish to use */
+@import url("skin/light.css");
+/*@import url("skin/dark.css");*/
+
+/* Colour - Choose one of the following pre-defined colours
+@import url("colours/blue.css");
+@import url("colours/dkblue.css");
+@import url("colours/green.css");
+@import url("colours/maroon.css");
+@import url("colours/orange.css");
+@import url("colours/purple.css");
+@import url("colours/red.css");
+@import url("colours/yellow.css");
+*/
+
+@import url("colours/blue.css");
+
+/* Custom CSS & Overrides
+It is possible that updates will be carried out on core files, so if you have modified the core files and wish to update them you will have a job of finding your changes
+If you want to add your own css or override any of the pre-defined elements we suggest you use the custom.css file
+This file will never be updated by us, so your changes won't be affected */
+@import url("custom.css");
+
+/* Remove this before using the template */
+@import url("demo-only.css");

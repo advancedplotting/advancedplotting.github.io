@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Evolve - Nerve Slider</title>
+<meta charset="UTF-8">
+<style type="text/css">
+body{margin:0; padding:30px; font-family:Verdana, Geneva, sans-serif; font-size:13px; line-height:1em; color:#222222; background-color:#F5F5F5;}
+h1, h2, h3, h4, h5, h6{font-family:Georgia, "Times New Roman", Times, serif; font-size:18px; font-weight:normal; margin:0 0 30px 0; padding:0;}
+img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+table{table-layout:auto; width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+table thead th{text-align:left; vertical-align:middle;}
+table, table th, table td{border:none; border-collapse:collapse; border-spacing:0; vertical-align:top;}
+table th, table td{padding:15px 10px;}
+table thead th{color:#FFFFFF; background-color:#666666; border-color:#CCCCCC;}
+table tr{}
+table tr:nth-child(even){background-color:#FFFFFF;}
+table tr:hover{background-color:#EFEFEF;}
+.red{font-weight:normal; color:#FFFFFF; background-color:#FF5656;}
+.circle{display:inline-block; position:relative; margin:0 20px 20px 0; text-align:center; -moz-border-radius:50%; -webkit-border-radius:50%; border-radius:50%;}
+.circle.small{width:40px; height:40px; font-size:1.4em; line-height:2.2em;}
+hr{height:1px; margin:15px 0; border:none;}
+code{word-wrap:break-word; white-space:normal;}
+code.code{display:block; width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+pre, pre code{word-wrap:break-word; white-space:pre-wrap;}
+</style>
+</head>
+<body>
+<h1>Nerve Slider 8.7</h1>
+<p><strong>Developed By:</strong> Ryan Bruzan</p>
+<p><strong>Developers Homepage:</strong> <a target="_blank" href="http://www.ryanbruzan.net/work/plugins/nerve-slider">Evolve</a></p>
+<p style="margin-bottom:30px;"><strong>Like Nerve Slider?</strong> <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=CV46879BPZX6Q">Donate Here &raquo;</a></p>
+<h2>Nerve Slider was built around you.</h2>
+<p>People want a neat way to show off what they have, can do, or have done.  Now, this can be done with a little bit of large, flashy text and some fancy snippets here and there, but what if you want more?</p>
+<p>In order to suit your desires, Nerve Slider comes with many options and customizations to help you find that perfect harmony between good-looking and easily-managable. Check out the <a href="#optionstable">options table</a> below to see what you can do.</p>
+<p>Some of the main features of Nerve Slider:</p>
+<ul>
+  <li>Fully responsive (allows percentages in width and/or height)</li>
+  <li>Adaptable (can resize itself to your browser, with or without aspect ratio)</li>
+  <li>Scaleable (you can set Nerve Slider to fit, fill, or stretch the images to fit)</li>
+  <li>Mobile supported (allow gestures and dragging)</li>
+  <li>Video supported (allows videos in slides)</li>
+</ul>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<hr>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<img src="images/nerve-diagram.png" alt="">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<hr>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<h2>What do I do?</h2>
+<div style="margin-bottom:30px;">
+  <p><strong class="red circle small">1</strong> Include the jQuery &amp; jQueryUI library.</p>
+  <pre><code>&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div style="margin-bottom:30px;">
+  <p><strong class="red circle small">2</strong> Include the Nerve Slider jQuery &amp; CSS.</p>
+  <pre><code>&lt;script src=&quot;YOUR PATH/jquery.nerveSlider.js&quot;&gt;&lt;/script&gt; <strong class="red">(OR)</strong> &lt;script src=&quot;YOUR PATH/jquery.nerveSlider.min.js&quot;&gt;&lt;/script&gt;
+&lt;link href=&quot;YOUR PATH/nerveSlider.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot;&gt;</code></pre>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div style="margin-bottom:30px;">
+  <p><strong class="red circle small">3</strong> Make a <code>div</code> with any class or ID and throw in your <code>img</code>'s.  Attributes you can add to your <code>img</code>'s can be viewed in the table below.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Example Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>data-slidecaption</td>
+        <td>Applies a caption to that slide. Add an <code>h1</code> for a cool heading.</td>
+        <td><code>&lt;img src=&quot;img.jpg&quot; alt=&quot;&quot; data-slidecaption=&quot;&lt;h1&gt;Title&lt;/h1&gt;Text&quot;&gt;</code></td>
+      </tr>
+      <tr>
+        <td>data-linkto</td>
+        <td>Applies a link to the given value. (You can also wrap the img in an anchor tag.)</td>
+        <td><code>&lt;img src=&quot;img.jpg&quot; alt=&quot;&quot; data-linkto=&quot;http://www.domain.com/&quot;&gt;<br>
+          <br>
+          <strong class="red">(OR)</strong><br>
+          <br>
+          &lt;a href=&quot;http://www.domain.com/&quot;&gt;&lt;img src=&quot;img.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;</code></td>
+      </tr>
+      <tr>
+        <td>data-linktarget</td>
+        <td>Applies a Target attribute for the link. (You can also wrap the img in an anchor tag.)</td>
+        <td><code>&lt;img src=&quot;img.jpg&quot; alt=&quot;&quot; data-linkto=&quot;http://www.domain.com/&quot; data-linktarget=&quot;_blank&quot;&gt;<br>
+          <br>
+          <strong class="red">(OR)</strong><br>
+          <br>
+          &lt;a href=&quot;http://www.domain.com/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;img.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;</code></td>
+      </tr>
+      <tr>
+        <td>data-imagescalemode</td>
+        <td>Overrides the default scale mode for that slide.  View options table below for allowed values.</td>
+        <td><code>&lt;img src=&quot;img.jpg&quot; alt=&quot;&quot; data-imagescalemode=&quot;fit&quot;&gt;</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Example 1.</strong></p>
+  <pre style="margin-bottom:20px"><code>&lt;div class=&quot;iAmTest&quot;&gt;
+  &lt;img src=&quot;img.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;img src=&quot;img2.png&quot; alt=&quot;&quot;&gt;
+  &lt;img src=&quot;img3.gif&quot; alt=&quot;&quot;&gt;
+  &lt;!-- etc... --&gt;
+&lt;/div&gt;</code></pre>
+  <p><strong>Example 2.</strong></p>
+  <pre style="margin-bottom:20px"><code>&lt;div class=&quot;iAmTest&quot;&gt;
+  &lt;img src=&quot;img.jpg&quot; alt=&quot;&quot; data-slidecaption=&quot;This is a slide caption!&quot;&gt;
+  &lt;img src=&quot;img2.jpg&quot; alt=&quot;&quot; data-slidecaption=&quot;I have a link!&quot; data-linkto=&quot;http://www.domain.com/&quot; data-linktarget=&quot;_blank&quot;&gt;
+  &lt;img src=&quot;img3.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;img src=&quot;img4.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;</code></pre>
+  <p><strong>Example 3.</strong></p>
+  <p>You can also add extra content to the slide. Just wrap your <code>img</code> in a <code>div</code> and create another <code>div</code> with a class of &quot;<strong>ns_slideContent</strong>&quot; inside.</p>
+  <pre><code>&lt;div class=&quot;iAmTest&quot;&gt;
+  &lt;div&gt;&lt;img src=&quot;img.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;div class=&quot;ns_slideContent&quot;&gt;Anything can go here! You're in control!&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;img src=&quot;img2.png&quot; alt=&quot;&quot;&gt;
+  &lt;img src=&quot;img3.gif&quot; alt=&quot;&quot;&gt;
+  &lt;!-- etc... --&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div id="optionstable" style="margin-bottom:30px;">
+  <p><strong class="red circle small">4</strong> In the page html, set up Nerve Slider using the following options inside a <code>nerveSlider()</code> function.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Option Name</th>
+        <th>Default</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>sliderWidth</td>
+        <td>&quot;1200px&quot;</td>
+        <td>String</td>
+        <td>The width of the slider.  Include units.</td>
+      </tr>
+      <tr>
+        <td>sliderHeight</td>
+        <td>&quot;500px&quot;</td>
+        <td>String</td>
+        <td>The height of the slider.  Include units.</td>
+      </tr>
+      <tr>
+        <td>sliderHeightAdaptable</td>
+        <td>false</td>
+        <td>Boolean</td>
+        <td>If true, the slider will adapt to either the current slide's image height or the current slide's content height, depending on which one is tallest.</td>
+      </tr>
+      <tr>
+        <td>sliderFullscreen</td>
+        <td>false</td>
+        <td>Boolean True/False</td>
+        <td>If true, sets the slider as a backgound slideshow.</td>
+      </tr>
+      <tr>
+        <td>sliderAutoPlay</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, slides automatically start timed transitions.</td>
+      </tr>
+      <tr>
+        <td>waitForLoad</td>
+        <td>false</td>
+        <td>Boolean True/False</td>
+        <td>If true, the slider will wait for all slides to load before beginning timed transitions.</td>
+      </tr>
+      <tr>
+        <td>slideTransition</td>
+        <td>&quot;slide&quot;</td>
+        <td>String</td>
+        <td>The type of transition that will occur.  Allowed values: &quot;slide&quot; | &quot;fade&quot;</td>
+      </tr>
+      <tr>
+        <td>slideTransitionDirection</td>
+        <td>&quot;left&quot;</td>
+        <td>String</td>
+        <td>The direction in which the slide transitions.  Only applicable when <code>slideTransition</code> is set to &quot;slide&quot;.  Allowed values: &quot;up&quot; | &quot;right&quot; | &quot;down&quot; | &quot;left&quot;</td>
+      </tr>
+      <tr>
+        <td>slideTransitionSpeed</td>
+        <td>1000</td>
+        <td>Number</td>
+        <td>The speed of the transition, in milliseconds.</td>
+      </tr>
+      <tr>
+        <td>slideTransitionDelay</td>
+        <td>5000</td>
+        <td>Number</td>
+        <td>The duration each slide is shown, in milliseconds.</td>
+      </tr>
+      <tr>
+        <td>slideTransitionEasing</td>
+        <td>&quot;swing&quot;</td>
+        <td>String</td>
+        <td>The type of easing associated with the slide transition.  May require jQueryUI.</td>
+      </tr>
+      <tr>
+        <td>slideTransitionStart</td>
+        <td>function(){}</td>
+        <td>Function</td>
+        <td>The callback function to occur just before the transition takes place.</td>
+      </tr>
+      <tr>
+        <td>slideTransitionComplete</td>
+        <td>function(){}</td>
+        <td>Function</td>
+        <td>The callback function to occur just after the transition takes place.</td>
+      </tr>
+      <tr>
+        <td>slideImageScaleMode</td>
+        <td>&quot;fill&quot;</td>
+        <td>String</td>
+        <td>The type of image sizing/positioning for each slide.  Allowed values: &quot;fit&quot; | &quot;fill&quot; | &quot;stretch&quot; | &quot;center&quot; | &quot;none&quot;</td>
+      </tr>
+      <tr>
+        <td>slideShuffle</td>
+        <td>false</td>
+        <td>Boolean True/False</td>
+        <td>If true, all slides will be displayed in a random order. Thanks to Joao Pedro for the idea!</td>
+      </tr>
+      <tr>
+        <td>slideReverse</td>
+        <td>false</td>
+        <td>Boolean True/False</td>
+        <td>If true, all slides will be displayed in reverse order.</td>
+      </tr>
+      <tr>
+        <td>startOnSlide</td>
+        <td>1</td>
+        <td>Number</td>
+        <td>The number of the slide to begin the slideshow on. This value is not zero-based.</td>
+      </tr>
+      <tr>
+        <td>showFilmstrip</td>
+        <td>false</td>
+        <td>Boolean True/False</td>
+        <td>If true, a set of thumbnails containing the slides will be shown on hover.</td>
+      </tr>
+      <tr>
+        <td>showCaptions</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, all captions will be displayed if applicable.</td>
+      </tr>
+      <tr>
+        <td>simultaneousCaptions</td>
+        <td>false</td>
+        <td>Boolean True/False</td>
+        <td>If true, captions will appear or disappear in time with the slide transition.</td>
+      </tr>
+      <tr>
+        <td>showTimer</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, a timer showing the remaining duration of the current slide will be shown.</td>
+      </tr>
+      <tr>
+        <td>timerStartWidth</td>
+        <td>&quot;0%&quot;</td>
+        <td>String</td>
+        <td>The starting width of the timer bar.  Include units.</td>
+      </tr>
+      <tr>
+        <td>timerEndWidth</td>
+        <td>&quot;100%&quot;</td>
+        <td>String</td>
+        <td>The ending width of the timer bar.  Include units.</td>
+      </tr>
+      <tr>
+        <td>showPause</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, a pause/resume button will be shown on hover.</td>
+      </tr>
+      <tr>
+        <td>showArrows</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, arrows associated with previous/next slide functions will be shown.</td>
+      </tr>
+      <tr>
+        <td>showDots</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, a set of dots that correspond to each slide will be shown on hover.</td>
+      </tr>
+      <tr>
+        <td>showLoadingOverlay</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, a loading icon will be shown while the slide image is busy loading.</td>
+      </tr>
+      <tr>
+        <td>sliderTheme</td>
+        <td>&quot;light&quot;</td>
+        <td>String</td>
+        <td>The theme the buttons, dots, and timer bar will aquire.  Allowed values: &quot;light&quot; | &quot;dark&quot;</td>
+      </tr>
+      <tr>
+        <td>slidesDraggable</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, slides will become draggable, allowing users to drag &amp; drop to navigate to the next/previous slide.</td>
+      </tr>
+      <tr>
+        <td>slidesDraggableMobileOnly</td>
+        <td>false</td>
+        <td>Boolean True/False</td>
+        <td>If true, <code>slidesDraggable</code> will be overridden to &quot;true&quot; only if on a mobile device.  Only applicable if <code>slidesDraggable</code> is set to &quot;true&quot;.</td>
+      </tr>
+      <tr>
+        <td>slidesDragLimitFactor</td>
+        <td>5</td>
+        <td>Number</td>
+        <td>The amount, divided from the current slider width/height, of space the user is required to drag in order for a function to be triggered.  Only applicable if <code>slidesDraggable</code> is set to &quot;true&quot;.</td>
+      </tr>
+      <tr>
+        <td>allowKeyboardEvents</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, the slider will listen to the keyboard keys.  Left: previous | Up: previous | Right: next | Down: next | Escape: pause/resume</td>
+      </tr>
+      <tr>
+        <td>sliderResizable</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, the slider will adapt to the current parent size.</td>
+      </tr>
+      <tr>
+        <td>sliderKeepAspectRatio</td>
+        <td>true</td>
+        <td>Boolean True/False</td>
+        <td>If true, the slider will resize and maintain shape.  Only applicable if <code>sliderResizable</code> is set to &quot;true&quot;.</td>
+      </tr>
+      <tr>
+        <td>preDelay</td>
+        <td>0</td>
+        <td>Number</td>
+        <td>The amount of time the slider waits before beginning the timer, in milliseconds.</td>
+      </tr>
+    </tbody>
+  </table>
+  <pre><code>&lt;script&gt;
+$(document).ready(function () {
+    $(&quot;.iAmTest&quot;).nerveSlider({
+        // Add options here
+    });
+});
+&lt;/script&gt;
+
+&lt;div class=&quot;iAmTest&quot;&gt;
+  &lt;img src=&quot;img.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;img src=&quot;img2.png&quot; alt=&quot;&quot;&gt;
+  &lt;img src=&quot;img3.gif&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<hr>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<h2>Nerve Slider API - Giving you control</h2>
+<p>An API is a set of functions that a user can call to control a plugin.  Nerve Slider comes with a few functions to control its basic features.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+      <th>Example Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>nextSlide()</code></td>
+      <td>Jumps to the next slide.</td>
+      <td><code>$(&quot;.yourSlider&quot;).nextSlide();</code></td>
+    </tr>
+    <tr>
+      <td><code>prevSlide()</code></td>
+      <td>Jumps to the previous slide.</td>
+      <td><code>$(&quot;.yourSlider&quot;).prevSlide();</code></td>
+    </tr>
+    <tr>
+      <td><code>gotoSlide(<em>#</em>)</code></td>
+      <td>Jumps to the given slide number.</td>
+      <td><code>$(&quot;.yourSlider&quot;).gotoSlide();</code></td>
+    </tr>
+    <tr>
+      <td><code>togglePause()</code></td>
+      <td>Pauses or resumes the slider based on its current state.</td>
+      <td><code>$(&quot;.yourSlider&quot;).togglePause();</code></td>
+    </tr>
+    <tr>
+      <td><code>fixImages()</code></td>
+      <td>Repositions images inside slide.  Only use for skewed or offset images.</td>
+      <td><code>$(&quot;.yourSlider&quot;).fixImages();</code></td>
+    </tr>
+    <tr>
+      <td><code>endNerveSlider()</code></td>
+      <td>Restores the slider markup to before nerveSlider() was called.</td>
+      <td><code>$(&quot;.yourSlider&quot;).endNerveSlider();</code></td>
+    </tr>
+  </tbody>
+</table>
+<pre><code>&lt;script&gt;  
+$(document).ready(function () {
+    $(&quot;.iAmTest&quot;).nerveSlider(); // Start the slider
+    $(&quot;.customPrevArrow&quot;).click(function () {
+        $(&quot;.iAmTest&quot;).prevSlide();
+    });
+    $(&quot;.customNextArrow&quot;).click(function () {
+        $(&quot;.iAmTest&quot;).nextSlide();
+    });
+});
+&lt;/script&gt;
+
+&lt;div class=&quot;iAmTest&quot;&gt;
+  &lt;img src=&quot;img.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;img src=&quot;img2.png&quot; alt=&quot;&quot;&gt;
+  &lt;img src=&quot;img3.gif&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;customPrevArrow&quot;&gt;PREVIOUS&lt;/div&gt;
+&lt;div class=&quot;customNextArrow&quot;&gt;NEXT&lt;/div&gt;</code></pre>
+</body>
+</html>

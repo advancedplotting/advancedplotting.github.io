@@ -1,0 +1,201 @@
+/*
+Template Name: CleanCut
+Template URI: http://www.os-templates.com/
+Description: Designed and Built by <a href="http://www.os-templates.com/">OS Templates</a>. This modern template is adaptable, lightweight and fully customisable. The template is easy to use, enabling you to create your site within minutes. 
+Version: 1.0
+Author: OS-Templates.com
+Author URI: http://www.os-templates.com/
+Licence: 
+Licence URI: 
+Tags: dark, light, responsive
+File: Shop CSS
+*/
+
+/*
+	TOC - Table Of Contents
+	
+	1 => Accessible Font Icon Support
+	2 => Shop
+	3 => Product Display Options
+	4 => Product Overview
+	5 => Product Page
+	6 => Basket
+*/
+
+
+/* Accessible Font Icon Support
+---------------------------------------------------------------------------------------------------------------------------------------*/
+
+*[class^="icon-"] .accessible{display:inline-block; text-indent:-99999px;}
+
+
+/* Shop
+---------------------------------------------------------------------------------------------------------------------------------------*/
+#shop{display:block; margin:0; padding:0; overflow:hidden;}
+
+/* Shop Start Page - the 3 Blocks Under The Main Slider */
+.shopbanner{text-align:right;}
+.shopbanner [class^="icon-"]{position:absolute; top:5px; left:5px; opacity:.3; line-height:normal;}
+
+.sidebar-cart{display:block; margin:0 0 30px 0; padding:10px 15px; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;}
+.sidebar-cart span{float:left; margin-right:25px;}
+.sidebar-cart p{margin:0 0 5px 0; padding:0; text-transform:uppercase;}
+
+.prd-rating{}
+.prd-rating strong{float:left; margin-right:5px; font-size:.8em; font-weight:normal;}
+.prd-rating ul{display:block; float:left; margin:0; padding:0; list-style:none; letter-spacing:normal;}
+.prd-rating ul li{float:left; margin:0 3px 0 0; padding:0;}
+.prd-rating ul li span{display:inline; margin:0 -2px 0 0; padding:0;}
+.prd-rating ul li span em{display:none;}
+
+
+/* Product Display Options
+---------------------------------------------------------------------------------------------------------------------------------------*/
+.prd-options{display:block; margin:0 0 50px 0; padding:3% 2% 0 3.5%; border:1px solid; text-align:center; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+
+.prd-options p, 
+.prd-options select, 
+.prd-options .displayview, 
+.prd-options .prd-sort, 
+.prd-options .displayview .prd-layout, 
+.prd-options .prd-sort .prd-count, 
+.prd-options .prd-sort .prd-sortby{margin:0; padding:0; line-height:normal;}
+
+.prd-options p, 
+.prd-options .displayview, 
+.prd-options .displayview .prd-layout, 
+.prd-options .displayview span, 
+.prd-options .prd-sort, 
+.prd-options .prd-sort .prd-count, 
+.prd-options .prd-sort .prd-sortby, 
+.prd-options .prd-sort .formstyler, 
+.prd-options .prd-sort .formstyler select{float:left;}
+
+.prd-options p{min-width:80px; margin:7px 0 0 0; text-align:left; text-transform:uppercase;}
+
+.prd-options .displayview{margin:0 30px 3% 0;}
+.prd-options .displayview p{}
+.prd-options .displayview .prd-layout{}
+.prd-options .displayview .prd-layout span{display:inline-block; margin:0 10px 0 0; padding:4px 6px 3px 6px; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+.prd-options .displayview .prd-layout span.active-view{}
+.prd-options .displayview .prd-layout span.inactive-view{cursor:pointer;}
+
+.prd-options .prd-sort{}
+.prd-options .prd-sort .prd-count, .prd-options .prd-sort .prd-sortby{margin-bottom:3%;}
+
+.prd-options .prd-sort .prd-count{margin-right:30px;}
+.prd-options .prd-sort .prd-count p{}
+.prd-options .prd-sort .prd-sortby{}
+.prd-options .prd-sort .prd-sortby p{}
+
+#shop form .formstyler select{}
+#shop form .prd-count .jq-selectbox{width:80px;}
+#shop form .prd-count .jq-selectbox .dropdown{min-width:100%; width:100%; max-width:80px;}
+#shop form .prd-sortby .jq-selectbox{width:180px; text-align:left;}
+#shop form .prd-sortby .jq-selectbox .dropdown{min-width:100%; width:100%; max-width:190px;}
+
+/* Display products as a list */
+
+.prd-overview.prd-list .prd-wrap.one_third{display:block; width:100%; margin-left:0;}
+.prd-overview.prd-list article .prd-img, .prd-overview.prd-list article .prd-info{float:left; margin:0 0 0 5%;}
+.prd-overview.prd-list article .prd-img{width:30%; margin-left:0;}
+.prd-overview.prd-list article .prd-info{width:65%;}
+
+
+/* Product Overview
+---------------------------------------------------------------------------------------------------------------------------------------*/
+.prd-wrap.one_third{position:relative; margin-bottom:40px;}
+
+.prd-wrap .article{}
+.prd-wrap article .prd-img{margin-bottom:8px;}
+
+.prd-wrap article .prd-info{}
+.prd-wrap article .prd-info .prd-header{font-size:1.2em;}
+.prd-wrap article .prd-info .prd-desc{margin-bottom:8px; font-size:.8em;}
+
+.prd-wrap article .prd-info .prd-price{margin-bottom:12px;}
+.prd-wrap article .prd-info .prd-price span{display:block;}
+.prd-wrap article .prd-info .prd-price span em{text-transform:none; font-style:normal;}
+.prd-wrap article .prd-info .prd-price .rrp{margin:0; font-size:.8em;}
+.prd-wrap article .prd-info .prd-price .rrp em{text-decoration:line-through;}
+.prd-wrap article .prd-info .prd-price .price{text-transform:uppercase; font-weight:bold;}
+.prd-wrap article .prd-info .prd-price .price em{font-size:1.6em;}
+
+.prd-wrap article .prd-info .prd-meta{padding:10px 0 0 0; border:solid; border-width:1px 0;}
+.prd-wrap article .prd-info .prd-meta ul{margin:0; padding:0; list-style:none;}
+.prd-wrap article .prd-info .prd-meta ul li{display:inline-block; margin:0 20px 10px 0;}
+.prd-wrap article .prd-info .prd-meta ul li:last-child, .prd-wrap article .prd-info .prd-meta ul li.last{margin-right:0;}
+.prd-wrap article .prd-info .prd-meta ul li strong{display:none;}
+.prd-wrap article .prd-info .prd-meta ul li a{display:block; padding:5px 8px; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+
+.prd-wrap article .announce{position:absolute; top:0; left:0;}
+.prd-wrap .circle.xsmall{width:50px; height:50px; padding-top:17px; font-size:.85em; line-height:normal; word-wrap:break-word; white-space:normal; text-transform:uppercase; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+
+
+/* Product Page
+---------------------------------------------------------------------------------------------------------------------------------------*/
+.product-info .prd-price{}
+.product-info .prd-price span{display:block;}
+.product-info .prd-price span em{text-transform:none; font-style:normal;}
+.product-info .prd-price .rrp{font-size:.8em;}
+.product-info .prd-price .rrp em{text-decoration:line-through;}
+.product-info .prd-price .price{text-transform:uppercase; font-weight:bold;}
+.product-info .prd-price .price em{font-size:1.6em;}
+.product-info .prd-price .discount{}
+
+.product-info form #prd-quantity{display:inline-block; margin:0; width:auto;}
+
+/* Product Images - Cloud Zoom */
+
+.product-info .prd-image{position:relative; overflow:hidden; width:auto;}
+.product-info .prd-image-xtra{}
+.product-info .prd-image-xtra li{display:inline; float:left; margin:0 0 5% 5%; list-style:none; width:21.25%;}
+.product-info .prd-image-xtra li.first{margin-left:0; clear:left;}
+
+/* Lens square underneath the mouse pointer. */
+.cloud-zoom-lens{border:4px solid #888; margin:-4px; /* Set this to minus the border thickness. */ background-color:#FFFFFF; cursor:move;}
+
+/* Title text. */
+.cloud-zoom-title{position:absolute !important; top:0; width:100%; padding:3px; color:#fff; background-color:#000; text-align:center; font-weight:bold; font-size:10px;}
+
+/* Zoom window. */
+.cloud-zoom-big{overflow:hidden;}
+
+/* Loading message. */
+.cloud-zoom-loading{color:#fff; background:#222; padding:3px; border:1px solid #000;}
+
+/* Make the preview image responsive */
+#cloud-zoom-wrap{display:block; width:100%; height:100%; margin:0; padding:0; overflow:hidden;}
+#cloud-zoom-wrap img{display:inline-block; width:100%; max-width:100%; height:auto;}
+
+/* Related Products */
+
+#prd-related{}
+
+/* Featured Products - Sidebar */
+
+#prd-featured{}
+#prd-featured .flexslider .flex-slides li.flex-active-slide{margin-bottom:10px;}
+
+
+/* Basket
+---------------------------------------------------------------------------------------------------------------------------------------*/
+#basket{max-width:100%; padding:0; border:none; text-align:center;}
+#basket .t-header .t-cell{padding:8px 5px; border:solid; border-width:0 1px; vertical-align:top; text-align:center; -moz-border-radius:10px 10px 0 0; -webkit-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;}
+
+#basket .description{text-align:left; max-width:350px;}
+#basket .description .desc-excerpt{font-size:.85em; line-height:normal;}
+
+#basket input, #basket button{display:inline-block; margin:0 10px 0 0; padding:0; overflow:hidden; text-align:center;}
+#basket input{width:30px; padding:2px; text-align:center;}
+#basket input[type="text"]{border:1px solid; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+#basket button{border:none; cursor:pointer;}
+#basket button:last-child{margin-right:0;}
+
+button.update{display:inline-block; width:auto; margin:10px 0 0 0; padding:5px 10px; border:none; text-transform:uppercase; cursor:pointer;}
+button.update span{margin-right:5px;}
+
+#shop-cart-total, #shop-cart-total .row{display:block; width:100%; text-align:right;}
+#shop-cart-total .cell{display:inline-block; width:auto; padding:5px 0;}
+#shop-cart-total .cell.title{font-weight:bold; text-align:right;}
+#shop-cart-total .cell.amount{min-width:60px; padding-left:10px;}

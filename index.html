@@ -1,5 +1,310 @@
-<html>
-<body>
-<p>Test page</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced Plotting Toolkit</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="format-detection" content="telephone=no">
+<link href="layout/styles/main.css" rel="stylesheet" type="text/css" media="all">
+<!-- Responsive -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/mediaqueries.css" rel="stylesheet" type="text/css" media="all">
+<!-- / Responsive -->
+<!--[if lt IE 9]>
+<link href="layout/styles/ie/ie8.css" rel="stylesheet" type="text/css" media="all">
+<script src="layout/scripts/ie/css3-mediaqueries.min.js"></script>
+<script src="layout/scripts/ie/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- HEADER -->
+<div class="wrapper row1">
+  <header role="banner" id="header" class="clear">
+    <nav role="navigation" id="topnav" class="clear">
+      <ul class="clear">
+        <li><a href="index.html" title="Home">Home</a></li>
+        <li><a href="download.html" title="Download">Download</a></li>
+        <li><a href="docs.html" title="Documentation">Docs</a></li>
+        <li><a href="contact.html" title="Project Info">Project Info</a></li>
+      </ul>
+    </nav>
+    <div id="logo">
+      <h1><a href="index.html">Advanced Plotting Toolkit</a></h1>
+    </div>
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- CONTENT -->
+<div class="wrapper row3">
+  <div role="main" class="container">
+    <!-- ################################################################################################ -->
+    <div id="homepage" class="clear">
+        <div class="nivo-wrapper push30">
+        <div class="nivoSlider">
+            <img src="images/header1.png" alt="" data-thumb="images/header1.png"> 
+            <img src="images/header2.png" alt="" data-thumb="images/header2.png"> 
+            <img src="images/header3.png" alt="" data-thumb="images/header3.png"> 
+            <img src="images/header4.png" alt="" data-thumb="images/header4.png"> 
+        </div>
+        </div>
+      <section>
+        <div class="center">
+           <h1>Modern Visualization for NI LabVIEW<sup>&nbsp;&trade;</sup></h1>
+        </div>
+      </section>
+    <div id="portfolio" class="">
+      <div class="one_sixth first"><p>&nbsp;</p></div>
+        <div class="four_sixth">
+        The Advanced Plotting Toolkit is an add-on package for LabVIEW&trade; that lets you create professional-quality
+        figures and plots directly from the block diagram.  Plots are displayed on the front panel using full 24 bit color and
+        antialiasing. With a single subVI call, they can also be saved to disk in any of half a dozen standard formats, including PDF.
+        <br><br>
+        The Advanced Plotting Toolkit is now an open-source project!  Check
+        out <a href="https://decibel.ni.com/content/groups/advanced-plotting-toolkit">our forum</a> at NI.com.
+        </div>
+      <div class="one_sixth"> </div>
+      <div class="clear"><p>&nbsp;</p></div>
+      <div class="center"><img src="about-images/palettes.png" alt=""></div>
+      <p>&nbsp;</p>
+      <div class="center">
+      <a href="http://sine.ni.com/nips/cds/view/p/lang/en/nid/213166" 
+                           class="button large blue"
+                           target="_blank">Download From LabVIEW Tools Network</a>
+      </div>
+      <p>&nbsp;</p>
+      <h1>What can I plot?</h1>
+      <p>
+        In addition to a complete set of standard plotting routines including
+        line, scatter, polar, and bar graphs, you can create advanced
+        visualizations including line-contour and filled-contour plots, 2D
+        histograms, vector arrow fields, streamline plots, and more.  Plots
+        support text annotation, math symbols, partial transparency, alpha
+        blending and a variety of colormaps.
+      </p><p>
+      View on the front panel or save to disk in PDF, PNG, TIFF, JPEG, GIF and BMP formats.
+      </p><p>
+      The Toolkit is entirely self-contained and requires no installation of a
+      separate analysis environment like Excel&trade; or IDL&trade;.
+      It combines advanced proprietary technology with
+      a fast embedded version of the industry-leading "matplotlib" 
+      graphing library, used by thousands of scientists and engineers 
+      worldwide.
+      </p>
+      <p>&nbsp;</p>
+      <h1>Example/Demo VIs</h1>
+      <p>
+      Each of the screenshots below is taken from an example VI.
+      You can download them from <a href="docs/guide/examples.html">the Examples page</a> in the online manual.
+            </p><p>&nbsp;</p>
+      <ul class="clear">
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/save.png" alt=""></figure>
+            <p>Save your plots to disk with a single subVI call.  That means real export functionality... not a screenshot of a control.
+            Get full 24-bit color and antialiasing.  Export to half a dozen formats including PDF and PNG.
+            Even better, PDF documents will use resolution-independent vector art which looks good at any size.</p>
+             <p><a href="docs/ref/Save.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/alpha.png" alt=""></figure>
+            <p>Use partial transparency and alpha blending to make your data more informative.  In this example VI, two histograms are plotted on the
+            same axes.  Alpha blending lets us compare the distributions, even though they overlap.  Nearly every type of plot in the Toolkit supports
+            alpha transparency.</p>
+             <p><a href="docs/guide/color.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/math.png" alt=""></figure>
+            <p>No more "fake" subscripts using the underscore character.  All text in your plots, from annotations to axis labels to 
+            legend titles, supports math markup.  The industry-standard LaTeX markup language is used, which goes beyond special
+            characters to include real math layout including integrals, vertically stacked fractions, and more.</p>
+             <p><a href="docs/guide/markup.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/contour.png" alt=""></figure>
+            <p>Finally, real 2D contour plots for LabVIEW!  Generate contours from any 2D array.
+            Add contour labels automatically, by changing a single setting.  Combine with other features to make
+            your data come to life; in this example, they are overlaid on a colormapped array displayed with
+            <a href="docs/ref/ArrayView.html" target="_blank">View Array</a>.</p>
+             <p><a href="docs/ref/Contour.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/contour-filled.png" alt=""></figure>
+            <p>You aren't limited to plain contour lines.  In this example, the regions between contours
+            are shaded according to a <a href="docs/guide/color.html" target="_blank">colormap</a>.  Combine with labelled
+            contour lines to get a topo-style map of your data.  Or add a colorbar with a single subVI call.
+            </p>
+             <p><a href="docs/ref/ContourFilled.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/vector.png" alt=""></figure>
+            <p>Have vector or flow-field data?  Display it using a field of vector arrows.  Arrows aren't just
+            plain black... they can be colormapped according to any 2D array you provide.  Like contours, you
+            are also free to overlay the vectors on another array visualization, or any other plot element.</p>
+             <p><a href="docs/ref/VectorField.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/stream.png" alt=""></figure>
+            <p>For vector data representing fluid flows, consider making a streamline plot.  Streamlines are
+            automatically generated from a pair of 2D arrays you provide, giving the X and Y components of the
+            vector field.  Like vector arrows, the streamlines can be colormapped according to any
+            2D array you provide.  In this example, darker colors represent faster flow speeds.</p>
+             <p><a href="docs/ref/Streamline.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/polar.png" alt=""></figure>
+            <p>Any plot of 1D data (line, scatter, bar, histogram, etc.) can be displayed on polar axes by setting a single value when the plot is created.  Polar plots are
+            first-class citizens in the Toolkit and have the same range of options as rectangular plots.  In fact, the same plotting subVIs are used for both, so your
+            code doesn't even have to change.  You can customize all features, including the grid lines and angle labels.</p>
+             <p><a href="docs/guide/polar.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+      </ul>
+      <h1>Automatic Histograms</h1>
+      <ul class="clear">
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/hist1d.png" alt=""></figure>
+            <p>Generate a histogram plot in a single step.  Supply an array of data points to
+            <a href="docs/ref/Histogram.html">Histogram.vi</a> and the Toolkit does the rest.  Just like
+            a regular bar plot, all the plot attributes are customizable, including color, line widths,
+            data range, and more.</p>
+             <p><a href="docs/ref/Histogram.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/hist2d.png" alt=""></figure>
+            <p>Finally, 2D histograms.  No need to write custom code for binning or interpolation.  Like regular histograms, you can create these directly
+            from raw data:  in this case, a pair of X/Y data arrays.  Great for visualizing things like beam or noise profiles, which suffer
+            from being forced into a 1D world.</p>
+             <p><a href="docs/ref/Histogram2D.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+      </ul>
+      <h1>1D Plotting</h1>
+      <ul class="clear">
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/line.png" alt=""></figure>
+            <p>Not your average line plot.  Make fast, antialiased, customizable plots from your 1D data sets.  Use linear, logscaled, or
+            even symmetric-log axes, which allow negative or zero values on a log scale.  Choose from an array of professional-quality markers,
+            colors and line styles.  Add error bars with a single subVI call.</p>
+             <p><a href="docs/ref/Line.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/scatter.png" alt=""></figure>
+            <p>Let your data speak for itself with the Toolkit's scatter plots.  You're not limited to a series of fixed-sized markers.  With a single additional
+            array you can make the marker size data-dependent, to emphasize trends in your analysis.  Use color mapping to add yet another dimension to your plot.
+            In the above example, both are used.</p>
+             <p><a href="docs/ref/Scatter.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+      </ul>
+      <ul class="clear">
+        <li>
+          <article class="clear">
+            <figure class="post-image"><img src="about-images/bar.png" alt=""></figure>
+            <p>Making bar plots is a breeze, including stacked, log-scaled, or negative-going bars.  Not only do they support the features you'd expect, including
+            full customizability of sizes, colors, and line styles, they even work on polar axes!</p>
+             <p><a href="docs/ref/Bar.html">Read online documentation for this feature</a></p>
+             <p>&nbsp;</p>
+          </article>
+        </li>
+      </ul>
+      <div class="center">
+      <a href="http://sine.ni.com/nips/cds/view/p/lang/en/nid/213166" 
+                           class="button large blue"
+                           target="_blank">Download From LabVIEW Tools Network</a>
+           <p>You can also check out the <a href="docs.html">online user guide</a>.</p>
+      </div>
+    </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+    <!-- Ensure That Everything Has Been Cleared -->
+  </div>
+  <!-- End class=container -->
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- COPYRIGHT -->
+<div class="wrapper row5">
+  <div id="copyright" class="clear">
+    <div class="fl_left">Copyright &copy; 2015 Heliosphere Research LLC and contributors<br><br>
+    "NI" and "LabVIEW" are trademarks of National Instruments. Neither Heliosphere Research LLC, nor any software programs or other
+    goods or services offered by Heliosphere Research LLC, are affiliated with, endorsed by, or sponsored by National Instruments.
+    "Excel" and "IDL" are trademarks of their respective owners, and no representation of
+    affiliation, endorsement or sponsorship is made.
+    </div>
+  </div>
+</div>
+<!-- JAVASCRIPTS -->
+<!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<script src="layout/scripts/jquery-latest.min.js"></script>
+<!-- <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script> -->
+<script src="layout/scripts/jquery-ui.min.js"></script>
+<!-- Retina -->
+<script src="layout/scripts/retina/retina.js"></script>
+<!-- Scrollbars -->
+<!-- <script src="layout/scripts/nicescroll/jquery.nicescroll.min.js"></script> -->
+<!-- Slider -->
+<script src="layout/scripts/slider/flexslider/jquery.flexslider-min.js"></script>
+<script src="layout/scripts/slider/nerveslider/jquery.nerveSlider.min.js"></script>
+<script src="layout/scripts/slider/nivo-slider/jquery.nivo.slider.pack.js"></script>
+<script src="layout/scripts/slider/responsiveslides.js/responsiveslides.min.js"></script>
+<script src="layout/scripts/slider/unslider/unslider.custom.min.js"></script>
+<script src="layout/scripts/slider/custom-config.js"></script>
+<!-- Lightbox -->
+<script src="layout/scripts/lightbox/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="layout/scripts/lightbox/nivo-lightbox/nivo-lightbox.min.js"></script>
+<script src="layout/scripts/lightbox/prettyphoto/jquery.prettyPhoto.min.js"></script>
+<script src="layout/scripts/lightbox/custom-config.js"></script>
+<!-- Media -->
+<script src="layout/scripts/fitvids/jquery.fitvids.js"></script>
+<!-- Isotope -->
+<script src="layout/scripts/isotope/jquery.isotope.min.js"></script>
+<script src="layout/scripts/isotope/jquery.isotope.setup.js"></script>
+<!-- General -->
+<script src="layout/scripts/jquery-total-storage/jquery.total-storage.min.js"></script>
+<script src="layout/scripts/cloud-zoom/cloud-zoom.1.0.4.min.js"></script>
+<!-- Form Styler -->
+<script src="layout/scripts/formstyler/jquery.formstyler.min.js"></script>
+<!-- Custom Settings -->
+<script src="layout/scripts/shop/shop.js"></script>
+<script src="layout/scripts/custom.js"></script>
 </body>
 </html>

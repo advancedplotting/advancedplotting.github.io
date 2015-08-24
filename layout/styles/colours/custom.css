@@ -1,0 +1,98 @@
+/*
+Template Name: CleanCut
+Template URI: http://www.os-templates.com/
+Description: Designed and Built by <a href="http://www.os-templates.com/">OS Templates</a>. This modern template is adaptable, lightweight and fully customisable. The template is easy to use, enabling you to create your site within minutes. 
+Version: 1.0
+Author: OS-Templates.com
+Author URI: http://www.os-templates.com/
+Licence: 
+Licence URI: 
+Tags: dark, light, responsive
+File: Custom Colour CSS
+*/
+
+/* Base Colour: #CUSTOMCOLOUR */
+
+/* Search and replace "#CUSTOMCOLOUR" with your base colour of choice */
+/* Search and replace "#CUSTOMCOLOUR-DARKER" with a darker version of your base colour of choice */
+
+a{color:#CUSTOMCOLOUR;}
+
+.row1{border-top-color:#CUSTOMCOLOUR;}
+
+/* Generalise */
+
+#openpanel a, .pageintro, #topnav li.active a, #topnav a:hover, #topnav ul li li:hover > a, #topnav ul li.active ul .active > a, #header.tno-7 nav ul ul li:hover > a, #header.tno-7 nav ul ul li.active > a, #header.tno-8 nav ul li:hover > a, #header.tno-8 nav ul li.active:hover > a, #header.tno-8 nav ul ul li:hover > a, #header.tno-8 nav ul ul li.active > a, #header.tno-10 nav ul ul li:hover > a, #header.tno-10 nav ul ul li.active > a, #header #topnav .jq-selectbox ul li:hover, .jq-selectbox li:hover, #scrolltotop, .list.tagcloud li a:hover, .list.posttags li a:hover, .accordion-title:hover, .toggle-title:hover, .accordion-wrapper .accordion-title.active, .toggle-wrapper .toggle-title.active, .container .isotope-filters .current a, .sidebar-cart, .sidebar-cart a, .prd-options .displayview .prd-layout span.inactive-view, #basket .t-header .t-cell{
+	color:#FFFFFF;
+	background-color:#CUSTOMCOLOUR;
+	}
+
+#pageintro .pagetitle h1{
+	color:#FFFFFF;
+	background-color:#CUSTOMCOLOUR-DARKER;
+	}
+
+h1 span:after, h2 span:after, h3 span:after, h4 span:after, h5 span:after, h6 span:after{
+	background-color:#CUSTOMCOLOUR;
+	}
+
+#header.tno-2 nav ul li:hover a.drop:before, #header.tno-2 nav ul li.active a.drop:before, #header.tno-4 nav ul li:hover a.drop:before, #header.tno-4 nav ul li.active a.drop:before{
+	border-top-color:#CUSTOMCOLOUR;
+	}
+
+#header.tno-6 nav ul li:hover > a, #header.tno-6 nav ul li.active > a, #header.tno-7 nav ul li:hover > a, #header.tno-7 nav ul li.active > a, #header.tno-8 nav ul li:hover > a, #header.tno-8 nav ul li.active > a, #header.tno-9 nav ul li:hover > a, #header.tno-9 nav ul li.active > a{
+	border-bottom-color:#CUSTOMCOLOUR-DARKER;
+	}
+
+#header.tno-7 nav ul li:hover > a, #header.tno-7 nav ul li.active > a, #header.tno-8 nav ul li.active > a{
+	color:inherit;
+	background-color:inherit;
+	}
+
+#header.tno-10 nav ul li:hover > a, #header.tno-10 nav ul li.active > a{
+	color:#CUSTOMCOLOUR;
+	background-color:inherit;
+	}
+
+.container .sidebar aside nav a:hover, .container .sidebar aside nav .active > a{
+	color:#CUSTOMCOLOUR;
+	background-color:inherit;
+	}
+
+.list.posttags li a:hover:before{
+	border-right-color:#CUSTOMCOLOUR;
+	}
+
+.calltoaction.opt1, .calltoaction.opt2, .calltoaction.opt3, .calltoaction.opt4{
+	border-color:#CUSTOMCOLOUR;
+	}
+
+.blog-post-title a:hover{
+	color:#CUSTOMCOLOUR;
+	background-color:inherit;
+	}
+
+/* To completely override all the pre-defined button colours uncomment the following */
+
+/*
+.button.blue, .button.dkblue, .button.green, .button.grey, .button.maroon, .button.orange, .button.purple, .button.red, .button.yellow, .button.black, .button.white{
+	color:#FFFFFF;
+	background-color:#CUSTOMCOLOUR;
+	}
+
+.button.blue:hover, .button.dkblue:hover, .button.green:hover, .button.grey:hover, .button.maroon:hover, .button.orange:hover, .button.purple:hover, .button.red:hover, .button.yellow:hover, .button.black:hover, .button.white:hover{
+	color:#FFFFFF;
+	background-color:#CUSTOMCOLOUR-DARKER;
+	}
+
+.button.blue.gradient, .button.dkblue.gradient, .button.green.gradient, .button.grey.gradient, .button.maroon.gradient, .button.orange.gradient, .button.purple.gradient, .button.red.gradient, .button.yellow.gradient, .button.black.gradient, .button.white.gradient{
+	background:#CUSTOMCOLOUR-DARKER;
+	background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc5MDkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiM1NkFFRDQiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxQzU0NkMiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c5MDkpIiAvPgo8L3N2Zz4=);
+	background:-moz-linear-gradient(#CUSTOMCOLOUR 0%, #CUSTOMCOLOUR-DARKER 100%);
+	background:-webkit-gradient(color-stop(0%,#CUSTOMCOLOUR), color-stop(100%,#CUSTOMCOLOUR-DARKER));
+	background:-webkit-linear-gradient(#CUSTOMCOLOUR 0%,#CUSTOMCOLOUR-DARKER 100%);
+	background:-o-linear-gradient(#CUSTOMCOLOUR 0%,#CUSTOMCOLOUR-DARKER 100%);
+	background:-ms-linear-gradient(#CUSTOMCOLOUR 0%,#CUSTOMCOLOUR-DARKER 100%);
+	background:linear-gradient(#CUSTOMCOLOUR 0%,#CUSTOMCOLOUR-DARKER 100%);
+	}
+*/
